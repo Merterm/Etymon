@@ -9,6 +9,16 @@ Mert Inan\
 Cholpon Mambetova\
 Utku Uckun
 
+## Supervisor
+Professor Mehmet Koyutürk
+
+## Jury Members
+Professor Ugur Dogrusöz\
+Professor Varol Akman
+
+## Innovation Expert
+Dr. Çağla Çığ Karaman
+
 ## Meeting Times
 Wednesdays @ 15:30-17:30 (UTC+3)\
 Fridays @ 16:30-17:30\
