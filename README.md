@@ -5,9 +5,19 @@ Etymøn will be a system that contains three main components: deep-learning, aug
 
 ## Group members
 Nashiha Ahmed\
-Mert Inan\
+Mert İnan\
 Cholpon Mambetova\
-Utku Uckun
+Utku Uçkun
+
+## Supervisor
+Professor Mehmet Koyutürk
+
+## Jury Members
+Professor Uğur Doğrusöz\
+Professor Varol Akman
+
+## Innovation Expert
+Dr. Çağla Çığ Karaman
 
 ## Meeting Times
 Wednesdays @ 15:30-17:30 (UTC+3)\
