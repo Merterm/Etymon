@@ -14,12 +14,13 @@ Professor Mehmet Koyutürk
 
 ## Jury Members
 Professor Uğur Doğrusöz\
-Professor Varol Akman
+Professor Varol Akman/ Associate Professor Çiğdem Gündüz Demir
 
 ## Innovation Expert
 Dr. Çağla Çığ Karaman
 
 ## Meeting Times
-Wednesdays @ 15:30-17:30 (UTC+3)\
-Fridays @ 16:30-17:30\
-Mondays (tentative)
+Wednesdays @ 12:40-17:30 (UTC+3)\
+Mondays @ 18:00-20:00 \
+Sundays @ 10:30-17:30 (tentative)
+
