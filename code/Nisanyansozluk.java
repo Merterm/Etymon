@@ -1,4 +1,4 @@
-package Websites;
+//package Websites;
 
 import java.io.PrintWriter;
 
@@ -31,7 +31,7 @@ public class Nisanyansozluk {
 
 				linksInCurrentWord = ElementsInCurrentWord.select("a[href]");
 				//writing html to file
-				out = new PrintWriter(currentWord + ".html");
+				out = new PrintWriter("../data/Nisanyan/" + currentWord + ".html");
 				String e = ElementsInCurrentWord.html(); 
 				out.write(e);
 				out.close();
