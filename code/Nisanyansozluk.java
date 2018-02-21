@@ -1,4 +1,4 @@
-//package Websites;
+package Websites;
 
 import java.io.PrintWriter;
 
@@ -20,9 +20,10 @@ public class Nisanyansozluk {
 		Elements linksInCurrentWord = null;
 		Elements ElementsInCurrentWord = null;
 		Element currentLink = null;
+		PrintWriter out = null;
 		
 		while(hasMoreWords){
-			PrintWriter out = null;
+			
 			try {
 				links = Jsoup.connect(link + currentWord + follow).get().select("a[href]");
 				currentLink = Jsoup.connect(link + currentWord + follow).get().getElementsByAttributeValue("title",currentWord).get(0);
@@ -66,12 +67,13 @@ public class Nisanyansozluk {
 				int offset = index + internalLinkCount;
 				
 				currentWord = links.get(offset).ownText();
+				//Editing the name, getting rid of "|" character
+				int charIndex = currentWord.indexOf('|');
+				if(charIndex != -1)
+					currentWord = currentWord.substring(0, charIndex) + '-';
+				
 				System.out.println("Done");
 			}
-
-
 		}
-
 	}
-
 }
