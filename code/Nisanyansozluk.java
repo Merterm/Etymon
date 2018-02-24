@@ -1,8 +1,12 @@
-//package Websites;
+package Websites;
 
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URL;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Attributes;
+import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -21,17 +25,36 @@ public class Nisanyansozluk {
 		Elements ElementsInCurrentWord = null;
 		Element currentLink = null;
 		PrintWriter out = null;
-		
-		while(hasMoreWords){
-			
-			try {
-				links = Jsoup.connect(link + currentWord + follow).get().select("a[href]");
-				currentLink = Jsoup.connect(link + currentWord + follow).get().getElementsByAttributeValue("title",currentWord).get(0);
-				ElementsInCurrentWord = currentLink.parent().children();
+		Document doc = null;
+		int index = 21;
+		int offset;
+		int internalLinkCount;
+		String original = "";
+		boolean useOrig = false;
+		try {
+			 doc = Jsoup.parse(new URL(link + currentWord /*+ follow*/).openStream(), "ISO-8859-9", link + currentWord + follow);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
-				linksInCurrentWord = ElementsInCurrentWord.select("a[href]");
+		while(hasMoreWords){
+			index = 21;
+			try {
+				
+				links = doc.select("a[href]");
+				if(useOrig)
+				{
+					currentWord = original;
+					useOrig = false;
+				}
+				currentLink = doc.getElementsByAttributeValue("title",currentWord).get(0);
+				Element E = currentLink.parent();
+				ElementsInCurrentWord = currentLink.parent().children();
+				linksInCurrentWord = ElementsInCurrentWord.select("a");
+				
 				//writing html to file
-				out = new PrintWriter("../data/Nisanyan/" + currentWord + ".html");
+				out = new PrintWriter(currentWord + ".html");
 				String e = ElementsInCurrentWord.html(); 
 				out.write(e);
 				out.close();
@@ -46,33 +69,45 @@ public class Nisanyansozluk {
 			if(currentWord.compareTo("zürriyet") == 0)
 				hasMoreWords = false;
 			else
-			{
-				//get rid of trash links
-				for(int i = 0; i < 16; i++)
+			{		
+				internalLinkCount = linksInCurrentWord.size();
+				offset = 0;
+				
+				do
 				{
-					links.remove(0);
-				}
+					offset = index + internalLinkCount;
+					currentWord = links.get(offset).text();
+					//Editing the name, getting rid of problematic character
+					int charIndex = currentWord.indexOf('|');
+					if(charIndex != -1)
+						currentWord = currentWord.substring(0, charIndex) + '-';
+					if(currentWord.contains("(o)+"))
+					{
+						int i = currentWord.indexOf('(');
+						original = currentWord;
+						currentWord = currentWord.substring(0,i) + "%28o%29%2B";
+						useOrig = true;
+					}
+					if(currentWord.contains("+"))
+					{
+						original = currentWord;
+						currentWord = currentWord.replace("+", "%2B");
+						useOrig = true;
+					}
+
+					try {
+
+						doc = Jsoup.parse(new URL(link + currentWord + follow).openStream(), "ISO-8859-9", link + currentWord + follow);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					index++;
+					
+				}while(doc.select("a[href]").size()< 25);
 				
-				int index = 0;
-				boolean found = false;
-				while(!found)
-				{
-					if(links.get(index).text().compareTo(currentLink.child(0).text()) == 0)
-						found = true;
-					else
-						index++;
-				}
-				
-				int internalLinkCount = linksInCurrentWord.size();
-				int offset = index + internalLinkCount;
-				
-				currentWord = links.get(offset).ownText();
-				//Editing the name, getting rid of "|" character
-				int charIndex = currentWord.indexOf('|');
-				if(charIndex != -1)
-					currentWord = currentWord.substring(0, charIndex) + '-';
-				
-				System.out.println("Done");
+				//System.out.println("Done");
 			}
 		}
 	}
