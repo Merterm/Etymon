@@ -12,7 +12,7 @@ csvfile.close()
 cnt = 0
 #Iterate over every html document in directory
 for html in os.listdir("../data/starling/Turkic Etymology/"):
-    print str(html)
+    #print str(html)
     try:
         #Open HTML file
         html_file = open("../data/starling/Turkic Etymology/" + html.decode('utf-8'), "r")
@@ -23,6 +23,7 @@ for html in os.listdir("../data/starling/Turkic Etymology/"):
         records = soup.find_all("div", class_="results_record")
 
         for record in records:
+            cnt = cnt + 1
             conts = record.contents
 
             #Find the word
@@ -52,3 +53,5 @@ for html in os.listdir("../data/starling/Turkic Etymology/"):
         html_file.close()
     except:
         print "passing " + str(html)
+
+print "Total word count: " + str(cnt)
