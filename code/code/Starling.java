@@ -30,11 +30,13 @@ public class Starling {
 		String languageName = "";
 		for(int index = 0; index < 95; index ++)
 		{
+			System.out.println("Inside for");
 			Element currentLink = links.get(index);
 			String currentLinkAddr = currentLink.attributes().get("href");
 			Element tempo = currentLink.parent().parent();
 			languageName = tempo.select("b").text();
-			String projectPath = System.getProperty("user.dir") + "\\data\\starling\\";
+			String projectPath = "../data/starling/";
+			System.out.println(projectPath);
 			new File( projectPath + languageName).mkdir();
 			
 			
@@ -45,9 +47,10 @@ public class Starling {
 			String html = "";
 			while(hasMorePages)
 			{
+				System.out.println("Inside while");
 				
 				try {
-					out = new PrintWriter(projectPath + languageName + "\\" + languageName + " _ Query result" + pageNo + ".html");
+					out = new PrintWriter(projectPath + languageName + "/" + languageName + "_Query result" + pageNo + ".html");
 					document = Jsoup.connect(Starling + currentLinkAddr + pageNo).get();
 					html = document.html();
 					
@@ -64,6 +67,7 @@ public class Starling {
 				else
 					pageNo = pageNo + 20;
 			}
+			System.out.println("Done");
 			
 		}
 		
