@@ -1,0 +1,91 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
+   <PATCH nodename="D:\ProgramFiles\vvvv\vvvv_50beta35.8_x64\my_examples\helloworld.v4p" scrollx="0" scrolly="-360" systemname="helloworld" filename="D:\ProgramFiles\vvvv\vvvv_50beta35.8_x64\my_examples\helloworld.v4p">
+   <BOUNDS type="Window" left="12720" top="870" width="9000" height="6000">
+   </BOUNDS>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="1">
+   <BOUNDS type="Node" left="750" top="105" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="750" top="105" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="2">
+   <BOUNDS type="Node" left="2010" top="90" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2010" top="90" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (GDI)" nodename="Renderer (GDI)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="3735" top="1215" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3735" top="1215" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="12945" top="2685" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Background Color" slicecount="1" values="|0.52704,0.55479,0.89830,1.00000|">
+   </PIN>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Text (GDI)" nodename="Text (GDI)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="1710" top="4560" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Text" slicecount="1" values="|Hello World|">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="Calibri">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" visible="1" values="-1">
+   </PIN>
+   <PIN pinname="Pen Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Brush Color" slicecount="1" values="|0.38790,0.42694,0.83572,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Layer" dstnodeid="4" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="1320" top="2250" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" slicecount="1" visible="1" values="2">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" visible="1" values="2">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Destination Minimum" slicecount="1" values="15">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="50">
+   </PIN>
+   <PIN pinname="Mapping" slicecount="1" values="Clamp">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Y" dstnodeid="0" dstpinname="Input">
+   <LINKPOINT x="3780" y="3825">
+   </LINKPOINT>
+   <LINKPOINT x="2370" y="1620">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="5" dstpinname="Size">
+   </LINK>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   </PATCH>
