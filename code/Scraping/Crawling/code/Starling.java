@@ -1,4 +1,4 @@
-package code;
+package Scraping.Crawling.code;
 
 import java.io.File;
 import java.io.FileNotFoundException;
