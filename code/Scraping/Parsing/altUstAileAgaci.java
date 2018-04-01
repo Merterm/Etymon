@@ -18,9 +18,7 @@ public class altUstAileAgaci {
 		String E = "etymology";
 		String HDF = "has_derived_form";
 		BufferedReader br = null;
-//		String word = ": "; 	//Get this as input from user in final version
-//		word = word.concat(input.toLowerCase());
-//		word = word.concat("\t");
+		input = input.toLowerCase();
 		ArrayList<String> parents = new ArrayList<String>();
 		ArrayList<String> children = new ArrayList<String>();
 		ArrayList<String> related = new ArrayList<String>();
