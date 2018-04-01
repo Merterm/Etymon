@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <input name="word" type="text" class="ghost-input" placeholder="Enter a Word" required>
+          <input type="submit" class="ghost-button" value="Get Etymology">
+        </form>
+        <% if(locals.etymology !== null){ %>
+                <% if(locals.etymology !== undefined){ %>
+                        <table style="width:100%">
+                          <% lines = locals.etymology.split('\n');
+                          for(var i =0; i < lines.length; i++){ %>
+                            <tr>
+                              <% columns = lines[i].split('\t');
+                              for(var j =0; j < columns.length; j++){ %>
+                                <td><p><%= columns[j] %></p></td>
+                              <% } %>
+                            </tr>
+                          <% } %>
+                        </table>
+                <% } %>
+        <% } %>
+
+        <% if(locals.error !== null){ %>
+          <p><%= locals.error %></p>
+        <% } %>
+      </fieldset>
+    </div>
+  </body>
+</html>

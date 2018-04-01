@@ -9,15 +9,17 @@ csvwriter = csv.writer(csvfile, delimiter=';')
 csvwriter.writerow(['language family','word','etymology'])
 csvfile.close()
 
+dirct = "../../../data/starling/"
+
 cnt = 0
-for folder in os.listdir("../data/starling/"):
+for folder in os.listdir(dirct):
     #try:
         #Iterate over every html document in directory
-    for html in os.listdir("../data/starling/" + str(folder) + "/"):
+    for html in os.listdir(dirct + str(folder) + "/"):
         #print str(html)
         #try:
         #Open HTML file
-        html_file = open("../data/starling/" + str(folder) + "/" + html.decode('utf-8'), "r")
+        html_file = open(dirct + str(folder) + "/" + html.decode('utf-8'), "r")
         content = html_file.read()
         soup = BeautifulSoup(content.decode('utf-8'), 'html.parser')
 
