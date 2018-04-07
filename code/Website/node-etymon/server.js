@@ -4,15 +4,17 @@ let child;
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
+var cytoscape = require('cytoscape');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs')
 
+// gets the root page
 app.get('/', function (req, res) {
   //unzip
   exec("unzip etymwn-20130208.zip");
-  res.render('index')
+  res.render('index');
 })
 
 app.post('/', function (req, res) {
