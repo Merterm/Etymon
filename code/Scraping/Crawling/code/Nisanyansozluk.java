@@ -17,7 +17,7 @@ public class Nisanyansozluk {
 
 		//Properties
 		String link = "http://www.nisanyansozluk.com/";
-		String currentWord = "aba";
+		String currentWord = "akroter";
 		String follow = "&view=annotated";
 		boolean hasMoreWords = true;
 		Elements links = null;
