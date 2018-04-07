@@ -17,7 +17,7 @@ public class Nisanyansozluk {
 
 		//Properties
 		String link = "http://www.nisanyansozluk.com/";
-		String currentWord = "akroter";
+		String currentWord = "aba";
 		String follow = "&view=annotated";
 		boolean hasMoreWords = true;
 		Elements links = null;
@@ -46,11 +46,7 @@ public class Nisanyansozluk {
 				links = doc.select("a[href]");
 				index = 0;
 				boolean loop = true;
-				/*if(useOrig)
-				{
-					currentWord = original;
-					useOrig = false;
-				}*/
+				
 				while(loop)
 				{
 					if(links.get(index).text().compareTo(currentWord) == 0)
@@ -63,7 +59,6 @@ public class Nisanyansozluk {
 				//Element E = currentLink.parent();
 				ElementsInCurrentWord = currentLink.parent().parent().children();
 				linksInCurrentWord = ElementsInCurrentWord.select("a");
-//				linksInCurrentWord.addAll(ElementsInCurrentWord.attr("class", "presufgram"));
 				
 				//writing HTML to file
 				String printName = currentWord;
@@ -94,21 +89,7 @@ public class Nisanyansozluk {
 					offset = index + internalLinkCount;
 					currentWord = links.get(offset).text();
 					nextLink = links.get(offset).attr("href");
-					//Editing the name, getting rid of problematic character
-					/*
-					if(currentWord.contains("(o)+"))
-					{
-						int i = currentWord.indexOf('(');
-						original = currentWord;
-						currentWord = currentWord.substring(0,i) + "%28o%29%2B";
-						useOrig = true;
-					}
-					if(currentWord.contains("+"))
-					{
-						original = currentWord;
-						currentWord = currentWord.replace("+", "%2B");
-						useOrig = true;
-					}*/
+					
 
 					try {
 
