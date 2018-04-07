@@ -16,14 +16,15 @@ public class Nisanyansozluk {
 
 
 		//Properties
-		String link = "http://www.nisanyansozluk.com/?k=";
-		String currentWord = "aba";
+		String link = "http://www.nisanyansozluk.com/";
+		String currentWord = "akroter";
 		String follow = "&view=annotated";
 		boolean hasMoreWords = true;
 		Elements links = null;
 		Elements linksInCurrentWord = null;
 		Elements ElementsInCurrentWord = null;
 		Element currentLink = null;
+		String nextLink = "?k=" + currentWord + "&lnk=1";
 		PrintWriter out = null;
 		Document doc = null;
 		int index = 21;
@@ -32,29 +33,44 @@ public class Nisanyansozluk {
 		String original = "";
 		boolean useOrig = false;
 		try {
-			 doc = Jsoup.parse(new URL(link + currentWord /*+ follow*/).openStream(), "ISO-8859-9", link + currentWord + follow);
+			doc = Jsoup.parse(new URL("http://www.nisanyansozluk.com/?k=" + currentWord /*+ follow*/).openStream(),null /*"ISO-8859-9"*/, link + currentWord + follow);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
 		while(hasMoreWords){
-			index = 21;
+
 			try {
-				
+
 				links = doc.select("a[href]");
-				if(useOrig)
+				index = 0;
+				boolean loop = true;
+				/*if(useOrig)
 				{
 					currentWord = original;
 					useOrig = false;
+				}*/
+				while(loop)
+				{
+					if(links.get(index).text().compareTo(currentWord) == 0)
+						loop = false;
+					else
+						index++;
 				}
-				currentLink = doc.getElementsByAttributeValue("title",currentWord).get(0);
-				Element E = currentLink.parent();
-				ElementsInCurrentWord = currentLink.parent().children();
-				linksInCurrentWord = ElementsInCurrentWord.select("a");
 				
-				//writing html to file
-				out = new PrintWriter(currentWord + ".html");
+				currentLink = doc.getElementsByAttributeValue("href",nextLink).get(0);
+				//Element E = currentLink.parent();
+				ElementsInCurrentWord = currentLink.parent().parent().children();
+				linksInCurrentWord = ElementsInCurrentWord.select("a");
+//				linksInCurrentWord.addAll(ElementsInCurrentWord.attr("class", "presufgram"));
+				
+				//writing HTML to file
+				String printName = currentWord;
+				int charIndex = currentWord.indexOf('|');
+				if(charIndex != -1)
+					printName = currentWord.substring(0, charIndex) + '-';
+				out = new PrintWriter(printName + ".html");
 				String e = ElementsInCurrentWord.html(); 
 				out.write(e);
 				out.close();
@@ -72,15 +88,14 @@ public class Nisanyansozluk {
 			{		
 				internalLinkCount = linksInCurrentWord.size();
 				offset = 0;
-				
+
 				do
 				{
 					offset = index + internalLinkCount;
 					currentWord = links.get(offset).text();
+					nextLink = links.get(offset).attr("href");
 					//Editing the name, getting rid of problematic character
-					int charIndex = currentWord.indexOf('|');
-					if(charIndex != -1)
-						currentWord = currentWord.substring(0, charIndex) + '-';
+					/*
 					if(currentWord.contains("(o)+"))
 					{
 						int i = currentWord.indexOf('(');
@@ -93,20 +108,20 @@ public class Nisanyansozluk {
 						original = currentWord;
 						currentWord = currentWord.replace("+", "%2B");
 						useOrig = true;
-					}
+					}*/
 
 					try {
 
-						doc = Jsoup.parse(new URL(link + currentWord + follow).openStream(), "ISO-8859-9", link + currentWord + follow);
+						doc = Jsoup.parse(new URL(link + nextLink + follow).openStream(), null/*"ISO-8859-9"*/, link + nextLink + follow);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 
 					index++;
-					
-				}while(doc.select("a[href]").size()< 25);
-				
+
+				}while(doc.select("a[href]").size() < 30);
+
 				//System.out.println("Done");
 			}
 		}
