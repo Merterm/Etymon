@@ -22,31 +22,7 @@ app.set('view engine', 'ejs')
 app.get('/', function (req, res) {
   //unzip
   exec("unzip etymwn-20130208.zip");
-  res.render('index');
-
-  console.log(req.body.word);
-  // variables
-  let word = req.body.word || "closet";
-  let bash_cmnd = "grep \": " + word + "\\t\" etymwn.tsv";
-
-  // executes bash command
-  child = exec(bash_cmnd, function (error, stdout, stderr) {
-    if (error !== null) {
-      console.log('inside if');
-      //res.render('index', {etymology: null, error: 'Couldn\'t find the word :('});
-      //console.log('after render');
-      res.send({etymology: null, error: 'Couldn\'t find the word :('});
-      console.log('after send');
-    }
-    else {
-      console.log('inside else');
-      let etymology = stdout;
-      //res.render('index', {etymology: stdout, error: null});
-      //console.log('after render');
-      res.send({etymology: stdout, error: null});
-      console.log('after send');
-    }
-  });
+  //res.render('index');
 })
 
 app.post('/', function (req, res) {
