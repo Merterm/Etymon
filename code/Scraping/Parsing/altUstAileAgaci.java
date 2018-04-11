@@ -22,7 +22,6 @@ public class altUstAileAgaci {
 		ArrayList<String> parents = new ArrayList<String>();
 		ArrayList<String> children = new ArrayList<String>();
 		ArrayList<String> related = new ArrayList<String>();
-		//ArrayList<String> lines = new ArrayList<String>();
 		br = new BufferedReader(new FileReader("W:\\Downloads\\etymwn\\etymwn.tsv"));	//Change it on your computer
 
 
