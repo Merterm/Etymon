@@ -18,18 +18,26 @@ document.addEventListener('DOMContentLoaded', function() {
   function addToGraph(theWord) {
     var nodes = [];
     if (cy.getElementById(theWord.etymology).empty()) {
-      console.log(theWord);
+      //console.log(theWord);
       if(theWord.etymology !== null){
         var lines = theWord.etymology.split('\n');
         for(var i =0; i < lines.length; i++){
           var columns = lines[i].split('\t');
           // Add the nodes to the network
-          console.log(columns[0]);
-          console.log(columns[2]);
+          //console.log(columns[0]);
+          //console.log(columns[2]);
           if (columns[0] != undefined && columns[0] != ' ' &&
               columns[2] != undefined && columns[2] != ' ') {
-                cy.add(etymToCyNode(columns[0]));
-                cy.add(etymToCyNode(columns[2]));
+                // Check if the nodes already exist
+                if (nodes.indexOf(columns[0]) === -1) {
+                  cy.add(etymToCyNode(columns[0]));
+                  nodes.push(columns[0]);
+                }
+                if (nodes.indexOf(columns[2]) === -1) {
+                  cy.add(etymToCyNode(columns[2]));
+                  nodes.push(columns[2]);
+                }
+
                 // Add the edges to the network
                 cy.add(etymToCyEdge(columns[0],i,columns[2]));
           }
@@ -50,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
   submitButton.addEventListener('click', function() {
     cy.elements().remove();
     var userInput = document.getElementById('wordInput').value;
-    console.log(userInput);
+    //console.log(userInput);
     if (userInput) {
       searchWord = userInput;
     } else {
