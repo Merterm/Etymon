@@ -17,7 +17,7 @@ public class Nisanyansozluk {
 
 		//Properties
 		String link = "http://www.nisanyansozluk.com/";
-		String currentWord = "aba";
+		String currentWord = "z\u00FCppe";
 		String follow = "&view=annotated";
 		boolean hasMoreWords = true;
 		Elements links = null;
@@ -65,7 +65,7 @@ public class Nisanyansozluk {
 				int charIndex = currentWord.indexOf('|');
 				if(charIndex != -1)
 					printName = currentWord.substring(0, charIndex) + '-';
-				out = new PrintWriter(printName + ".html");
+				out = new PrintWriter("../../../data/Nisanyan/" + printName + ".html");
 				String e = ElementsInCurrentWord.html(); 
 				out.write(e);
 				out.close();
@@ -77,7 +77,7 @@ public class Nisanyansozluk {
 
 
 			//Calculating if has more words
-			if(currentWord.compareTo("zürriyet") == 0)
+			if(currentWord.compareTo("zï¿½rriyet") == 0)
 				hasMoreWords = false;
 			else
 			{		

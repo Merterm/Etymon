@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <script src="assets/cytoscape.js"></script>
+    <script src='assets/jquery-2.2.4.js'></script>
+    <script src='main.js'></script>
+  </head>
+
+  <style>
+    #cy {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border: 3px solid #73AD21;
+    }
+  </style>
+
+  <body>
+    <div id="cy"></div>
+
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <input name="word" type="text" id="wordInput" class="ghost-input" placeholder="Enter a Word" required>
+          <input type="submit" id="submitButton" class="ghost-button" value="Get Etymology">
+        </form>
+      </fieldset>
+    </div>
+  </body>
+</html>

@@ -5,7 +5,9 @@
     <title>Test</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-    <script src="/cytoscape.js"></script>
+    <script src="assets/cytoscape.js"></script>
+    <script src='assets/jquery-2.2.4.js'></script>
+    <script src='main.js'></script>
   </head>
 
   <style>
@@ -19,27 +21,12 @@
 
   <body>
     <div id="cy"></div>
-    <script>
-      var cy = cytoscape({
-        container: document.getElementById('cy'),
-        elements: [
-          { data: { id: 'a'} },
-          { data: { id: 'b' } },
-          {
-            data: {
-              id: 'ab',
-              source: 'a',
-              target: 'b'
-            }
-          }]
-      });
-    </script>
 
     <div class="container">
       <fieldset>
         <form action="/" method="post">
-          <input name="word" type="text" class="ghost-input" placeholder="Enter a Word" required>
-          <input type="submit" class="ghost-button" value="Get Etymology">
+          <input name="word" type="text" id='wordInput' class="ghost-input" placeholder="Enter a Word" required>
+          <input type="submit" id='submitButton' class="ghost-button" value="Get Etymology">
         </form>
         <% if(locals.graph !== null){ %>
                 <div><%= locals.graph %></div>
