@@ -1,20 +1,28 @@
 package Scraping.Parsing;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 
 public class nisanyanParserParser {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		BufferedReader BR = new BufferedReader(new InputStreamReader(new FileInputStream ("W:\\Etymon\\code\\Scraping\\Parsing\\extracted_nisanyan.csv"), "UTF-8" ));
-		PrintWriter PW = new PrintWriter(new File("W:\\Etymon\\code\\Scraping\\Parsing\\Nisanyan.tsv"));
-
+		File outFile = new File("W:\\Etymon\\code\\Scraping\\Parsing\\Nisanyan.tsv");
+		//PrintWriter PW = new PrintWriter(new OutputStreamWriter(new FileOutputStream(outFile),StandardCharsets.UTF_8),true);
+		Writer PW = new BufferedWriter(new OutputStreamWriter(
+				new FileOutputStream(outFile), "UTF8"));
+		
 		//Discarding the first line
 		String line = BR.readLine();
 
@@ -51,15 +59,15 @@ public class nisanyanParserParser {
 					boolean lanDefined = false;
 					switch(prevLan)
 					{
-					case "Fransýzca ":
+					case "FransÄ±zca ":
 						prevLan = "fre";
 						lanDefined = true; 
 						break;
-					case "Arapça":
+					case "ArapÃ§a":
 						prevLan = "ara";
 						lanDefined = true; 
 						break;	
-					case "Türkçe":
+					case "TÃ¼rkÃ§e":
 						prevLan = "tur";
 						lanDefined = true; 
 						break;
@@ -67,15 +75,15 @@ public class nisanyanParserParser {
 						prevLan = "lat";
 						lanDefined = true; 
 						break;
-					case "Farsça":
+					case "FarsÃ§a":
 						prevLan = "per";
 						lanDefined = true; 
 						break;
-					case "Ýngilizce ":
+					case "Ä°ngilizce ":
 						prevLan = "eng";
 						lanDefined = true; 
 						break;
-					case "Ýspanyolca ":
+					case "Ä°spanyolca ":
 						prevLan = "spa";
 						lanDefined = true; 
 						break;
@@ -87,7 +95,7 @@ public class nisanyanParserParser {
 						prevLan = "ger";
 						lanDefined = true; 
 						break;
-					case "Ýtalyanca":
+					case "Ä°talyanca":
 						prevLan = "ita";
 						lanDefined = true; 
 						break;
@@ -95,15 +103,15 @@ public class nisanyanParserParser {
 						prevLan = "gre";
 						lanDefined = true; 
 						break;
-					case "Moðolca ":
+					case "MoÄŸolca ":
 						prevLan = "mon";
 						lanDefined = true; 
 						break;
-					case "Rusça ":
+					case "RusÃ§a ":
 						prevLan = "rus";
 						lanDefined = true; 
 						break;
-					case "Ýbranice ":
+					case "Ä°branice ":
 						prevLan = "heb";
 						lanDefined = true; 
 						break;
@@ -111,19 +119,19 @@ public class nisanyanParserParser {
 						prevLan = "arm";
 						lanDefined = true; 
 						break;
-					case "Eski Farsça ":
+					case "Eski Farsï¿½a ":
 						prevLan = "peo";
 						lanDefined = true; 
 						break;
-					case "Akatça":
+					case "AkatÃ§a":
 						prevLan = "akk";
 						lanDefined = true; 
 						break;
-					case "Fransýzca ve Ýngilizce ":
+					case "FransÄ±zca ve Ä°ngilizce ":
 						prevLan = "fre/eng";
 						lanDefined = true; 
 						break;
-					case "Venedikçe":
+					case "VenedikÃ§e":
 						prevLan = "vec";
 						lanDefined = true; 
 						break;
@@ -133,18 +141,14 @@ public class nisanyanParserParser {
 						break;
 					}
 					newLine = newLine.concat(prevLan + ": ");
-//					if(line.charAt(comaIndex + 3) == '\'' )
-//						nextWord = line.substring(comaIndex + 4, nextIndex);
-//					else
-//					{
-						//nextIndex = line.indexOf("\")");
-						nextWord = line.substring(comaIndex + 1, nextIndex);
-					//}
+					nextWord = line.substring(comaIndex + 1, nextIndex);
+					
 					newLine = newLine.concat(nextWord + '\n');
 
 					line = line.substring(nextIndex+1);
 					prevWord = nextWord;
-					PW.write(newLine);
+					PW.append(newLine);
+					PW.flush();
 				}
 
 
