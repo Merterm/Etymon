@@ -1,0 +1,6 @@
+..\simplegeneric.py
+..\__pycache__\simplegeneric.cpython-36.pyc
+dependency_links.txt
+PKG-INFO
+SOURCES.txt
+top_level.txt

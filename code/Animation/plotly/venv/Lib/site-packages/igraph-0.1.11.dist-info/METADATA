@@ -1,0 +1,26 @@
+Metadata-Version: 2.0
+Name: igraph
+Version: 0.1.11
+Summary: View graph data structures in the IPython notebook.
+Home-page: http://github.com/patrickfuller/igraph/
+Author: Patrick Fuller
+Author-email: patrickfuller@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Education
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Framework :: IPython
+Classifier: Topic :: Education :: Computer Aided Instruction (CAI)
+Requires-Dist: ipython
+
+UNKNOWN
+
+
