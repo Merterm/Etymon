@@ -42,6 +42,8 @@ public class nisanyanParserParser {
 				prevIndex = 0;
 				nextIndex = line.indexOf(';');
 				prevWord = line.substring(prevIndex, nextIndex);
+				if(prevWord.contains("|") )
+					prevWord = prevWord.replace("|", "");
 				line = line.substring(line.indexOf('\t')+1); //shortening the line
 				prevLan = "tur";
 
@@ -51,7 +53,7 @@ public class nisanyanParserParser {
 					newLine = newLine.concat(prevLan + ": ");
 					newLine = newLine.concat(prevWord + '\t');
 					newLine = newLine.concat("rel: etymology" + '\t');
-					prevIndex = 0;//line.indexOf('\t'') + 1;
+					prevIndex = 0;
 					comaIndex = line.indexOf(',');
 					nextIndex = line.indexOf("\t");
 					prevLan = line.substring(prevIndex, comaIndex);
@@ -142,7 +144,8 @@ public class nisanyanParserParser {
 					}
 					newLine = newLine.concat(prevLan + ": ");
 					nextWord = line.substring(comaIndex + 1, nextIndex);
-					
+					if(nextWord.contains("|") )
+						nextWord = nextWord.replace("|", "");
 					newLine = newLine.concat(nextWord + '\n');
 
 					line = line.substring(nextIndex+1);
