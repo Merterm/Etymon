@@ -36,16 +36,12 @@ app.post('/search', function (req, res) {
   child = exec(bash_cmnd, function (error, stdout, stderr) {
     if (error !== null) {
       console.log('inside if');
-      //res.render('index', {etymology: null, error: 'Couldn\'t find the word :('});
-      //console.log('after render');
       res.send({etymology: null, error: 'Couldn\'t find the word :('});
       console.log('after send');
     }
     else {
       console.log('inside else');
       let etymology = stdout;
-      //res.render('index', {etymology: stdout, error: null});
-      //console.log('after render');
       res.send({etymology: stdout, error: null});
       console.log('after send');
     }
@@ -57,23 +53,18 @@ app.post('/lstm', function (req, res) {
   console.log(req.body.word);
   // variables
   let word = req.body.word || "closet";
-  let bash_cmnd = "python generate_text.py";
+  let bash_cmnd = "cd tensorflow; source ./bin/activate; python generate_text.py";
 
   // executes bash command
   child = exec(bash_cmnd, function (error, stdout, stderr) {
     if (error !== null) {
       console.log('inside if');
-      //res.render('index', {etymology: null, error: 'Couldn\'t find the word :('});
-      //console.log('after render');
-      res.send({etymology: null, error: 'Couldn\'t find the word :('});
+      res.send({hallucination: null, error: 'Couldn\'t find the word :('});
       console.log('after send');
     }
     else {
       console.log('inside else');
-      let etymology = stdout;
-      //res.render('index', {etymology: stdout, error: null});
-      //console.log('after render');
-      res.send({etymology: stdout, error: null});
+      res.send({hallucination: stdout, error: null});
       console.log('after send');
     }
   });
