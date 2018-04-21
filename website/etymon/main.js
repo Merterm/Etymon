@@ -72,6 +72,26 @@ document.addEventListener('DOMContentLoaded', function() {
     getWord(searchWord);
   });
 
+  // hallucinate button interactions
+  var hallucinateButton = document.getElementById('hallucinateButton');
+
+  hallucinateButton.addEventListener('click', function() {
+    cy.elements().remove();
+    var userInput = document.getElementById('wordInput').value;
+    //console.log(userInput);
+    if (userInput) {
+      searchWord = userInput;
+    } else {
+      // default value
+      searchWord = 'hello';
+    }
+
+    //Start loading icon
+    loading.classList.remove('loaded');
+    // add the word to the graph
+    getHallucination(searchWord);
+  });
+
   //Requests the word from the server
   function getWord(theWord) {
     // send an ajax request
@@ -83,6 +103,21 @@ document.addEventListener('DOMContentLoaded', function() {
       success: function(response){
         //console.log(response);
         addToGraph(response);
+      }
+    });
+  }
+
+  //Requests hallucination from the server
+  function getHallucination(theWord) {
+    // send an ajax request
+    var response = $.ajax({
+      //change this while running on Google Cloud Platform
+      url: 'http://localhost:8080/lstm',
+      type: 'POST',
+      data: { word: theWord },
+      success: function(response){
+        console.log(response);
+        //addToGraph(response);
       }
     });
   }
@@ -109,21 +144,3 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
 });
-
-// When the user scrolls the page, stick the navigation bar
-window.onscroll = function() {navBarStick()};
-
-// Get the navbar
-var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function navBarStick() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}

@@ -16,14 +16,6 @@ var allowCrossDomain = function(req, res, next) {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(allowCrossDomain);
-app.set('view engine', 'ejs')
-
-// gets the root page
-app.get('/', function (req, res) {
-  //unzip
-  exec("unzip etymwn-20130208.zip");
-  //res.render('index');
-})
 
 app.post('/search', function (req, res) {
   console.log("search");
@@ -53,13 +45,13 @@ app.post('/lstm', function (req, res) {
   console.log(req.body.word);
   // variables
   let word = req.body.word || "closet";
-  let bash_cmnd = "cd tensorflow; source ./bin/activate; python generate_text.py";
+  let bash_cmnd = "cd LSTM; source ./tensorflow/bin/activate; python generate_text.py; deactivate; cd ..";
 
   // executes bash command
   child = exec(bash_cmnd, function (error, stdout, stderr) {
     if (error !== null) {
       console.log('inside if');
-      res.send({hallucination: null, error: 'Couldn\'t find the word :('});
+      res.send({hallucination: null, error: error});
       console.log('after send');
     }
     else {
