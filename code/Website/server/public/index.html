@@ -10,7 +10,8 @@
       <h1>
         This is the server API page for Etymøn
       </h1>
-      <p> You can search for a word under /search and hallucinate for </br>
+      <p> You can search for a word by sending a post request with the word as the "word" parameter </br>
+        to /search,or send a post request to hallucinate for </br>
         a word using /lstm. Outputs will be strings of the following format: </br>
         "language_iso_code: source_word \t rel:some_relation \t language_iso_code: target_word"
       </p>

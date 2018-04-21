@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
       type: 'POST',
       data: { word: theWord },
       success: function(response){
-        //console.log(response);
+        console.log(response);
         addToGraph(response);
       }
     });

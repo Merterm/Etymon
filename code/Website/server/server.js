@@ -22,7 +22,7 @@ app.post('/search', function (req, res) {
   console.log(req.body.word);
   // variables
   let word = req.body.word || "closet";
-  let bash_cmnd = "grep \": " + word + "\\t\" etymon.tsv";
+  let bash_cmnd = "grep \": " + word + "$(printf '\\t')\" etymon.tsv";
 
   // executes bash command
   child = exec(bash_cmnd, function (error, stdout, stderr) {
