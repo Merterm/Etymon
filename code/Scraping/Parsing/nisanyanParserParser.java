@@ -52,7 +52,7 @@ public class nisanyanParserParser {
 					String newLine = "";
 					newLine = newLine.concat(prevLan + ": ");
 					newLine = newLine.concat(prevWord + '\t');
-					newLine = newLine.concat("rel: etymology" + '\t');
+					newLine = newLine.concat("rel:etymology" + '\t');
 					prevIndex = 0;
 					comaIndex = line.indexOf(',');
 					nextIndex = line.indexOf("\t");
