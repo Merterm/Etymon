@@ -4,14 +4,10 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.io.Writer;
-import java.nio.charset.StandardCharsets;
 
 public class nisanyanParserParser {
 
@@ -19,9 +15,7 @@ public class nisanyanParserParser {
 		// TODO Auto-generated method stub
 		BufferedReader BR = new BufferedReader(new InputStreamReader(new FileInputStream ("W:\\Etymon\\code\\Scraping\\Parsing\\extracted_nisanyan.csv"), "UTF-8" ));
 		File outFile = new File("W:\\Etymon\\code\\Scraping\\Parsing\\Nisanyan.tsv");
-		//PrintWriter PW = new PrintWriter(new OutputStreamWriter(new FileOutputStream(outFile),StandardCharsets.UTF_8),true);
-		Writer PW = new BufferedWriter(new OutputStreamWriter(
-				new FileOutputStream(outFile), "UTF8"));
+		Writer PW = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outFile), "UTF8"));
 		
 		//Discarding the first line
 		String line = BR.readLine();
