@@ -25,28 +25,27 @@ public class nisanyanParserParser {
 		{
 			if(!line.contains("none") && !(line.contains("<p>")|| line.contains("<b>") || line.contains("<sup>")|| line.contains("<i>") ))
 			{
-
 				String prevWord;
 				String nextWord;
 				String prevLan;
 				int prevIndex;
 				int nextIndex;
 				int comaIndex;
-				//System.out.println(line);
 				prevIndex = 0;
 				nextIndex = line.indexOf(';');
 				prevWord = line.substring(prevIndex, nextIndex);
 				if(prevWord.contains("|") )
 					prevWord = prevWord.replace("|", "");
-				line = line.substring(line.indexOf('\t')+1); //shortening the line
+				line = line.substring(line.indexOf('\t') + 1); //shortening the line
 				prevLan = "tur";
 
 				while(line.length() > 3)
 				{
 					String newLine = "";
 					newLine = newLine.concat(prevLan + ": ");
-					newLine = newLine.concat(prevWord + '\t');
-					newLine = newLine.concat("rel:etymology" + '\t');
+					newLine = newLine.concat(prevWord);
+					String reverseRelationEnding = newLine;
+					newLine = newLine.concat("\trel:etymology\t");
 					prevIndex = 0;
 					comaIndex = line.indexOf(',');
 					nextIndex = line.indexOf("\t");
@@ -140,11 +139,15 @@ public class nisanyanParserParser {
 					nextWord = line.substring(comaIndex + 1, nextIndex);
 					if(nextWord.contains("|") )
 						nextWord = nextWord.replace("|", "");
+					String reverseRelationStart = prevLan.concat(": " + nextWord);
+					reverseRelationStart = reverseRelationStart.concat("\trel:etymological_origin_of\t");
+					reverseRelationStart = reverseRelationStart.concat(reverseRelationEnding + '\n');
 					newLine = newLine.concat(nextWord + '\n');
 
 					line = line.substring(nextIndex+1);
 					prevWord = nextWord;
 					PW.append(newLine);
+					PW.append(reverseRelationStart);
 					PW.flush();
 				}
 
