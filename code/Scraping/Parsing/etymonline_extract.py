@@ -49,24 +49,43 @@ for row in etymon_reader:
     row_cnt = row_cnt + 1
     #try:
     #Regular Expression
-    etymology_extract = re.findall(r"[Ff]rom (.+?) *<span class=\"foreign\">(.+?)</span>", row[1], re.M)
-    combination_extract = re.findall(r"class=\"crossreference\".*?>(.+?)</a>.*?\+.*?<a .*?class=\"crossreference\".*?>(.+?)</a>", row[1], re.M)
-    single_extract = re.findall(r"class=\"crossreference\".*?>(.+?)</a>",row[1],re.M)
-    related_extract = re.findall(r"<li class=\"related__word--3Si0N\">(.+)</li>",row[2])
+    etymology_extract = ""
+    single_extract = ""
+    combination_extract = ""
+    related_extract = ""
+
+    etymology_found = re.findall(ur"[Ff]rom (.+?) *<span class=\"foreign\">(.+?)</span>", row[1], re.M | re.UNICODE)
+    for idx in range(len(etymology_found)):
+        lang = etymology_found[idx][0].encode('utf-8')
+        orig_word = etymology_found[idx][1].encode('utf-8')
+        etymology_extract = etymology_extract + lang + "##" + orig_word + "\t"
+    combination_found = re.findall(ur"class=\"crossreference\".*?>(.+?)</a>.*?\+.*?<a .*?class=\"crossreference\".*?>(.+?)</a>", row[1], re.M | re.UNICODE)
+    for idx in range(len(combination_found)):
+        comb1 = combination_found[idx][0].encode('utf-8')
+        comb2= combination_found[idx][1].encode('utf-8')
+        combination_extract = combination_extract + comb1 + "##" + comb2 + "\t"
+    single_found = re.findall(ur"class=\"crossreference\".*?>(.+?)</a>",row[1],re.M | re.UNICODE)
+    for idx in range(len(single_found)):
+        single = single_found[idx].encode('utf-8')
+        single_extract = single_extract + single + "\t"
+    related_found = re.findall(ur"<li class=\"related__word--3Si0N\">(.+)</li>",row[2])
+    for idx in range(len(related_found)):
+        related = related_found[idx].encode('utf-8')
+        related_extract = related_extract + related + "\t"
 
     #If no etymological root is present in the text, check whether it is a
     # combination word or a tensed version of another word
     if etymology_extract:
-        etymology_extract = [u'orig'] + etymology_extract #label found origins
+        etymology_extract = "orig\t" + etymology_extract #label found origins
         orig_cnt = orig_cnt + 1
     elif (not etymology_extract) and combination_extract:
-        etymology_extract = [u'comb'] + combination_extract #combinations are labeled
+        etymology_extract = "comb\t" + combination_extract #combinations are labeled
         comb_cnt = comb_cnt + 1
     elif (not etymology_extract) and (not combination_extract) and single_extract:
-        etymology_extract = [u'single'] + single_extract #singles are labeled
+        etymology_extract = "single\t" + single_extract #singles are labeled
         single_cnt = single_cnt + 1
     elif (not etymology_extract) and (not combination_extract) and (not single_extract):
-        etymology_extract = [u'none'] + [row[1]] #nothing is extracted
+        etymology_extract = "none\t" + row[1] #nothing is extracted
         none_cnt = none_cnt + 1
 
     #Write-back
