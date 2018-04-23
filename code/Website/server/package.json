@@ -12,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "cytoscape": "^3.2.11",
+    "cytoscape-cola": "^2.2.3",
     "ejs": "^2.5.8",
     "express": "^4.16.3",
     "yargs": "^11.0.0"

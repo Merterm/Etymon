@@ -4,7 +4,6 @@ let child;
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
-var cytoscape = require('cytoscape');
 
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
@@ -45,19 +44,17 @@ app.post('/lstm', function (req, res) {
   console.log(req.body.word);
   // variables
   let word = req.body.word || "closet";
-  let bash_cmnd = "cd LSTM; source ./tensorflow/bin/activate; python generate_text.py; deactivate; cd ..";
+  let bash_cmnd = "cd LSTM; source ./tensorflow/bin/activate; cd trainer; python generate_text.py \"" + word + "\"; deactivate; cd ../..";
 
   // executes bash command
   child = exec(bash_cmnd, function (error, stdout, stderr) {
     if (error !== null) {
-      console.log('inside if');
-      res.send({hallucination: null, error: error});
-      console.log('after send');
+      res.send({etymology: null, error: error});
     }
     else {
-      console.log('inside else');
-      res.send({hallucination: stdout, error: null});
-      console.log('after send');
+      var halluc_word = stdout.split('\n');
+      console.log("eng: " + word + "\trel:etymology\t" + halluc_word[0])
+      res.send({etymology: "eng: " + word + "\trel:etymology\t" + halluc_word[0], error: null});
     }
   });
 })
