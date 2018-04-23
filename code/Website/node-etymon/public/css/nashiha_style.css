@@ -141,8 +141,8 @@ p {
 
 #home {
    background-image: url('icons/home.png');
-   height: 30px;
-   width: 30px;
+   height: 24px;
+   width: 24px;
    margin-bottom: 30px;
 }
 #home:hover {
@@ -152,8 +152,8 @@ p {
 
 #search {
    background-image: url('icons/search.png');
-   height: 30px;
-   width: 30px;
+   height: 24px;
+   width: 24px;
    margin-bottom: 30px;
 }
 #search:hover {
@@ -163,8 +163,8 @@ p {
 
 #hallucinate {
    background-image: url('icons/hallucinate.png');
-   height: 30px;
-   width: 30px;
+   height: 24px;
+   width: 24px;
    margin-bottom: 30px;
 }
 #hallucinate:hover {
@@ -174,8 +174,8 @@ p {
 
 #help {
    background-image: url('icons/help.png');
-   height: 30px;
-   width: 30px;
+   height: 24px;
+   width: 24px;
    margin-bottom: 30px;
 }
 #help:hover {
