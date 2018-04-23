@@ -37,11 +37,11 @@ public class EtymonlineParserParser {
 				lastSemicolon = line.lastIndexOf(";");
 				prevWord = line.substring(prevIndex, nextIndex);
 				if(prevWord.contains("(n.)"))
-					prevWord = prevWord.replace("(n.)", "");
+					prevWord = prevWord.replace(" (n.)", "");
 				if(prevWord.contains("(v.)"))
-					prevWord = prevWord.replace("(v.)", "");
+					prevWord = prevWord.replace(" (v.)", "");
 				if(prevWord.contains("(adj.)"))
-					prevWord = prevWord.replace("(adj.)", "");
+					prevWord = prevWord.replace(" (adj.)", "");
 				
 				String etyRelated = line.substring(lastSemicolon + 1);
 				String etyType = line.substring(nextIndex + 2, nextIndex + 6);
@@ -56,17 +56,20 @@ public class EtymonlineParserParser {
 					String secondComb = line.substring(line.indexOf("##") + 2,line.indexOf("\t"));
 					W.append("eng: " + prevWord + "\trel:etymology\teng: " + firstComb + '\n');
 					W.append("eng: " + prevWord + "\trel:etymology\teng: " + secondComb + '\n');
+					W.append("eng: " + firstComb + "\trel:etymological_origin_of\teng: " + prevWord + '\n');
+					W.append("eng: " + secondComb + "\trel:etymological_origin_of\teng: " + prevWord + '\n');
 					W.flush();
 					break;
 				case "sing":
 					line = line.substring(nextIndex + 9);
 					nextWord = line.substring(0, line.indexOf('\t'));
 					W.append("eng: " + prevWord + "\trel:etymology\teng: " + nextWord + '\n');
+					W.append("eng: " + nextWord + "\trel:etymological_origin_of\teng: " + prevWord + '\n');
 					W.flush();
 					break;
 				case "orig":
 				case "\"ori":
-					if(/*!line.contains("\"orig") &&*/ !(line.contains("<span")|| line.contains("<a class") || line.contains("<p>") ))
+					if(!(line.contains("<span")|| line.contains("<a class") || line.contains("<p>") ))
 					{
 						
 						tabIndex = line.indexOf('\t');
@@ -78,6 +81,7 @@ public class EtymonlineParserParser {
 							prevLan = line.substring(0, line.indexOf("##"));
 							nextWord = line.substring(line.indexOf("##") + 2, tabIndex);
 							W.append("eng: " + prevWord + "\trel:etymology\t" + prevLan + ": " + nextWord + '\n');
+							W.append("eng: " + nextWord + "\trel:etymological_origin_of\t" + prevLan + ": " + prevWord + '\n');
 							W.flush();
 							line = line.substring(tabIndex + 1);
 						}
@@ -85,18 +89,16 @@ public class EtymonlineParserParser {
 					}
 				default:
 					while(etyRelated.length() > 2)
-					{
-						W.append("eng: " + prevWord + "\trel:etymologically_related\teng: ");
+					{						
 						tabIndex = etyRelated.indexOf('\t');
 						nextWord = etyRelated.substring(0,tabIndex);
-						W.append(nextWord + '\n');
+						W.append("eng: " + prevWord + "\trel:etymologically_related\teng: " + nextWord + '\n');
+						W.append("eng: " + nextWord + "\trel:etymologically_related\teng: " + prevWord + '\n');
 						W.flush();
 						etyRelated = etyRelated.substring(tabIndex + 1);
 					}
 					break;
-				}
-
-				
+				}				
 			}
 			line = BR.readLine();
 		}
