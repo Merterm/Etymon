@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
       cy.nodes().forEach(function(ele) {
         ele.qtip({
           content: {
-            text: qtipText(ele),
-            title: ele.data('id')
+            text: qtipText(ele, ele.data('id')),
+            title: ele.data('name')
           },
           style: {
             classes: 'qtip-bootstrap'
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return {
       data: {
         id: theWord,
-        name: lang + "\n" + word,
+        name: word,
         faveColor : faveColor,
         faveShape: faveShape
       }
@@ -214,6 +214,22 @@ document.addEventListener('DOMContentLoaded', function() {
         strength: strength
       }
     };
+  }
+
+  // qTip box function
+  function qtipText(node, theWord) {
+    // send an ajax request
+    /*var response = $.ajax({
+      //change this while running on Google Cloud Platform
+      url: 'https://glosbe.com/gapi/translate?from=pol&dest=eng&format=json&phrase=witaj&pretty=true&tm=true',
+      datatype: 'jsonp',
+      success: function(response){
+        console.log(response);
+      }
+    });*/
+    var splitted = theWord.split(':');
+    var lang = convertISO(splitted[0]);
+    return lang
   }
 
   //Converts the given ISO 639-2 codes to regular language names
@@ -318,6 +334,9 @@ document.addEventListener('DOMContentLoaded', function() {
       case "haw":
         return "Hawaiian";
         break;
+      case "hbs":
+        return "Serbo-Croatian";
+        break;
       case "heb":
         return "Hebrew";
         break;
@@ -358,6 +377,9 @@ document.addEventListener('DOMContentLoaded', function() {
         return "Javanese";
         break;
       case "jap":
+        return "Japanese";
+        break;
+      case "jpn":
         return "Japanese";
         break;
       case "kaz":
@@ -465,6 +487,9 @@ document.addEventListener('DOMContentLoaded', function() {
       case "ron":
         return "Romanian";
         break;
+      case "rom":
+        return "Romany";
+        break;
       case "rus":
         return "Russian";
         break;
@@ -569,18 +594,3 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
 });
-
-  // qTip box function
-  function qtipText(node) {
-    // send an ajax request
-    var response = $.ajax({
-      //change this while running on Google Cloud Platform
-      url: 'https://glosbe.com/gapi/translate?from=pol&dest=eng&format=json&phrase=witaj&pretty=true&tm=true',
-      type: 'GET',
-      datatype: 'json',
-      success: function(response){
-        console.log(response);
-      }
-    });
-    return "Hello World!"
-  }

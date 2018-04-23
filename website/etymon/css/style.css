@@ -3,22 +3,50 @@
   https://codepen.io/official_naveen/pen/rgknI
 */
 
-/* Style the navbar */
-#navbar {
-  width: 100%;
-  padding: 0;
-  overflow: hidden;
-  background-color: #ACE1AF;
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
-/* Navbar links */
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
+#icons {
+  padding: 20px;
+}
+
+img {
+  padding-bottom: 30px;
 }
 
 /* Page content */
@@ -42,7 +70,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  background-color: #ACE1AF;
+  background-color: #000D1A;
   width: 800px;
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
@@ -110,4 +138,47 @@ fieldset {
 }
 p {
   color: #E64A19;
+}
+
+#home {
+   background-image: url('icons/home.png');
+   height: 24px;
+   width: 24px;
+   margin-bottom: 30px;
+}
+#home:hover {
+   background-image: url('icons/home_gradient.png');
+}
+
+
+#search {
+   background-image: url('icons/search.png');
+   height: 24px;
+   width: 24px;
+   margin-bottom: 30px;
+}
+#search:hover {
+   background-image: url('icons/search_gradient.png');
+}
+
+
+#hallucinate {
+   background-image: url('icons/hallucinate.png');
+   height: 24px;
+   width: 24px;
+   margin-bottom: 30px;
+}
+#hallucinate:hover {
+   background-image: url('icons/hallucinate_gradient.png');
+}
+
+
+#help {
+   background-image: url('icons/help.png');
+   height: 24px;
+   width: 24px;
+   margin-bottom: 30px;
+}
+#help:hover {
+   background-image: url('icons/help_gradient.png');
 }
