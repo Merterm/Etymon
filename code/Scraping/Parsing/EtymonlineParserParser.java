@@ -36,6 +36,13 @@ public class EtymonlineParserParser {
 				nextIndex = line.indexOf("\";");
 				lastSemicolon = line.lastIndexOf(";");
 				prevWord = line.substring(prevIndex, nextIndex);
+				if(prevWord.contains("(n.)"))
+					prevWord = prevWord.replace("(n.)", "");
+				if(prevWord.contains("(v.)"))
+					prevWord = prevWord.replace("(v.)", "");
+				if(prevWord.contains("(adj.)"))
+					prevWord = prevWord.replace("(adj.)", "");
+				
 				String etyRelated = line.substring(lastSemicolon + 1);
 				String etyType = line.substring(nextIndex + 2, nextIndex + 6);
 				line = line.substring(0, lastSemicolon);
