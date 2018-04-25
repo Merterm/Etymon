@@ -19,6 +19,7 @@ app.use(allowCrossDomain);
 app.post('/search', function (req, res) {
   console.log("search");
   console.log(req.body.word);
+
   // variables
   let word = req.body.word || "closet";
   let bash_cmnd = "grep \": " + word + "$(printf '\\t')\" etymon.tsv";

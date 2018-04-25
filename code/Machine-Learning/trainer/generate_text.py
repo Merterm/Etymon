@@ -44,7 +44,7 @@ seed_end = 	"\trel:etymology\t"
 word = "hello"
 
 min_chars = seq_length - (len(seed_end)+len('eng: '))
-print min_chars
+#print min_chars
 
 # Get the command line arguments
 if len(sys.argv) > 1:
@@ -61,14 +61,14 @@ if len(sys.argv) > 1:
 else:
 	seed = seed_start[5:] + word + seed_end
 
-print seed
+#print seed
 #print dataX[start]
 pattern = []
 for char in seed:
 	pattern.append(char_to_int[char])
 #print pattern
-print "Seed:"
-print "\"",''.join([int_to_char[value] for value in pattern]), "\""
+#print "Seed:"
+#print "\"",''.join([int_to_char[value] for value in pattern]), "\""
 # generate characters
 for i in range(len(seed)):
 	x = numpy.reshape(pattern, (1, len(pattern), 1))
