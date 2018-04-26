@@ -16,6 +16,90 @@ body {
   margin: 0 auto;
 }
 
+.bar-c {
+  overflow: hidden;
+  height: 30px;
+  width: 40px;
+  margin: 0 auto;
+  position: absolut;
+  cursor:pointer;
+}
+.bar {
+  height: 1px;
+  width: 3px;
+  display: inline-block;
+  background-color: #ffffd2;
+  bottom: 0;
+  position: absolute;
+
+  &.noAnim {
+    -webkit-animation: none;
+    -webkit-animation-name: none;
+  }
+
+  &#bar-1 {
+    left: 0;
+    -webkit-animation-name: danceHeight1;
+    -webkit-animation-delay: 0ms;
+  }
+  &#bar-2 {
+    left: 6px;
+    -webkit-animation-name: danceHeight2;
+    -webkit-animation-delay: 300ms;
+  }
+  &#bar-3 {
+    left: 12px;
+    -webkit-animation-name: danceHeight3;
+    -webkit-animation-delay: 600ms;
+  }
+  &#bar-4 {
+    left: 18px;
+    -webkit-animation-name: danceHeight4;
+    -webkit-animation-delay: 900ms;
+  }
+  &#bar-5 {
+    left: 24px;
+    -webkit-animation-name: danceHeight5;
+    -webkit-animation-delay: 1200ms;
+  }
+  &#bar-6 {
+    left: 30px;
+    -webkit-animation-name: danceHeight6;
+    -webkit-animation-delay: 1500ms;
+  }
+
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-play-state: running;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes danceHeight1 {
+  from { height: 1px; }
+  to { height: 22px; }
+}
+@-webkit-keyframes danceHeight2 {
+  from { height: 1px; }
+  to { height: 15px; }
+}
+@-webkit-keyframes danceHeight3 {
+  from { height: 1px; }
+  to { height: 30px; }
+}
+@-webkit-keyframes danceHeight4 {
+  from { height: 1px; }
+  to { height: 20px; }
+}
+@-webkit-keyframes danceHeight5 {
+  from { height: 1px; }
+  to { height: 15px; }
+}
+@-webkit-keyframes danceHeight6 {
+  from { height: 1px; }
+  to { height: 15px; }
+}
+
 fieldset {
   display: block;
   -webkit-margin-start: 0px;

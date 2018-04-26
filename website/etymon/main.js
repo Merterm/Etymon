@@ -39,15 +39,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function addToGraph(query) {
     var nodes = [];
+    const TOTAL_NODES_ON_SCREEN = 25;
+
+    //Get the cytoscape element in html
     if (cy.getElementById(query.etymology).empty()) {
       //console.log(theWord);
       if(query.etymology !== null){
         var lines = query.etymology.split('\n');
-        for(var i =0; i < lines.length; i++){
-          var columns = lines[i].split('\t');
-          // Add the nodes to the network
-          if (columns[0] != undefined && columns[0] != ' ' &&
-              columns[2] != undefined && columns[2] != ' ') {
+        // If there are less than TOTAL_NODES_ON_SCREEN nodes, show all of them
+        if (lines.length <= TOTAL_NODES_ON_SCREEN) {
+          for(var i =0; i < lines.length; i++){
+            var columns = lines[i].split('\t');
+            // Add the nodes to the network
+            if (columns[0] != undefined && columns[0] != ' ' &&
+                columns[2] != undefined && columns[2] != ' ') {
+                  var source = searchWord.toLowerCase();
+                  // Check if the nodes already exist
+                  if (nodes.indexOf(columns[0]) === -1) {
+                    cy.add(etymToCyNode(source, columns[0]));
+                    nodes.push(columns[0]);
+                  }
+                  if (nodes.indexOf(columns[2]) === -1) {
+                    cy.add(etymToCyNode(source, columns[2]));
+                    nodes.push(columns[2]);
+                  }
+
+                  // Add the edges to the network
+                  cy.add(etymToCyEdge(i,columns[0],columns[1],columns[2]));
+            }
+          }
+        }
+        // Else show only the important ones
+        else {
+          for(var i =0; i < lines.length; i++){
+            var columns = lines[i].split('\t');
+            // Add the nodes to the network
+            if (columns[0] != undefined && columns[0] != ' ' &&
+                columns[2] != undefined && columns[2] != ' ') {
+              if (columns[1] == 'rel:etymology' ||
+                  columns[1] == 'rel=etymological_origin_of' ||
+                  columns[1] == 'rel=etymologically_related') {
                 var source = searchWord.toLowerCase();
                 // Check if the nodes already exist
                 if (nodes.indexOf(columns[0]) === -1) {
@@ -61,9 +92,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Add the edges to the network
                 cy.add(etymToCyEdge(i,columns[0],columns[1],columns[2]));
+              }
+            }
+          }
+          for(var i =0; i < lines.length && nodes.length < TOTAL_NODES_ON_SCREEN; i++){
+            var columns = lines[i].split('\t');
+            // Add the nodes to the network
+            if (columns[0] != undefined && columns[0] != ' ' &&
+                columns[2] != undefined && columns[2] != ' ') {
+              var source = searchWord.toLowerCase();
+              // Check if the nodes already exist
+              if (nodes.indexOf(columns[0]) === -1) {
+                cy.add(etymToCyNode(source, columns[0]));
+                nodes.push(columns[0]);
+              }
+              if (nodes.indexOf(columns[2]) === -1) {
+                cy.add(etymToCyNode(source, columns[2]));
+                nodes.push(columns[2]);
+              }
+
+              // Add the edges to the network
+              cy.add(etymToCyEdge(i,columns[0],columns[1],columns[2]));
+            }
           }
         }
       }
+
       cy.layout({
         name: 'cose'
       }).run();
@@ -288,6 +342,9 @@ document.addEventListener('DOMContentLoaded', function() {
         return "Finnish"
         break;
       case "fra":
+        return "French";
+        break;
+      case "fre":
         return "French";
         break;
       case "frm":
@@ -593,5 +650,18 @@ document.addEventListener('DOMContentLoaded', function() {
       default:
         return lang;
       }
+  }
+});
+
+//Sound Button
+var clicked = true;
+
+$(".bar-c").click( function() {
+  if (clicked) {
+    $(".bar").addClass("noAnim");
+    clicked = false;
+  } else {
+    $(".bar").removeClass("noAnim");
+    clicked = true;
   }
 });
