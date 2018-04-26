@@ -17,7 +17,8 @@ public class Nisanyansozluk {
 
 		//Properties
 		String link = "http://www.nisanyansozluk.com/";
-		String currentWord = "aba";
+		String currentWord = "pa";
+		System.out.println(currentWord);
 		String follow = "&view=annotated";
 		boolean hasMoreWords = true;
 		Elements links = null;
@@ -65,7 +66,7 @@ public class Nisanyansozluk {
 				int charIndex = currentWord.indexOf('|');
 				if(charIndex != -1)
 					printName = currentWord.substring(0, charIndex) + '-';
-				out = new PrintWriter("W:\\Etymon\\" + printName + ".html");
+				out = new PrintWriter( printName + ".html");
 				String e = ElementsInCurrentWord.html(); 
 				out.write(e);
 				out.close();
