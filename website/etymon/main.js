@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         name: 'cose'
       }).run();
 
-      cy.nodes().forEach(function(ele) {
+      /*cy.nodes().forEach(function(ele) {
         ele.qtip({
           content: {
             text: qtipText(ele, ele.data('id')),
@@ -137,11 +137,70 @@ document.addEventListener('DOMContentLoaded', function() {
             target: ele
           }
         });
-      });
+      });*/
     }
 
     // Stop the loading icon
     loading.classList.add('loaded');
+  }
+
+  // Action to perform on tap on nodes
+  cy.on('tap', 'node', function (evt) {
+      //console.log(evt.target.id());
+      var splitted = evt.target.id().split(':');
+      var lang = convertISO(splitted[0]);
+      var word = splitted[1];
+      openNav(word, lang);
+  });
+
+  // Search wiktionary for the word
+  // Initialize loading icon
+  var wiki_loading = document.getElementById('wiki_loading');
+  var baseURL = 'http://en.wiktionary.org';
+  function showPage(page,text) {
+    wiki_loading.classList.add('loaded');
+    var sourceurl = baseURL + '/wiki/' + page;
+    $('#wikiInfo').html(text);
+    $('#sourceurl').attr('href',sourceurl);
+    $('#licenseInfo').show();
+    // now you can modify content of #wikiInfo as you like
+    $('#wikiInfo').find('a:not(.references a):not(.extiw):not([href^="#"])').attr('href',
+      function() { return baseURL + $(this).attr('href');
+    });
+  }
+
+  //Tapping on node opens the sidenav
+  function openNav(page, lang) {
+      document.getElementById("mySidenav").style.width = "50%";
+      document.getElementById("main").style.marginLeft = "25%";
+      //document.body.style.opacity = "0.5";
+
+      wiki_loading.classList.add('loaded');
+
+      // Query Wiktionary for the word
+      $('#pagetitle').text(page);
+      $('#pagelang').text(lang);
+      //Start loading icon
+      wiki_loading.classList.remove('loaded');
+      $('#wikiInfo').html('Loading Word Information');
+      $('#licenseInfo').hide();
+      $.getJSON(baseURL+'/w/api.php?action=parse&format=json&prop=text|revid|displaytitle&callback=?&page='+page,
+      function(json) {
+        if (json.parse != undefined) {
+          if(json.parse.revid > 0) {
+            showPage(page,json.parse.text['*']);
+          } else {
+            wiki_loading.classList.add('loaded');
+            $('#wikiInfo').html('Word unavailable on Wiktionary');
+            $('#licenseInfo').hide();
+          }
+        }
+        else {
+          wiki_loading.classList.add('loaded');
+          $('#wikiInfo').html('Word unavailable on Wiktionary');
+          $('#licenseInfo').hide();
+        }
+      });
   }
 
   // submit button interactions
@@ -221,12 +280,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var lang = convertISO(splitted[0]);
     var word = splitted[1];
 
-
     var faveColor = '#6FB1FC';
     var faveShape = 'ellipse';
 
     /*var str = new String(sourceNode);
-
     if (str.toString().localCompare(word)==0) {
       console.log(sourceNode + " " + word);
       faveColor = '#86B342';
@@ -271,21 +328,22 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
 
+  /*
   // qTip box function
   function qtipText(node, theWord) {
     // send an ajax request
-    /*var response = $.ajax({
+    var response = $.ajax({
       //change this while running on Google Cloud Platform
       url: 'https://glosbe.com/gapi/translate?from=pol&dest=eng&format=json&phrase=witaj&pretty=true&tm=true',
       datatype: 'jsonp',
       success: function(response){
         console.log(response);
       }
-    });*/
+    });
     var splitted = theWord.split(':');
     var lang = convertISO(splitted[0]);
     return lang
-  }
+  }*/
 
   //Converts the given ISO 639-2 codes to regular language names
   function convertISO(lang) {
@@ -650,18 +708,5 @@ document.addEventListener('DOMContentLoaded', function() {
       default:
         return lang;
       }
-  }
-});
-
-//Sound Button
-var clicked = true;
-
-$(".bar-c").click( function() {
-  if (clicked) {
-    $(".bar").addClass("noAnim");
-    clicked = false;
-  } else {
-    $(".bar").removeClass("noAnim");
-    clicked = true;
   }
 });
