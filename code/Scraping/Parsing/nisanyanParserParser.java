@@ -23,7 +23,7 @@ public class nisanyanParserParser {
 		line = BR.readLine();
 		while(line != null)
 		{
-			if(!line.contains("none") && !(line.contains("<p>")|| line.contains("<b>") || line.contains("<sup>")|| line.contains("<i>") ))
+			if(!line.contains("none") && !(line.contains("<p>")|| line.contains("<b>") || line.contains("<sup>")|| line.contains("<i>") || line.contains("</div>")))
 			{
 				String prevWord;
 				String nextWord;
