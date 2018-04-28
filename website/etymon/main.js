@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var lang = convertISO(splitted[0]);
       var word = splitted[1];
       openNav(word, lang);
+      //getWord(word);
   });
 
   // Search wiktionary for the word

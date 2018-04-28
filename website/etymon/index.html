@@ -20,6 +20,53 @@
 
   <body>
 
+    <!-- Trigger/Open The Modal -->
+    <button id='backBtn' href="http://etymon.org" style="position: relative; height: 45px; width: 45px; margin: 10px 7px; font-weight: 200; font-size: 30px; letter-spacing: 2px; border: 0; color: #fff; text-transform: uppercase; outline: 0; overflow:hidden; background: none; z-index: 1; cursor: pointer;">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </button>
+    <button id="infoBtn" class="fill-info"><i class="fa fa-question" aria-hidden="true"></i></button>
+    <button id="searchBtn" class="fill-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <button id="hallucinateBtn" class="fill-search"><i class="fa fa-bullseye" aria-hidden="true"></i></button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div id="modalContent" class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+      </div>
+
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("infoBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on the button, open the modal
+      btn.onclick = function() {
+        modal.classList.add('show');
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.classList.remove('show');
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.classList.remove('show');
+        }
+      }
+    </script>
+
     <!-- Use any element to open the sidenav -->
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>

@@ -32,6 +32,61 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+/* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    top: -100%;
+    opacity: 0;
+    transition: top 0.4s, opacity 0.4s;
+}
+
+.modal.show {
+    top: 0;
+    opacity: 1;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    position: relative;
+    border-radius: 15px 50px;
+    background: linear-gradient(to top, rgba(100, 239, 123,0.9), rgba(135, 220, 241,0.9));
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content p {
+  background-color: transparent;
+  color: #fff;
+  opacity: 1;
+}
+
+/* The Close Button */
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
@@ -40,7 +95,7 @@ body {
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black*/
+    background-color: #000811;
     opacity: 0.9;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
@@ -119,7 +174,7 @@ body {
 }
 
 .container {
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
 }
 
@@ -267,4 +322,68 @@ fieldset {
 }
 p {
   color: #E64A19;
+}
+
+#infoBtn, #searchBtn, #hallucinateBtn{
+  position: relative;
+  height: 45px;
+  width: 45px;
+  margin: 10px 7px;
+  font-weight: 200;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #fff;
+  border: 2px #fff solid;
+  border-radius: 50%;
+  text-transform: uppercase;
+  outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+  transition:         0.08s ease-in;
+  -o-transition:      0.08s ease-in;
+  -ms-transition:     0.08s ease-in;
+  -moz-transition:    0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
+}
+
+.fill-info:hover {
+  color: whitesmoke;
+}
+
+.fill-info:before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to top, rgba(100, 239, 123,0.5), rgba(135, 220, 241,0.5));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  -webkit-transition: top 0.09s ease-in;
+}
+
+.fill-info:hover:before {
+  top: 0;
+}
+
+.fill-search:hover {
+  color: whitesmoke;
+}
+
+.fill-search:before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to top, rgba(100, 239, 123,0.5), rgba(135, 220, 241,0.5));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  -webkit-transition: top 0.09s ease-in;
+}
+
+.fill-search:hover:before {
+  top: 0;
 }
