@@ -34,8 +34,10 @@ $(document).ready(function(){
     $hallucinateTrigger.addClass('active');
   });
 
+  var input = document.getElementById("hallucinateInput");
+
   // Execute a function when the user releases a key on the keyboard
-  $hallucinateInput.addEventListener("keyup", function(event) {
+  input.addEventListener("keyup", function(event) {
     // Cancel the default action, if needed
     event.preventDefault();
     // Number 13 is the "Enter" key on the keyboard

@@ -207,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("pagetitle").addEventListener("click", function(){
     $('[data-ic-class="search-input"]').val(document.getElementById("pagetitle").textContent.substr(1));
     document.getElementById("submitButton").click();
+    closeNav();
   });
 
   // submit button interactions
