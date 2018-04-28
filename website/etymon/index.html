@@ -17,6 +17,11 @@
     <script src='search_btn.js'></script>
     <script src='hallucinate_btn.js'></script>
     <script src='main.js'></script>
+    <script src="assets/three.js"></script>
+    <script src="assets/three.js"></script>
+		<script src="js/Projector.js"></script>
+		<script src="js/CanvasRenderer.js"></script>
+    <script src='waves.js'></script>
     <link rel="icon"
       type="image/png"
       href="etymon_favicon.png">
@@ -105,22 +110,14 @@
       </div>
     </div>
 
-    <!--
-    <div class="container">
-      <fieldset>
-          <input name="word" type="text" id="wordInput" class="ghost-input" placeholder="Enter a Word" required>
-          <input type="submit" id="submitButton" class="ghost-button" value="Get Etymology">
-          <input type="submit" id="hallucinateButton" class="ghost-button" value="Hallucinate">
-      </fieldset>
-    </div>
-    -->
-
     <div id="main">
       <div id="cy"></div>
 
       <div id="loading">
           <span class="fa fa-refresh fa-spin"></span>
       </div>
+
+      <div id="particles-container" style="height: 90%; margin-left: 0px;"></div>
     </div>
 
     <audio id="song" autoplay loop>
