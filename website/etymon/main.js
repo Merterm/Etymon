@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
+  // Follow-up on a node
   document.getElementById("pagetitle").addEventListener("click", function(){
     $('[data-ic-class="search-input"]').val(document.getElementById("pagetitle").textContent.substr(1));
     document.getElementById("submitButton").click();
@@ -217,6 +218,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var userInput = document.getElementById('wordInput').value;
     //console.log(userInput);
     if (userInput) {
+      // Hide the etymon title
+      var etymon = document.getElementById("etymon");
+      if (etymon.style.display !== "none") {
+          etymon.style.display = "none";
+      }
       cy.elements().remove();
       searchWord = userInput;
       //Start loading icon
@@ -233,6 +239,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var userInput = document.getElementById('hallucinateInput').value;
     //console.log(userInput);
     if (userInput) {
+      // Hide the etymon title
+      var etymon = document.getElementById("etymon");
+      if (etymon.style.display !== "none") {
+          etymon.style.display = "none";
+      }
       cy.elements().remove();
       searchWord = userInput;
       //Start loading icon

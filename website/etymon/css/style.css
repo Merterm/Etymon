@@ -54,13 +54,13 @@ body {
   -moz-animation-fill-mode:forwards;
   animation-fill-mode:forwards;
 
-  -webkit-animation-duration:5s;
-  -moz-animation-duration:5s;
-  animation-duration:5s;
+  -webkit-animation-duration:6s;
+  -moz-animation-duration:6s;
+  animation-duration:6s;
 
-  -webkit-animation-delay: 0.7s;
-  -moz-animation-delay: 0.7s;
-  animation-delay: 0.7s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
 }
 
 .box{
