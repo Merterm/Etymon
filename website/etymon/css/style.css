@@ -5,7 +5,7 @@
 
 #cy {
   width: 100%;
-  height: 70%;
+  height: 90%;
   position: absolute;
 }
 #loading {
@@ -31,7 +31,6 @@ body {
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
 }
-
 /* The Modal (background) */
 .modal {
     position: fixed; /* Stay in place */
@@ -54,31 +53,27 @@ body {
 .modal-content {
     position: relative;
     border-radius: 15px 50px;
-    background: linear-gradient(to top, rgba(100, 239, 123,0.9), rgba(135, 220, 241,0.9));
+    background: linear-gradient(to top, rgba(100, 239, 123,0.7), rgba(135, 220, 241,0.7));
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     width: 50%; /* Could be more or less, depending on screen size */
 }
 
+.info-container {
+  width: 90%;
+  position: relative;
+  border-radius: 15px 50px;
+  background-color: rgb(249, 247, 242);
+  margin: 2% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border-radius: 15px 50px;
+}
+
 .modal-content p {
   background-color: transparent;
-  color: #fff;
+  color: rgb(48, 47, 45);
+  font-size: 16px;
   opacity: 1;
-}
-
-/* The Close Button */
-.close {
-    color: #fff;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 /* Add Animation */
@@ -179,6 +174,7 @@ body {
 }
 
 .bar-c {
+  display: inline;
   overflow: hidden;
   height: 30px;
   width: 40px;
@@ -320,70 +316,7 @@ fieldset {
 .ghost-button:hover {
   border:2px solid #515151;
 }
+
 p {
   color: #E64A19;
-}
-
-#infoBtn, #searchBtn, #hallucinateBtn{
-  position: relative;
-  height: 45px;
-  width: 45px;
-  margin: 10px 7px;
-  font-weight: 200;
-  font-size: 30px;
-  letter-spacing: 2px;
-  color: #fff;
-  border: 2px #fff solid;
-  border-radius: 50%;
-  text-transform: uppercase;
-  outline: 0;
-  overflow:hidden;
-  background: none;
-  z-index: 1;
-  cursor: pointer;
-  transition:         0.08s ease-in;
-  -o-transition:      0.08s ease-in;
-  -ms-transition:     0.08s ease-in;
-  -moz-transition:    0.08s ease-in;
-  -webkit-transition: 0.08s ease-in;
-}
-
-.fill-info:hover {
-  color: whitesmoke;
-}
-
-.fill-info:before {
-  content: "";
-  position: absolute;
-  background: linear-gradient(to top, rgba(100, 239, 123,0.5), rgba(135, 220, 241,0.5));
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 100%;
-  z-index: -1;
-  -webkit-transition: top 0.09s ease-in;
-}
-
-.fill-info:hover:before {
-  top: 0;
-}
-
-.fill-search:hover {
-  color: whitesmoke;
-}
-
-.fill-search:before {
-  content: "";
-  position: absolute;
-  background: linear-gradient(to top, rgba(100, 239, 123,0.5), rgba(135, 220, 241,0.5));
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 100%;
-  z-index: -1;
-  -webkit-transition: top 0.09s ease-in;
-}
-
-.fill-search:hover:before {
-  top: 0;
 }

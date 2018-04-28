@@ -1,0 +1,262 @@
+.wrapper {
+  display: inline-block;
+}
+
+#infoBtn, #hallucinateBtn{
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  height: 45px;
+  width: 45px;
+  margin: 10px 7px;
+  font-weight: 200;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #fff;
+  border: 2px #fff solid;
+  border-radius: 50%;
+  text-transform: uppercase;
+  outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+  transition:         0.08s ease-in;
+  -o-transition:      0.08s ease-in;
+  -ms-transition:     0.08s ease-in;
+  -moz-transition:    0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
+}
+
+.fill-info:hover {
+  color: whitesmoke;
+}
+
+.fill-info:before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to top, rgba(100, 239, 123,0.5), rgba(135, 220, 241,0.5));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  -webkit-transition: top 0.09s ease-in;
+}
+
+.fill-info:hover:before {
+  top: 0;
+}
+
+.icon-search-container {
+  display: inline-block;
+  vertical-align: top;
+  border: 2px solid #fff;
+  border-radius: 45px;
+  height: 45px;
+  width: 45px;
+  position: relative;
+  margin: 10px 7px;
+  font-weight: 200;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+  transition: width 0.2s ease-out;
+  backface-visibility: hidden;
+}
+.icon-search-container:hover {
+  color: whitesmoke;
+}
+
+.icon-search-container:before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to top,rgba(232,127,155,0.5),rgba(135,220,241,0.5));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  -webkit-transition: top 0.09s ease-in;
+}
+
+.icon-search-container:hover:before {
+  top: 0;
+}
+.icon-search-container.active {
+  width: 285px;
+  background: transparent;
+}
+.icon-search-container.active .fa-times-circle {
+  opacity: 1;
+}
+.icon-search-container.active .fa-arrow-circle-right {
+  opacity: 1;
+}
+.icon-search-container.active .search-input {
+  width: 200px;
+  color: #fff;
+}
+.icon-search-container .fa-search {
+  color: #fff;
+  background: transparent;
+  font-size: 30px;
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  cursor: pointer;
+}
+.icon-search-container .fa-times-circle {
+  opacity: 0;
+  background: transparent;
+  color: #d9d9d9;
+  font-size: 20px;
+  position: absolute;
+  top: 12px;
+  right: 32px;
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
+}
+.icon-search-container .fa-arrow-circle-right {
+  opacity: 0;
+  background: transparent;
+  color: #d9d9d9;
+  font-size: 20px;
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
+}
+.icon-search-container .search-input {
+  position: absolute;
+  cursor: default;
+  left: 45px;
+  top: 6px;
+  width: 0;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  line-height: 20px;
+  background-color: rgba(255,255,255,0);
+  transition: width 0.2s ease-out;
+}
+
+.icon-hallucinate-container {
+  display: inline-block;
+  vertical-align: top;
+  border: 2px solid #fff;
+  border-radius: 45px;
+  height: 45px;
+  width: 45px;
+  position: relative;
+  margin: 10px 7px;
+  font-weight: 200;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+  transition: width 0.2s ease-out;
+  backface-visibility: hidden;
+}
+.icon-hallucinate-container:hover {
+  color: whitesmoke;
+}
+
+.icon-hallucinate-container:before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to top, rgba(232, 126, 64,0.5), rgba(244, 234, 95,0.5));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+  -webkit-transition: top 0.09s ease-in;
+}
+
+.icon-hallucinate-container:hover:before {
+  top: 0;
+}
+.icon-hallucinate-container.active {
+  width: 285px;
+  background: transparent;
+}
+.icon-hallucinate-container.active .fa-times-circle {
+  opacity: 1;
+}
+.icon-hallucinate-container.active .fa-arrow-circle-right {
+  opacity: 1;
+}
+.icon-hallucinate-container.active .hallucinate-input {
+  width: 200px;
+  color: #fff;
+}
+.icon-hallucinate-container .fa-bullseye {
+  color: #fff;
+  background: transparent;
+  font-size: 30px;
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  cursor: pointer;
+}
+.icon-hallucinate-container .fa-times-circle {
+  opacity: 0;
+  background: transparent;
+  color: #d9d9d9;
+  font-size: 20px;
+  position: absolute;
+  top: 12px;
+  right: 32px;
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
+}
+.icon-hallucinate-container .fa-arrow-circle-right {
+  opacity: 0;
+  background: transparent;
+  color: #d9d9d9;
+  font-size: 20px;
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
+}
+.icon-hallucinate-container .hallucinate-input {
+  position: absolute;
+  cursor: default;
+  left: 45px;
+  top: 6px;
+  width: 0;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  line-height: 20px;
+  background-color: rgba(255,255,255,0);
+  transition: width 0.2s ease-out;
+}
+
+::placeholder {
+    color: #fff;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #fff;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #fff;
+}

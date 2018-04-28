@@ -204,44 +204,41 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
+  document.getElementById("pagetitle").addEventListener("click", function(){
+    $('[data-ic-class="search-input"]').val(document.getElementById("pagetitle").textContent.substr(1));
+    document.getElementById("submitButton").click();
+  });
+
   // submit button interactions
   var submitButton = document.getElementById('submitButton');
 
   submitButton.addEventListener('click', function() {
-    cy.elements().remove();
     var userInput = document.getElementById('wordInput').value;
     //console.log(userInput);
     if (userInput) {
+      cy.elements().remove();
       searchWord = userInput;
-    } else {
-      // default value
-      searchWord = 'hello';
+      //Start loading icon
+      loading.classList.remove('loaded');
+      // add the word to the graph
+      getWord(searchWord.toLowerCase());
     }
-
-    //Start loading icon
-    loading.classList.remove('loaded');
-    // add the word to the graph
-    getWord(searchWord.toLowerCase());
   });
 
   // hallucinate button interactions
   var hallucinateButton = document.getElementById('hallucinateButton');
 
   hallucinateButton.addEventListener('click', function() {
-    cy.elements().remove();
-    var userInput = document.getElementById('wordInput').value;
+    var userInput = document.getElementById('hallucinateInput').value;
     //console.log(userInput);
     if (userInput) {
+      cy.elements().remove();
       searchWord = userInput;
-    } else {
-      // default value
-      searchWord = 'hello';
+      //Start loading icon
+      loading.classList.remove('loaded');
+      // add the word to the graph
+      getHallucination(searchWord.toLowerCase());
     }
-
-    //Start loading icon
-    loading.classList.remove('loaded');
-    // add the word to the graph
-    getHallucination(searchWord.toLowerCase());
   });
 
   //Requests the word from the server
