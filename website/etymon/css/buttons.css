@@ -76,7 +76,7 @@
 .icon-search-container:before {
   content: "";
   position: absolute;
-  background: linear-gradient(to top,rgba(232,127,155,0.5),rgba(135,220,241,0.5));
+  background: linear-gradient(to top,rgba(232,127,155,0.7),rgba(135,220,241,0.7));
   bottom: 0;
   left: 0;
   right: 0;
@@ -176,7 +176,7 @@
 .icon-hallucinate-container:before {
   content: "";
   position: absolute;
-  background: linear-gradient(to top, rgba(232, 126, 64,0.5), rgba(244, 234, 95,0.5));
+  background: linear-gradient(to top, rgba(232, 126, 64,0.7), rgba(244, 234, 95,0.7));
   bottom: 0;
   left: 0;
   right: 0;

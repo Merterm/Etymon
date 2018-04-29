@@ -134,6 +134,29 @@ body {
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
+#pagetitle {
+  background: linear-gradient(to top,rgba(232,127,155,0.7),rgba(135,220,241,0.7));
+  font-size: 50px;
+}
+#jumpBtn {
+  background: linear-gradient(to top,rgba(232,127,155,0.2),rgba(135,220,241,0.2));
+  font-style: italic;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-left: 30px;
+  padding: 10px 10px 10px 10px;
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+#wiktionary {
+  background: linear-gradient(to top,rgba(232,127,155,0.7),rgba(135,220,241,0.7));
+  margin-top: 60px;
+  padding: 8px 30px 10px 32px;
+  font-size: 35px;
+  color: #fff;
+}
 #wikiBucket {
   padding: 8px 30px 100px 32px;
 }
@@ -154,7 +177,7 @@ body {
   position: absolute;
   display: block;
   left: 0;
-  top: 50%;
+  top: 70%;
   width: 100%;
   text-align: center;
   margin-top: -0.5em;

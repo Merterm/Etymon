@@ -184,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Query Wiktionary for the word
     $('#pagetitle').text(page);
+    $('#jumpBtn').text('Jump to ' + page);
     $('#pagelang').text(lang);
     //Start loading icon
     wiki_loading.classList.remove('loaded');
@@ -209,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Follow-up on a node
-  document.getElementById("pagetitle").addEventListener("click", function(){
+  document.getElementById("jumpBtn").addEventListener("click", function(){
     $('[data-ic-class="search-input"]').val(document.getElementById("pagetitle").textContent.substr(1));
     document.getElementById("submitButton").click();
     closeNav();
