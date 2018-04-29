@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-	var SEPARATION = 100, AMOUNTX = 100, AMOUNTY = 100;
+	var SEPARATION = 80, AMOUNTX = 50, AMOUNTY = 50;
 	var container;
 	var camera, scene, renderer;
 	var particles, particle, count = 0;

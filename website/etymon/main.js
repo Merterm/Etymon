@@ -172,14 +172,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Tapping on node opens the sidenav
   function openNav(page, lang) {
-    if ($(window).width() >= 600) {
+    if ($(window).width() >= 800) {
       document.getElementById("mySidenav").style.width = "50%";
+      document.getElementById("main").style.marginLeft = "25%";
+      //document.body.style.opacity = "0.5";
     } else {
       document.getElementById("mySidenav").style.width = "100%";
     }
-
-    document.getElementById("main").style.marginLeft = "25%";
-    //document.body.style.opacity = "0.5";
 
     wiki_loading.classList.add('loaded');
 
