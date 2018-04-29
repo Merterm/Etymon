@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize loading icon
   var loading = document.getElementById('loading');
   loading.classList.add('loaded');
+  // Initialize Fade-in cytoscape container
+  var cy_container = document.getElementById('cy');
+  cy_container.classList.remove('show');
 
   function addToGraph(query) {
     var nodes = [];
@@ -142,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Stop the loading icon
     loading.classList.add('loaded');
+    cy_container.classList.add('show');
   }
 
   // Action to perform on tap on nodes
@@ -232,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
       searchWord = userInput;
       //Start loading icon
       loading.classList.remove('loaded');
+      cy_container.classList.remove('show');
       // add the word to the graph
       getWord(searchWord.toLowerCase());
     }
@@ -253,6 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
       searchWord = userInput;
       //Start loading icon
       loading.classList.remove('loaded');
+      cy_container.classList.remove('show');
       // add the word to the graph
       getHallucination(searchWord.toLowerCase());
     }
