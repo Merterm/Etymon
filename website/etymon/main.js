@@ -172,36 +172,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Tapping on node opens the sidenav
   function openNav(page, lang) {
+    if ($(window).width() >= 600) {
       document.getElementById("mySidenav").style.width = "50%";
-      document.getElementById("main").style.marginLeft = "25%";
-      //document.body.style.opacity = "0.5";
+    } else {
+      document.getElementById("mySidenav").style.width = "100%";
+    }
 
-      wiki_loading.classList.add('loaded');
+    document.getElementById("main").style.marginLeft = "25%";
+    //document.body.style.opacity = "0.5";
 
-      // Query Wiktionary for the word
-      $('#pagetitle').text(page);
-      $('#pagelang').text(lang);
-      //Start loading icon
-      wiki_loading.classList.remove('loaded');
-      $('#wikiInfo').html('Loading Word Information');
-      $('#licenseInfo').hide();
-      $.getJSON(baseURL+'/w/api.php?action=parse&format=json&prop=text|revid|displaytitle&callback=?&page='+page,
-      function(json) {
-        if (json.parse != undefined) {
-          if(json.parse.revid > 0) {
-            showPage(page,json.parse.text['*']);
-          } else {
-            wiki_loading.classList.add('loaded');
-            $('#wikiInfo').html('Word unavailable on Wiktionary');
-            $('#licenseInfo').hide();
-          }
-        }
-        else {
+    wiki_loading.classList.add('loaded');
+
+    // Query Wiktionary for the word
+    $('#pagetitle').text(page);
+    $('#pagelang').text(lang);
+    //Start loading icon
+    wiki_loading.classList.remove('loaded');
+    $('#wikiInfo').html('Loading Word Information');
+    $('#licenseInfo').hide();
+    $.getJSON(baseURL+'/w/api.php?action=parse&format=json&prop=text|revid|displaytitle&callback=?&page='+page,
+    function(json) {
+      if (json.parse != undefined) {
+        if(json.parse.revid > 0) {
+          showPage(page,json.parse.text['*']);
+        } else {
           wiki_loading.classList.add('loaded');
           $('#wikiInfo').html('Word unavailable on Wiktionary');
           $('#licenseInfo').hide();
         }
-      });
+      }
+      else {
+        wiki_loading.classList.add('loaded');
+        $('#wikiInfo').html('Word unavailable on Wiktionary');
+        $('#licenseInfo').hide();
+      }
+    });
   }
 
   // Follow-up on a node

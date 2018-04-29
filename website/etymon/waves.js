@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 		renderer = new THREE.CanvasRenderer();
 		renderer.setPixelRatio( window.devicePixelRatio );
-		renderer.setSize( window.innerWidth, window.innerHeight );
+		renderer.setSize( $(container).width(), $(container).height() );
 		container.appendChild( renderer.domElement );
 		document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 		document.addEventListener( 'touchstart', onDocumentTouchStart, false );
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		windowHalfY = window.innerHeight / 2;
 		camera.aspect = window.innerWidth / window.innerHeight;
 		camera.updateProjectionMatrix();
-		renderer.setSize( window.innerWidth, window.innerHeight );
+		renderer.setSize( $(container).width(), $(container).height() );
 	}
 	//
 	function onDocumentMouseMove( event ) {

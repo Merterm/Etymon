@@ -2,7 +2,7 @@
   display: inline-block;
 }
 
-#infoBtn, #hallucinateBtn{
+#infoBtn{
   text-align: center;
   display: inline-block;
   position: relative;
@@ -14,7 +14,7 @@
   letter-spacing: 2px;
   color: #fff;
   border: 2px #fff solid;
-  border-radius: 50%;
+  border-radius: 45px;
   text-transform: uppercase;
   outline: 0;
   overflow:hidden;
@@ -208,7 +208,7 @@
   font-size: 30px;
   position: absolute;
   top: 7px;
-  left: 8px;
+  left: 10px;
   cursor: pointer;
 }
 .icon-hallucinate-container .fa-times-circle {
