@@ -1,10 +1,13 @@
 let sys = require('util')
 let exec = require('child_process').exec;
 let virtualenv = require('python-virtualenv');
+var http = require('http'); // 3. HTTP server
+
 let child;
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
+
 // Install a virtualenv for the current project.
 virtualenv.installEnv();
 virtualenv.installPackage('numpy');
@@ -18,6 +21,12 @@ var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 }
+
+/**
+ * Get port from environment and store in Express.
+ */
+var port = process.env.PORT; // 2. Using process.env.PORT
+app.set('port', port);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -80,6 +89,16 @@ app.post('/lstm', function (req, res) {
   });*/
 })
 
-app.listen(8080, function () {
+/**
+ * Create HTTP server.
+ */
+var server = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port);
+
+/*app.listen(8080, function () {
   console.log('Example app listening on port 8080!')
-})
+})*/
