@@ -17,7 +17,7 @@
     "express": "^4.16.3",
     "python-virtualenv": "0.0.4",
     "server.js": "^1.0.0",
-    "yargs": "^11.0.0"
+    "yargs": "^11.1.0"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "1.4.17"
