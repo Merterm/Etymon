@@ -285,8 +285,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // send an ajax request
     var response = $.ajax({
       //change this while running on Google Cloud Platform
-      url: 'https://etymon-190009.appspot.com/lstm',
-      //url: 'http://localhost:8080/lstm',
+      //url: 'https://etymon-190009.appspot.com/lstm',
+      url: 'http://localhost:8080/lstm',
       type: 'POST',
       data: { word: theWord },
       success: function(response){

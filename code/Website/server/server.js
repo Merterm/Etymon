@@ -25,8 +25,8 @@ var allowCrossDomain = function(req, res, next) {
 /**
  * Get port from environment and store in Express.
  */
-var port = process.env.PORT; // 2. Using process.env.PORT
-app.set('port', port);
+//var port = process.env.PORT; // 2. Using process.env.PORT
+//app.set('port', port);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -61,10 +61,10 @@ app.post('/lstm', function (req, res) {
   console.log(req.body.word);
   // variables
   let word = req.body.word || "closet";
-  //let bash_cmnd = "cd LSTM; source ./tensorflow/bin/activate; cd trainer; python generate_text.py \"" + word + "\"; deactivate; cd ../..";
+  let bash_cmnd = "cd LSTM; source ./tensorflow/bin/activate; cd trainer; python generate_text.py \"" + word + "\"; deactivate; cd ../..";
 
   // Execute the python script inside the virtualenv
-  virtualenv.executeScript('LSTM/trainer/generate_text.py ' + word).then(
+  /*virtualenv.executeScript('LSTM/trainer/generate_text.py ' + word).then(
     function successHandler(stdout){
       console.log(stdout);
       var halluc_word = stdout.split('\n');
@@ -74,9 +74,9 @@ app.post('/lstm', function (req, res) {
       console.log(stderr);
       res.send({etymology: null, error: error});
     }
-  );
+  );*/
 
-  /*// executes bash command
+  // executes bash command
   child = exec(bash_cmnd, function (error, stdout, stderr) {
     if (error !== null) {
       res.send({etymology: null, error: error});
@@ -86,19 +86,19 @@ app.post('/lstm', function (req, res) {
       console.log("eng: " + word + "\trel:etymology\t" + halluc_word[0])
       res.send({etymology: "eng: " + word + "\trel:etymology\t" + halluc_word[0], error: null});
     }
-  });*/
+  });
 })
 
 /**
  * Create HTTP server.
  */
-var server = http.createServer(app);
+//var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port);
+//server.listen(port);
 
-/*app.listen(8080, function () {
+app.listen(8080, function () {
   console.log('Example app listening on port 8080!')
-})*/
+})
