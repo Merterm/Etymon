@@ -35,7 +35,7 @@ public class Starling {
 			String currentLinkAddr = currentLink.attributes().get("href");
 			Element tempo = currentLink.parent().parent();
 			languageName = tempo.select("b").text();
-			String projectPath = "../data/starling/";
+			String projectPath = "W:\\Etymon\\data\\starling\\";
 			System.out.println(projectPath);
 			new File( projectPath + languageName).mkdir();
 			
@@ -47,7 +47,7 @@ public class Starling {
 			String html = "";
 			while(hasMorePages)
 			{
-				System.out.println("Inside while");
+				//System.out.println("Inside while");
 				
 				try {
 					out = new PrintWriter(projectPath + languageName + "/" + languageName + "_Query result" + pageNo + ".html");
