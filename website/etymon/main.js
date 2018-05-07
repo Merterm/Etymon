@@ -13,12 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
       .selector('node')
         .css({
           'shape': 'data(faveShape)',
-          //'width': 'mapData(weight, 40, 80, 20, 60)',
+          'width': 60,
+          'height': 60,
           'content': 'data(name)',
           'text-valign': 'center',
-          'text-outline-width': 2,
+          'text-outline-width': 1,
           'text-outline-color': 'data(faveColor)',
+          'border-width': 4,
+          'border-color': 'data(faveColor)',
           'background-color': 'data(faveColor)',
+          'background-opacity': 0.9,
           'color': '#fff'
         })
       .selector('edge')
@@ -125,22 +129,43 @@ document.addEventListener('DOMContentLoaded', function() {
         name: 'cose'
       }).run();
 
-      /*cy.nodes().forEach(function(ele) {
-        ele.qtip({
-          content: {
-            text: qtipText(ele, ele.data('id')),
-            title: ele.data('name')
-          },
-          style: {
-            classes: 'qtip-bootstrap'
-          },
-          position: {
-            my: 'bottom center',
-            at: 'top center',
-            target: ele
+      //Change the color of nodes based on language
+      var lang = [];
+      cy.nodes().forEach(function(ele) {
+        //console.log(ele);
+        var splitted = ele.data('id').split(':');
+        var language = convertISO(splitted[0]);
+        var flag = false;
+        var found_idx = 0;
+        for (var i = 0; i < lang.length; i++) {
+          //console.log(lang[i].language);
+          if (lang[i].language == language) {
+            flag = true;
+            found_idx = i;
           }
-        });
-      });*/
+        }
+        if (!flag) {
+          //console.log('inside if')
+          var color = randomColor({
+             hue: 'blue'
+          });
+          var splitted = ele.data('id').split(':');
+          var node_lang = {
+              language: convertISO(splitted[0]),
+              color: color
+          };
+          lang.push(node_lang);
+          ele.css('border-color',color);
+          ele.css('background-color',color);
+          ele.css('text-outline-color',color);
+        }
+        else {
+          //console.log('inside else');
+          ele.css('border-color',lang[found_idx].color);
+          ele.css('background-color',lang[found_idx].color);
+          ele.css('text-outline-color',lang[found_idx].color);
+        }
+      });
     }
 
     // Stop the loading icon
@@ -227,10 +252,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var userInput = document.getElementById('wordInput').value;
     //console.log(userInput);
     if (userInput) {
-      // Hide the etymon title
+      // Hide the etymon title and explanation
       var etymon = document.getElementById("etymon");
       if (etymon.style.display !== "none") {
           etymon.style.display = "none";
+      }
+      var explanation = document.getElementById("explanation");
+      if (explanation.style.display !== "none") {
+          explanation.style.display = "none";
       }
       cy.elements().remove();
       searchWord = userInput;
@@ -249,10 +278,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var userInput = document.getElementById('hallucinateInput').value;
     //console.log(userInput);
     if (userInput) {
-      // Hide the etymon title
+      // Hide the etymon title and the explanation
       var etymon = document.getElementById("etymon");
       if (etymon.style.display !== "none") {
           etymon.style.display = "none";
+      }
+      var explanation = document.getElementById("explanation");
+      if (explanation.style.display !== "none") {
+          explanation.style.display = "none";
       }
       cy.elements().remove();
       searchWord = userInput;
@@ -285,12 +318,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // send an ajax request
     var response = $.ajax({
       //change this while running on Google Cloud Platform
-      //url: 'https://etymon-190009.appspot.com/lstm',
-      url: 'http://localhost:8080/lstm',
+      url: 'https://etymon-190009.appspot.com/lstm',
+      //url: 'http://localhost:8080/lstm',
       type: 'POST',
       data: { word: theWord },
       success: function(response){
-        //console.log(response);
+        console.log(response);
         addToGraph(response);
       }
     });
@@ -349,23 +382,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     };
   }
-
-  /*
-  // qTip box function
-  function qtipText(node, theWord) {
-    // send an ajax request
-    var response = $.ajax({
-      //change this while running on Google Cloud Platform
-      url: 'https://glosbe.com/gapi/translate?from=pol&dest=eng&format=json&phrase=witaj&pretty=true&tm=true',
-      datatype: 'jsonp',
-      success: function(response){
-        console.log(response);
-      }
-    });
-    var splitted = theWord.split(':');
-    var lang = convertISO(splitted[0]);
-    return lang
-  }*/
 
   //Converts the given ISO 639-2 codes to regular language names
   function convertISO(lang) {

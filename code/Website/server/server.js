@@ -70,7 +70,7 @@ app.post('/lstm', function (req, res) {
   //Another take on virtualenv
   // This is a child_process running Python using your virtualenv. You can
   // communicate with it over stdin/stdout, etc.
-  var child = env.spawnPython(["./LSTM/trainer/generate_text.py"]);
+  /*var child = env.spawnPython(["./LSTM/trainer/generate_text.py"]);
   child.stdout.on('data', (data) => {
     console.log(`child stdout:\n${data}`);
     var halluc_word = `${data}`.split('\n');
@@ -79,10 +79,10 @@ app.post('/lstm', function (req, res) {
 
   child.stderr.on('data', (data) => {
     console.error(`child stderr:\n${data}`);
-  });
+  });*/
 
   // Execute the python script inside the virtualenv
-  /*python_virtualenv.executeScript('LSTM/trainer/generate_text.py ' + word).then(
+  python_virtualenv.executeScript('LSTM/trainer/generate_text.py ' + word).then(
     function successHandler(stdout){
       console.log(stdout);
       var halluc_word = stdout.split('\n');
@@ -92,7 +92,7 @@ app.post('/lstm', function (req, res) {
       console.log(stderr);
       res.send({etymology: null, error: error});
     }
-  );*/
+  );
 
   // executes bash command
   /*child = exec(bash_cmnd, function (error, stdout, stderr) {

@@ -79,6 +79,43 @@ body {
 
 }
 
+/* Short Explanation */
+.explanation {
+    height: 10vh;
+    width: 100vw;
+    position: fixed;
+    bottom: 10%;
+    left: 31%;
+}
+
+/* Explanation Fade In */
+.explanation-fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:6s;
+  -moz-animation-duration:6s;
+  animation-duration:6s;
+
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+.exp_box{
+  font-size: 1.5vw;
+  color: #fff;
+  position: relative;
+  margin: 10px;
+  background: transparent;
+}
+
 /* The Modal (background) */
 .modal {
     position: fixed; /* Stay in place */
@@ -103,7 +140,7 @@ body {
     border-radius: 15px 50px;
     background: linear-gradient(to top, rgba(100, 239, 123,0.7), rgba(135, 220, 241,0.7));
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    padding: 2px;
     width: 50%; /* Could be more or less, depending on screen size */
 }
 
@@ -114,6 +151,7 @@ body {
   background-color: rgb(249, 247, 242);
   margin: 2% auto; /* 15% from the top and centered */
   padding: 20px;
+  padding-left: 10%;
   border-radius: 15px 50px;
 }
 

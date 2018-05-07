@@ -21,6 +21,7 @@
     <script src="assets/three.min.js"></script>
 		<script src="js/Projector.js"></script>
 		<script src="js/CanvasRenderer.js"></script>
+    <script src="js/randomColor.min.js"></script>
     <script src='waves.js'></script>
     <link rel="icon"
       type="image/png"
@@ -60,13 +61,32 @@
         E T Y M Ø N
       </div>
     </div>
+    <!-- Short Explanation -->
+    <div id="explanation" class="explanation">
+      <div class="exp_box explanation-fade-in">
+        <i class="fa fa-search" aria-hidden="true"></i> to search,
+        <i class="fa fa-bullseye" aria-hidden="true"></i> to create new connections,
+        <i class="fa fa-question" aria-hidden="true"></i> to learn more
+      </div>
+    </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
       <!-- Modal content -->
       <div id="modalContent" class="modal-content">
         <div id="infoContainer" class="info-container">
-          <p>Some text in the Modal..</p>
+          <p>
+            Different types of connections in Etymøn:
+            <ul>
+              <li><b><mark style="background-color:#EDA1ED;color:#fff;padding-left:10px; padding-right:10px;">Pink</mark></b>&nbsp;&nbsp;&nbsp;&nbsp; Out-going Etymology</li>
+              <li><b><mark style="background-color:#1047BD;color:#fff;padding-left:10px; padding-right:10px;">Thick Blue</mark></b>&nbsp;&nbsp;&nbsp;&nbsp; In-coming Etymology</li>
+              <li><b><mark style="background-color:#86B342;color:#fff;padding-left:10px; padding-right:10px;">Green</mark></b>&nbsp;&nbsp;&nbsp;&nbsp; Etymologically related</li>
+              <li><b><mark style="background-color:#6FB1FC;color:#fff;padding-left:10px; padding-right:10px;">Thin Blue</mark></b>&nbsp;&nbsp;&nbsp;&nbsp; Semantically Related</li>
+            </ul>
+            Click on a node to see more information about that word. </br>
+            After clicking a node, click "Jump to word" to see the graph of that node. </br>
+            Border colors represent languages: same colors mean same languages.
+          </p>
         </div>
       </div>
 
