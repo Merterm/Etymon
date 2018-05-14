@@ -65,7 +65,7 @@ app.post('/lstm', function (req, res) {
   console.log(req.body.word);
   // variables
   let word = req.body.word || "closet";
-  //let bash_cmnd = "cd LSTM; source ./tensorflow/bin/activate; cd trainer; python generate_text.py \"" + word + "\"; deactivate; cd ../..";
+  let bash_cmnd = "cd LSTM; source ./tensorflow/bin/activate; cd trainer; python generate_text.py \"" + word + "\"; deactivate; cd ../..";
 
   //Another take on virtualenv
   // This is a child_process running Python using your virtualenv. You can
@@ -82,7 +82,7 @@ app.post('/lstm', function (req, res) {
   });*/
 
   // Execute the python script inside the virtualenv
-  python_virtualenv.executeScript('LSTM/trainer/generate_text.py ' + word).then(
+  /*python_virtualenv.executeScript('LSTM/trainer/generate_text.py ' + word).then(
     function successHandler(stdout){
       console.log(stdout);
       var halluc_word = stdout.split('\n');
@@ -92,10 +92,10 @@ app.post('/lstm', function (req, res) {
       console.log(stderr);
       res.send({etymology: null, error: error});
     }
-  );
+  );*/
 
   // executes bash command
-  /*child = exec(bash_cmnd, function (error, stdout, stderr) {
+  child = exec(bash_cmnd, function (error, stdout, stderr) {
     if (error !== null) {
       res.send({etymology: null, error: error});
     }
@@ -104,7 +104,7 @@ app.post('/lstm', function (req, res) {
       console.log("eng: " + word + "\trel:etymology\t" + halluc_word[0])
       res.send({etymology: "eng: " + word + "\trel:etymology\t" + halluc_word[0], error: null});
     }
-  });*/
+  });
 })
 
 /**
