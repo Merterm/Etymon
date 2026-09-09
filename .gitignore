@@ -3,3 +3,14 @@
 /bin
 /.project
 /.classpath
+
+# Build products of installation/build.sh.
+#
+# The two indexes are ~29,000 small files and ~400 MB, so they are built rather
+# than committed, and they are written outside the project by default: this
+# tree is often kept in iCloud Drive, which responds to that many small files
+# by making a conflict copy of every one of them. serve.py serves whichever
+# location it finds. See installation/README.md.
+installation/data/index/
+__pycache__/
+*.pyc

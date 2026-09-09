@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+
+# iCloud Drive conflict copies. This tree lives in iCloud, and writing ~2,000
+# small index shards makes it duplicate files asynchronously as it syncs
+# ("aa 2.json"), after the build has already finished — so build.sh cannot
+# reliably sweep them itself. They are never referenced: data/index/manifest.json
+# lists the real names. To clear them out by hand:
+#   find data/index -name "* [0-9].json" -delete
+* [0-9].*

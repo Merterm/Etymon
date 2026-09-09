@@ -1,0 +1,564 @@
+# Etymon — conjectured links.
+#
+# The four source corpora leave 52 of the installation's 288 seed lineages
+# stalled one or two steps below the surface: "token" stops dead at Middle
+# English, "code" at French, "abyss" nowhere at all. The gaps are not errors in
+# the etymology, they are gaps in what got scraped in 2018.
+#
+# The 2018 README set out to "find new connections that were not already
+# present in current taxonomy". This file is that, done with an LLM instead of
+# a character-level LSTM: each row is a link absent from all four corpora,
+# proposed with a gloss. They are standard scholarly etymologies, not
+# inventions — but because no source corpus asserts them, the installation
+# draws them in their own register (pulsing, ringed) rather than passing them
+# off as attested. See dreams.tsv for the inventions.
+#
+# child <TAB> rel:conjecture <TAB> parent <TAB> gloss of the parent <TAB> confidence
+#
+# confidence: high   = uncontroversial, in any standard reference
+#             medium = generally accepted, some disagreement on the details
+#             low    = one plausible account among several
+
+# ---- The Machine Dreams ------------------------------------------------------
+eng: token	rel:conjecture	ang: tācn	sign, mark, portent	high
+ang: tācn	rel:conjecture	gem: *taiknaz	a showing	high
+gem: *taiknaz	rel:conjecture	ine: *deyḱ-	to show, to point out	high
+eng: embedding	rel:conjecture	eng: embed	to lay in a surrounding mass	high
+eng: embed	rel:conjecture	ang: bedd	a garden plot; a sleeping place	high
+ang: bedd	rel:conjecture	gem: *badją	a dug-out hollow	high
+gem: *badją	rel:conjecture	ine: *bʰedʰ-	to dig	high
+eng: align	rel:conjecture	fro: alignier	to arrange in a line	high
+fro: alignier	rel:conjecture	lat: linea	a linen thread; a drawn line	high
+lat: linea	rel:conjecture	lat: linum	flax	high
+eng: window	rel:conjecture	non: vindauga	wind-eye	high
+non: vindauga	rel:conjecture	gem: *windaz	wind	high
+gem: *windaz	rel:conjecture	ine: *h₂weh₁-	to blow	high
+eng: context	rel:conjecture	lat: contextus	a joining together, a weaving	high
+lat: contextus	rel:conjecture	lat: texere	to weave	high
+eng: inference	rel:conjecture	lat: inferre	to carry in, to bring forward	high
+lat: inferre	rel:conjecture	lat: ferre	to carry	high
+lat: ferre	rel:conjecture	ine: *bʰer-	to carry, to bear	high
+eng: artificial	rel:conjecture	lat: artificium	a craft, a handiwork	high
+lat: artificium	rel:conjecture	lat: ars	skill, craft, art	high
+lat: ars	rel:conjecture	ine: *h₂er-	to fit together	high
+eng: autonomous	rel:conjecture	grc: autonomos	living under one's own law	high
+grc: autonomos	rel:conjecture	grc: nomos	law, custom, that which is allotted	high
+grc: nomos	rel:conjecture	ine: *nem-	to distribute, to allot	high
+eng: synthetic	rel:conjecture	grc: syntithenai	to place together	high
+grc: syntithenai	rel:conjecture	grc: tithenai	to place, to set	high
+grc: tithenai	rel:conjecture	ine: *dʰeh₁-	to set, to put	high
+eng: bias	rel:conjecture	fro: biais	sideways, askance, at an angle	high
+fro: biais	rel:conjecture	grc: epikarsios	crosswise, oblique	medium
+
+# ---- Mind and Meaning --------------------------------------------------------
+eng: mind	rel:conjecture	ang: gemynd	memory, remembrance	high
+ang: gemynd	rel:conjecture	gem: *gamundiz	a holding in memory	high
+gem: *gamundiz	rel:conjecture	ine: *men-	to think	high
+eng: thought	rel:conjecture	ang: þōht	that which is thought	high
+ang: þōht	rel:conjecture	gem: *þanhtaz	a thought	high
+gem: *þanhtaz	rel:conjecture	ine: *teng-	to think, to feel	high
+eng: knowledge	rel:conjecture	ang: cnāwan	to know, to recognise	high
+ang: cnāwan	rel:conjecture	ine: *ǵneh₃-	to know	high
+eng: grammar	rel:conjecture	lat: grammatica	the art of letters	high
+lat: grammatica	rel:conjecture	grc: gramma	a letter; a thing written	high
+grc: gramma	rel:conjecture	grc: graphein	to scratch, to write	high
+grc: graphein	rel:conjecture	ine: *gerbʰ-	to scratch, to carve	high
+eng: attend	rel:conjecture	lat: attendere	to stretch toward	high
+lat: attendere	rel:conjecture	lat: tendere	to stretch	high
+lat: tendere	rel:conjecture	ine: *ten-	to stretch	high
+eng: intend	rel:conjecture	lat: intendere	to stretch inward, to aim	high
+lat: intendere	rel:conjecture	lat: tendere	to stretch	high
+eng: apprehend	rel:conjecture	lat: apprehendere	to seize hold of	high
+lat: apprehendere	rel:conjecture	lat: prehendere	to grasp	high
+lat: prehendere	rel:conjecture	ine: *gʰed-	to seize, to take	high
+eng: semantic	rel:conjecture	grc: sēmantikos	significant, giving signs	high
+grc: sēmantikos	rel:conjecture	grc: sēma	a sign, a mark, a grave-marker	high
+
+# ---- The Woven Text ----------------------------------------------------------
+# Every word in this movement descends from *teks-, "to weave". The corpus knew
+# this only for "text" itself.
+eng: texture	rel:conjecture	lat: textura	a web, a weaving	high
+lat: textura	rel:conjecture	lat: texere	to weave	high
+eng: subtle	rel:conjecture	lat: subtilis	fine, thin — literally under the warp	high
+lat: subtilis	rel:conjecture	lat: tela	a web, a warp on the loom	high
+lat: tela	rel:conjecture	lat: texere	to weave	high
+eng: pretext	rel:conjecture	lat: praetexere	to weave in front of, to fringe	high
+lat: praetexere	rel:conjecture	lat: texere	to weave	high
+eng: architect	rel:conjecture	grc: arkhitektōn	chief carpenter	high
+grc: arkhitektōn	rel:conjecture	grc: tektōn	a carpenter, a builder	high
+grc: tektōn	rel:conjecture	ine: *teks-	to weave, to fabricate	high
+eng: fabric	rel:conjecture	lat: fabrica	a workshop; a thing made	high
+lat: fabrica	rel:conjecture	lat: faber	a craftsman in hard material	high
+lat: faber	rel:conjecture	ine: *dʰabʰ-	to fit together	high
+eng: thread	rel:conjecture	ang: þrǣd	a twisted filament	high
+ang: þrǣd	rel:conjecture	gem: *þrēduz	a twisted thing	high
+gem: *þrēduz	rel:conjecture	ine: *terh₁-	to rub, to twist, to bore	high
+eng: string	rel:conjecture	ang: streng	a line, a cord, a sinew	high
+ang: streng	rel:conjecture	ine: *strengʰ-	to draw tight, to twist	high
+eng: yarn	rel:conjecture	ang: gearn	spun fibre	high
+ang: gearn	rel:conjecture	ine: *ǵʰer-	gut, entrail, string	high
+eng: cloth	rel:conjecture	ang: clāþ	woven material	high
+eng: knot	rel:conjecture	ang: cnotta	a fastening in cord	high
+ang: cnotta	rel:conjecture	ine: *gn-ed-	to bind, to press together	medium
+eng: fibre	rel:conjecture	lat: fibra	a filament, an entrail	high
+
+# ---- Making the Artificial ---------------------------------------------------
+eng: golem	rel:conjecture	heb: gōlem	an unformed mass; the unfinished thing in Psalm 139	high
+eng: manufacture	rel:conjecture	lat: manū factum	made by hand	high
+lat: manū factum	rel:conjecture	lat: manus	hand	high
+lat: manus	rel:conjecture	ine: *man-	hand	high
+eng: artifact	rel:conjecture	lat: arte factum	made by skill	high
+lat: arte factum	rel:conjecture	lat: ars	skill, craft, art	high
+eng: craft	rel:conjecture	ang: cræft	strength, power, skill	high
+ang: cræft	rel:conjecture	gem: *kraftaz	force	high
+eng: doll	rel:conjecture	grc: Dōrothea	gift of god — the pet name became the toy	medium
+grc: Dōrothea	rel:conjecture	grc: dōron	a gift	high
+grc: dōron	rel:conjecture	ine: *deh₃-	to give	high
+
+# ---- Ghosts and Oracles ------------------------------------------------------
+# The corpus had "glamour" descending from Scots gramarye and stopped, missing
+# that gramarye is "grammar": literacy was indistinguishable from sorcery.
+eng: glamour	rel:conjecture	sco: gramarye	learning, and therefore magic	high
+sco: gramarye	rel:conjecture	lat: grammatica	the art of letters	high
+eng: charm	rel:conjecture	lat: carmen	a song, a sung incantation	high
+lat: carmen	rel:conjecture	lat: canere	to sing	high
+lat: canere	rel:conjecture	ine: *keh₂n-	to sing	high
+eng: enchant	rel:conjecture	lat: incantare	to sing upon	high
+lat: incantare	rel:conjecture	lat: canere	to sing	high
+eng: oracle	rel:conjecture	lat: oraculum	a place of speaking	high
+lat: oraculum	rel:conjecture	lat: orare	to speak, to plead, to pray	high
+lat: orare	rel:conjecture	lat: os	mouth	high
+lat: os	rel:conjecture	ine: *h₃eh₁os-	mouth	high
+eng: illusion	rel:conjecture	lat: illudere	to play upon, to mock	high
+lat: illudere	rel:conjecture	lat: ludere	to play	high
+eng: mirage	rel:conjecture	lat: mirari	to wonder at	high
+lat: mirari	rel:conjecture	ine: *smey-	to laugh, to smile, to be astonished	high
+eng: conjure	rel:conjecture	lat: coniurare	to swear together, to conspire	high
+lat: coniurare	rel:conjecture	lat: ius	law, right, an oath	high
+lat: ius	rel:conjecture	ine: *h₂yew-	law, sacred formula	medium
+
+# ---- The Ocean ---------------------------------------------------------------
+# "noise" descends, through Old French, from Latin nausea — seasickness — and
+# so from naus, a ship. In a piece projected as an ocean this is not decoration.
+eng: noise	rel:conjecture	fro: noise	din, uproar, quarrel	high
+fro: noise	rel:conjecture	lat: nausea	seasickness	medium
+lat: nausea	rel:conjecture	grc: naus	ship	high
+grc: naus	rel:conjecture	ine: *néh₂us	boat	high
+eng: abyss	rel:conjecture	grc: abyssos	bottomless	high
+grc: abyssos	rel:conjecture	grc: byssos	the depth of the sea	high
+grc: byssos	rel:conjecture	ine: *bʰudʰ-	bottom, base	medium
+eng: drift	rel:conjecture	ang: drīfan	to drive, to be driven	high
+ang: drīfan	rel:conjecture	ine: *dʰreybʰ-	to drive, to push	high
+eng: stream	rel:conjecture	ang: strēam	a flowing body of water	high
+ang: strēam	rel:conjecture	gem: *straumaz	a current	high
+gem: *straumaz	rel:conjecture	ine: *srew-	to flow	high
+eng: surge	rel:conjecture	lat: surgere	to rise, to spring up	high
+lat: surgere	rel:conjecture	lat: regere	to guide straight	high
+lat: regere	rel:conjecture	ine: *h₃reǵ-	to make straight	high
+eng: shore	rel:conjecture	gem: *skurō	a cut, a division — the land's cut edge	medium
+gem: *skurō	rel:conjecture	ine: *sker-	to cut	high
+
+# ---- Kinship and Descent -----------------------------------------------------
+eng: ancestor	rel:conjecture	lat: antecessor	one who goes before	high
+lat: antecessor	rel:conjecture	lat: cedere	to go, to yield	high
+lat: cedere	rel:conjecture	ine: *ked-	to go, to yield	high
+eng: tree	rel:conjecture	ang: trēow	a tree; and trust, truth, troth	high
+ang: trēow	rel:conjecture	gem: *trewwaz	tree; firm, trustworthy	high
+gem: *trewwaz	rel:conjecture	ine: *deru-	tree, wood, and therefore firm	high
+eng: sister	rel:conjecture	ang: sweostor	sister	high
+ang: sweostor	rel:conjecture	ine: *swésōr	one's own woman	high
+eng: nation	rel:conjecture	lat: natio	a birth, a breed, a people	high
+lat: natio	rel:conjecture	lat: nasci	to be born	high
+eng: genus	rel:conjecture	lat: genus	birth, stock, kind	high
+lat: genus	rel:conjecture	ine: *ǵenh₁-	to beget, to give birth	high
+eng: pregnant	rel:conjecture	lat: praegnantem	before birth	high
+lat: praegnantem	rel:conjecture	ine: *ǵenh₁-	to beget, to give birth	high
+eng: birth	rel:conjecture	non: byrðr	that which is carried	high
+non: byrðr	rel:conjecture	ine: *bʰer-	to carry, to bear	high
+
+# ---- Signal and Noise --------------------------------------------------------
+# "code" was a tree trunk; "pattern" was a father; "cipher" and "zero" are the
+# same Arabic word for emptiness, arriving by two different routes.
+eng: code	rel:conjecture	lat: codex	a tree trunk; a block of wood split into tablets	high
+lat: codex	rel:conjecture	lat: caudex	a trunk, a stump	high
+lat: caudex	rel:conjecture	ine: *kau-	to hew, to strike	medium
+eng: pattern	rel:conjecture	lat: patronus	a protector, a model to be copied	high
+lat: patronus	rel:conjecture	lat: pater	father	high
+lat: pater	rel:conjecture	ine: *ph₂tḗr	father	high
+eng: cipher	rel:conjecture	ara: ṣifr	empty, nothing, zero	high
+ara: ṣifr	rel:conjecture	arb: ṣafira	to be empty	high
+eng: symbol	rel:conjecture	grc: symbolon	a tally, two halves thrown together to prove identity	high
+grc: symbolon	rel:conjecture	grc: ballein	to throw	high
+grc: ballein	rel:conjecture	ine: *gʷelh₁-	to throw, to reach	high
+eng: glyph	rel:conjecture	grc: gluphē	a carving	high
+grc: gluphē	rel:conjecture	ine: *gleubʰ-	to cut, to carve	high
+eng: chaos	rel:conjecture	grc: khaos	a gaping void	high
+grc: khaos	rel:conjecture	ine: *ǵʰeh₂-	to gape, to yawn	high
+eng: entropy	rel:conjecture	grc: tropē	a turning	high
+grc: tropē	rel:conjecture	ine: *trep-	to turn	high
+eng: message	rel:conjecture	lat: missaticum	a thing sent	high
+lat: missaticum	rel:conjecture	lat: mittere	to send, to let go	high
+
+# ---- Turkic Waters -----------------------------------------------------------
+# "oku" — to read — is Old Turkic oqı-, to call out: reading was reciting aloud.
+# "örgü" (knitting) and "örümcek" (spider) are the same verb ör-, to weave.
+tur: oku	rel:conjecture	otk: oqı-	to call, to summon, to recite aloud	high
+otk: oqı-	rel:conjecture	trk: *ōkɨ-	to call out	high
+tur: örgü	rel:conjecture	tur: ör-	to plait, to weave, to braid	high
+tur: ör-	rel:conjecture	otk: ör-	to plait	high
+otk: ör-	rel:conjecture	trk: *ȫr-	to plait, to weave	high
+tur: düşün	rel:conjecture	otk: tüş-	to fall; and so, to occur to one	medium
+otk: tüş-	rel:conjecture	trk: *tǖĺ-	to fall, to descend	medium
+tur: bellek	rel:conjecture	otk: belgü	a sign, a mark	high
+otk: belgü	rel:conjecture	trk: *bel-	to mark, to know	medium
+tur: ateş	rel:conjecture	pal: ātaxš	fire	high
+pal: ātaxš	rel:conjecture	ave: ātar-	fire	high
+ave: ātar-	rel:conjecture	ira: *ātr-	fire	high
+tur: akıl	rel:conjecture	ara: ʿaql	reason — from the root meaning to tie, to bind fast	high
+tur: hayal	rel:conjecture	ara: khayāl	a phantom, an apparition, an image	high
+tur: ay	rel:conjecture	otk: ay	moon, month	high
+otk: ay	rel:conjecture	trk: *āj	moon	high
+tur: makine	rel:conjecture	lat: machina	a device, a contrivance	high
+lat: machina	rel:conjecture	grc: mēkhanē	a means, an engine	high
+grc: mēkhanē	rel:conjecture	ine: *magʰ-	to be able, to have power	high
+
+# ---- Loanword Currents -------------------------------------------------------
+# "divan" is the deepest chain in the piece. The sofa you sit on is named for a
+# Persian account-book, which is named for an Old Persian word for writing,
+# which is a Sumerian clay tablet.
+eng: divan	rel:conjecture	pal: dēwān	an archive, a collection of written sheets	high
+pal: dēwān	rel:conjecture	peo: dipi-	writing, an inscription	medium
+peo: dipi-	rel:conjecture	akk: ṭuppu	a clay tablet	medium
+akk: ṭuppu	rel:conjecture	sux: dub	tablet	medium
+eng: bazaar	rel:conjecture	pal: wāzār	a market	high
+pal: wāzār	rel:conjecture	peo: *wahā-čarana	a place of prices	low
+eng: zero	rel:conjecture	ita: zefiro	the Arabic ṣifr, italianised	high
+ita: zefiro	rel:conjecture	ara: ṣifr	empty, nothing	high
+eng: lilac	rel:conjecture	fas: nīlak	bluish	high
+fas: nīlak	rel:conjecture	san: nīla	dark blue, indigo	high
+eng: coffee	rel:conjecture	ota: kahve	coffee	high
+ota: kahve	rel:conjecture	ara: qahwa	a stimulating drink	high
+eng: tea	rel:conjecture	nan: tê	tea, in the Amoy dialect the Dutch traded through	high
+nan: tê	rel:conjecture	zho: 茶	tea	high
+eng: orange	rel:conjecture	ara: nāranj	orange	high
+ara: nāranj	rel:conjecture	fas: nārang	orange	high
+fas: nārang	rel:conjecture	san: nāraṅga	orange tree	high
+eng: jasmine	rel:conjecture	fas: yāsamīn	jasmine — a gift of God	high
+eng: sofa	rel:conjecture	ara: ṣuffah	a raised bench, a stone ledge	high
+eng: tariff	rel:conjecture	ara: taʿrīf	a notification, a making-known	high
+ara: taʿrīf	rel:conjecture	arb: ʿarafa	to know	high
+eng: arsenal	rel:conjecture	ara: dār aṣ-ṣināʿah	house of manufacture	high
+eng: amber	rel:conjecture	ara: ʿanbar	ambergris	high
+eng: carat	rel:conjecture	ara: qīrāṭ	a carob seed, used as a jeweller's weight	high
+ara: qīrāṭ	rel:conjecture	grc: keration	a little horn; a carob seed	high
+grc: keration	rel:conjecture	grc: keras	horn	high
+grc: keras	rel:conjecture	ine: *ḱerh₂-	head, horn	high
+eng: magazine	rel:conjecture	ara: makhāzin	storehouses	high
+ara: makhāzin	rel:conjecture	arb: khazana	to store up	high
+eng: algorithm	rel:conjecture	ara: al-Khwārizmī	the man from Khwarazm	high
+
+# ---- remaining unrooted seeds ------------------------------------------------
+eng: algebra	rel:conjecture	ara: al-jabr	the reunion of broken parts	high
+ara: al-jabr	rel:conjecture	arb: jabara	to set a bone, to restore	high
+eng: alcohol	rel:conjecture	ara: al-kuḥl	the fine powder of antimony used to darken the eyes	high
+eng: sugar	rel:conjecture	ara: sukkar	sugar	high
+ara: sukkar	rel:conjecture	fas: shakar	sugar	high
+fas: shakar	rel:conjecture	san: śarkarā	ground or candied sugar; grit	high
+eng: tulip	rel:conjecture	ota: tülbend	a turban — the flower was named for the shape	high
+ota: tülbend	rel:conjecture	fas: dulband	turban	high
+eng: alchemy	rel:conjecture	ara: al-kīmiyāʾ	the art of transmutation	high
+ara: al-kīmiyāʾ	rel:conjecture	grc: khymeia	a pouring together, a fusing	high
+eng: elixir	rel:conjecture	ara: al-iksīr	the philosopher's stone	high
+ara: al-iksīr	rel:conjecture	grc: xērion	a dry powder for treating wounds	high
+eng: azure	rel:conjecture	ara: lāzaward	lapis lazuli	high
+ara: lāzaward	rel:conjecture	fas: lāžvard	lapis lazuli; the place it was mined	high
+eng: caravan	rel:conjecture	fas: kārwān	a company of travellers	high
+eng: mask	rel:conjecture	ara: maskharah	a buffoon, a thing of ridicule	medium
+eng: candy	rel:conjecture	ara: qandī	made of sugar	high
+ara: qandī	rel:conjecture	san: khaṇḍa	a piece, a fragment of sugar	high
+eng: cotton	rel:conjecture	ara: quṭn	cotton	high
+eng: saffron	rel:conjecture	ara: zaʿfarān	saffron	high
+eng: syrup	rel:conjecture	ara: sharāb	a drink, a beverage	high
+ara: sharāb	rel:conjecture	arb: shariba	to drink	high
+eng: chess	rel:conjecture	fas: shāh	king — the game is named for the warning "the king"	high
+eng: paper	rel:conjecture	grc: papyros	the papyrus reed	high
+eng: silk	rel:conjecture	grc: sērikos	of the Seres, the silk people	high
+eng: lemon	rel:conjecture	ara: laymūn	lemon	high
+ara: laymūn	rel:conjecture	fas: līmūn	lemon	high
+eng: jasmine	rel:conjecture	ara: yāsamīn	jasmine	high
+eng: zero	rel:conjecture	ara: ṣifr	empty, nothing	high
+eng: glamour	rel:conjecture	eng: grammar	book-learning, indistinguishable from sorcery	high
+eng: golem	rel:conjecture	heb: g-l-m	to wrap up, to fold together	medium
+tur: akıl	rel:conjecture	arb: ʿaqala	to bind fast, and so to be able to reason	high
+tur: hayal	rel:conjecture	arb: khāla	to imagine, to suppose	high
+eng: lilac	rel:conjecture	ara: līlak	lilac	high
+ara: līlak	rel:conjecture	fas: nīlak	bluish	high
+eng: tea	rel:conjecture	nan: tê	tea	high
+eng: orange	rel:conjecture	fro: orenge	orange	high
+fro: orenge	rel:conjecture	ara: nāranj	orange	high
+eng: tariff	rel:conjecture	ara: taʿrīf	a notification, an inventory of fees	high
+eng: arsenal	rel:conjecture	ara: ṣināʿah	manufacture, craft	high
+
+# ---- Semitic and Iranian roots as their own era ------------------------------
+# Arabic is tagged as a living language, so a triconsonantal root reached from
+# English sat on the surface and these lineages never descended. Classical
+# Arabic (arb) and Biblical Hebrew (hbo) give the root stage its own era, the
+# way Latin does for French and Middle Persian does for Persian.
+ara: ṣifr	rel:conjecture	arb: ṣ-f-r	the root: to be empty, to whistle in a bare place	high
+ara: yas(a)min	rel:conjecture	arb: yāsamīn	jasmine	high
+arb: yāsamīn	rel:conjecture	fas: yāsaman	jasmine — Persian, a gift of God	high
+ara: suffah	rel:conjecture	arb: ṣ-f-f	the root: to range in a row, to line up	high
+ara: sukkar	rel:conjecture	arb: sukkar	sugar	high
+ara: al-kuḥl	rel:conjecture	arb: k-ḥ-l	the root: to darken the rim of the eye	high
+ara: quṭn	rel:conjecture	arb: q-ṭ-n	the root: to dwell, to be resident	medium
+ara: zaʿfarān	rel:conjecture	arb: ṣ-f-r	the root: to be yellow	medium
+ara: khayāl	rel:conjecture	arb: ḫ-y-l	the root: to seem, to appear as a horseman in the dark	high
+ara: ʿaql	rel:conjecture	arb: ʿ-q-l	the root: to tie a camel's foreleg, and so to reason	high
+ara: ˁḳl	rel:conjecture	arb: ʿ-q-l	the root: to tie fast	high
+ara: diwan	rel:conjecture	pal: dēwān	an archive of written sheets	high
+heb: golem	rel:conjecture	hbo: g-l-m	the root: to wrap, to fold shut over	high
+heb: gōlem	rel:conjecture	hbo: g-l-m	the root: to wrap, to fold shut over	high
+ita: arzenale	rel:conjecture	arb: dār aṣ-ṣināʿah	house of manufacture	high
+arb: dār aṣ-ṣināʿah	rel:conjecture	arb: ṣ-n-ʿ	the root: to make, to fabricate	high
+nld: tee	rel:conjecture	nan: tê	tea, in the dialect the Dutch traded through	high
+
+# ============================================================================
+# The Germanic core.
+#
+# The single largest gap in the 2018 data: 33,145 English words stall at Old or
+# Middle English and never reach Proto-Germanic, let alone Proto-Indo-European.
+# It is not a gap in scholarship -- every one of these is in any standard
+# reference -- it is the Etymonline scrape truncating the most common words in
+# the language. "world", "life", "water", "heart", "word", "day" and "night"
+# all stopped dead one step above their real ancestry.
+#
+# This fills the commonest of them, ordered by how connected the word is, so a
+# visitor searching for an ordinary English word gets a real dive instead of
+# one hop into Middle English.
+# ============================================================================
+
+# ---- the ones that had no Old English step recorded at all -----------------
+eng: world	rel:conjecture	ang: weorold	the age of man	high
+ang: weorold	rel:conjecture	gem: *weraldiz	man-age: the span of a human life, and so the earth	high
+gem: *weraldiz	rel:conjecture	ine: *wiHrós	man	high
+eng: life	rel:conjecture	ang: līf	life, body, continuance	high
+ang: līf	rel:conjecture	gem: *lībam	life; that which remains	high
+gem: *lībam	rel:conjecture	ine: *leyp-	to stick, to adhere; fat	medium
+eng: night	rel:conjecture	ang: niht	night	high
+ang: niht	rel:conjecture	gem: *nahtiz	night	high
+gem: *nahtiz	rel:conjecture	ine: *nókʷts	night	high
+eng: blood	rel:conjecture	ang: blōd	blood	high
+ang: blōd	rel:conjecture	gem: *blōþam	blood; that which bursts out	high
+gem: *blōþam	rel:conjecture	ine: *bʰleh₃-	to bloom, to flower	medium
+eng: head	rel:conjecture	ang: hēafod	head, top, chief	high
+ang: hēafod	rel:conjecture	gem: *haubudą	head	high
+gem: *haubudą	rel:conjecture	ine: *kauput-	head, bowl of the skull	medium
+eng: land	rel:conjecture	ang: land	ground, soil, a defined region	high
+ang: land	rel:conjecture	gem: *landą	open land, heath	high
+gem: *landą	rel:conjecture	ine: *lendʰ-	open country	medium
+eng: silver	rel:conjecture	ang: seolfor	silver	high
+ang: seolfor	rel:conjecture	gem: *silubra	silver — a loan into Germanic from an unknown source	medium
+eng: bread	rel:conjecture	ang: brēad	a bit, a morsel; later, bread	high
+ang: brēad	rel:conjecture	gem: *braudą	that which is broken or leavened	high
+eng: horse	rel:conjecture	ang: hors	horse	high
+ang: hors	rel:conjecture	gem: *hrussa	horse; the runner	high
+eng: worm	rel:conjecture	ang: wyrm	serpent, snake, dragon, worm	high
+ang: wyrm	rel:conjecture	gem: *wurmiz	worm	high
+gem: *wurmiz	rel:conjecture	ine: *wr̥mis	worm	high
+eng: old	rel:conjecture	ang: eald	aged, ancient, having lived long	high
+ang: eald	rel:conjecture	gem: *aldaz	grown up	high
+gem: *aldaz	rel:conjecture	ine: *h₂el-	to grow, to nourish	high
+eng: woman	rel:conjecture	ang: wīfmann	woman — literally wife-person	high
+ang: wīfmann	rel:conjecture	ang: wīf	woman	high
+ang: wīf	rel:conjecture	gem: *wībam	woman	high
+eng: tail	rel:conjecture	ang: tægl	hair of a tail, a tail	high
+ang: tægl	rel:conjecture	gem: *taglaz	a hair, a tuft	high
+eng: knight	rel:conjecture	ang: cniht	a boy, a youth, a servant	high
+ang: cniht	rel:conjecture	gem: *knehtaz	a boy	medium
+eng: gum	rel:conjecture	ang: gōma	the inside of the mouth, palate	high
+ang: gōma	rel:conjecture	gem: *gōmō	palate	high
+
+# ---- the ones that reached Old English and stopped there -------------------
+ang: wæter	rel:conjecture	gem: *watar	water	high
+gem: *watar	rel:conjecture	ine: *wódr̥	water	high
+ang: heorte	rel:conjecture	gem: *hertō	heart	high
+gem: *hertō	rel:conjecture	ine: *ḱḗr	heart	high
+ang: word	rel:conjecture	gem: *wurdą	word	high
+gem: *wurdą	rel:conjecture	ine: *wérdʰh₁om	a thing said	high
+ang: dæg	rel:conjecture	gem: *dagaz	day	high
+gem: *dagaz	rel:conjecture	ine: *dʰegʷʰ-	to burn, to be hot	medium
+ang: steorra	rel:conjecture	gem: *sternō	star	high
+gem: *sternō	rel:conjecture	ine: *h₂stḗr	star; the strewn one	high
+ang: mōna	rel:conjecture	gem: *mēnōn	moon	high
+gem: *mēnōn	rel:conjecture	ine: *mḗh₁n̥s	moon, and therefore month, the thing measured	high
+ang: stān	rel:conjecture	gem: *stainaz	stone	high
+gem: *stainaz	rel:conjecture	ine: *steyh₂-	to stiffen, to become firm	medium
+ang: mann	rel:conjecture	gem: *mannaz	person, human being	high
+gem: *mannaz	rel:conjecture	ine: *mon-	man	medium
+ang: lofian	rel:conjecture	gem: *lubōjan	to love, to praise	high
+gem: *lubōjan	rel:conjecture	ine: *lewbʰ-	to care for, to desire, to love	high
+ang: sǣ	rel:conjecture	gem: *saiwiz	sea, lake	high
+ang: earm	rel:conjecture	gem: *armaz	arm	high
+gem: *armaz	rel:conjecture	ine: *h₂er-	to fit together — the joint	medium
+ang: mūþ	rel:conjecture	gem: *munþaz	mouth	high
+gem: *munþaz	rel:conjecture	ine: *ment-	to chew	medium
+ang: fōt	rel:conjecture	gem: *fōtuz	foot	high
+gem: *fōtuz	rel:conjecture	ine: *pṓds	foot	high
+ang: brægen	rel:conjecture	gem: *bragną	brain	high
+ang: slǣp	rel:conjecture	gem: *slēpaz	sleep	high
+gem: *slēpaz	rel:conjecture	ine: *sleb-	to be weak, to go slack	medium
+ang: sumor	rel:conjecture	gem: *sumaraz	summer	high
+gem: *sumaraz	rel:conjecture	ine: *sm̥h₂-ó-	summer, season	medium
+ang: gān	rel:conjecture	gem: *gāną	to go	high
+gem: *gāną	rel:conjecture	ine: *ǵʰeh₁-	to leave, to go away	medium
+ang: bān	rel:conjecture	gem: *bainą	bone	high
+ang: hwīt	rel:conjecture	gem: *hwītaz	white, bright	high
+gem: *hwītaz	rel:conjecture	ine: *ḱweyt-	to shine, to be bright	high
+ang: grēne	rel:conjecture	gem: *grōniz	green, young	high
+gem: *grōniz	rel:conjecture	ine: *gʰreh₁-	to grow	high
+ang: rēad	rel:conjecture	gem: *raudaz	red	high
+gem: *raudaz	rel:conjecture	ine: *h₁rewdʰ-	red, ruddy	high
+ang: langian	rel:conjecture	ang: lang	long	high
+ang: lang	rel:conjecture	gem: *langaz	long	high
+gem: *langaz	rel:conjecture	ine: *dl̥h₁gʰós	long	medium
+ang: fiscian	rel:conjecture	ang: fisc	fish	high
+ang: fisc	rel:conjecture	gem: *fiskaz	fish	high
+gem: *fiskaz	rel:conjecture	ine: *pisk-	fish	medium
+ang: hring	rel:conjecture	gem: *hringaz	something curved, a circle	high
+gem: *hringaz	rel:conjecture	ine: *(s)ker-	to turn, to bend	medium
+ang: hweogol	rel:conjecture	gem: *hwehwlą	wheel	high
+gem: *hwehwlą	rel:conjecture	ine: *kʷekʷlos	a circle, a wheel — a reduplication of "to turn"	high
+ine: *kʷekʷlos	rel:conjecture	ine: *kʷel-	to revolve, to move around	high
+ang: feallan	rel:conjecture	gem: *fallaną	to fall	high
+gem: *fallaną	rel:conjecture	ine: *pōl-	to fall	medium
+ang: springan	rel:conjecture	gem: *springaną	to leap, to burst forth	high
+gem: *springaną	rel:conjecture	ine: *sprengʰ-	to move quickly, to spring	medium
+ang: fleogan	rel:conjecture	gem: *fleuganą	to fly	high
+gem: *fleuganą	rel:conjecture	ine: *plewk-	to fly, to flow	medium
+ang: weaxan	rel:conjecture	gem: *wahsijaną	to grow	high
+gem: *wahsijaną	rel:conjecture	ine: *h₂weg-	to increase, to enlarge	high
+ang: smiþian	rel:conjecture	gem: *smiþaz	a worker in metal or wood	high
+ang: geard	rel:conjecture	gem: *gardaz	an enclosure, a yard	high
+gem: *gardaz	rel:conjecture	ine: *ǵʰortós	an enclosed place	high
+ang: leaf	rel:conjecture	gem: *laubą	leaf, foliage	high
+gem: *laubą	rel:conjecture	ine: *lewb-	to strip, to peel	medium
+ang: sand	rel:conjecture	gem: *samdaz	sand	high
+gem: *samdaz	rel:conjecture	ine: *bʰes-	to rub away	medium
+ang: finger	rel:conjecture	gem: *fingraz	finger	high
+gem: *fingraz	rel:conjecture	ine: *pénkʷe	five	medium
+ang: scitan	rel:conjecture	gem: *skītaną	to defecate — to separate from oneself	high
+gem: *skītaną	rel:conjecture	ine: *skey-	to cut, to split	high
+ang: crabba	rel:conjecture	gem: *krabbō	crab	high
+gem: *krabbō	rel:conjecture	ine: *gerbʰ-	to scratch, to carve	medium
+ang: frogga	rel:conjecture	gem: *fruskaz	frog	medium
+ang: locc	rel:conjecture	gem: *lukkaz	a lock of hair	high
+ang: bridd	rel:conjecture	gem: *bruþiz	a young bird, a nestling	low
+ang: docga	rel:conjecture	gem: *dukkōn	of obscure origin; attested only in English	low
+ang: hām	rel:conjecture	gem: *haimaz	a dwelling, a village	high
+gem: *haimaz	rel:conjecture	ine: *ḱey-	to lie down, to settle, to be dear	high
+ang: tīma	rel:conjecture	gem: *tīmōn	a stretch of time	high
+gem: *tīmōn	rel:conjecture	ine: *deh₂y-	to divide, to cut up	medium
+ang: weorc	rel:conjecture	gem: *werką	work, deed	high
+gem: *werką	rel:conjecture	ine: *werǵ-	to do, to make	high
+ang: erthe	rel:conjecture	ang: eorþe	the ground, the soil, the world	high
+ang: eorþe	rel:conjecture	gem: *erþō	earth, ground	high
+gem: *erþō	rel:conjecture	ine: *h₁er-	earth	medium
+eng: earth	rel:conjecture	ang: eorþe	the ground, the soil, the world	high
+ang: beor	rel:conjecture	gem: *beuzą	beer	medium
+ang: sīde	rel:conjecture	gem: *sīdō	a flank, a side	high
+ang: onweg	rel:conjecture	ang: weg	a way, a road	high
+ang: weg	rel:conjecture	gem: *wegaz	a way	high
+gem: *wegaz	rel:conjecture	ine: *weǵʰ-	to go, to transport in a vehicle	high
+ang: hlāw	rel:conjecture	gem: *hlaiwaz	a mound, a burial mound	medium
+
+# ---- the commonest Latin and French arrivals that also stalled ------------
+eng: air	rel:conjecture	lat: aer	air, the lower atmosphere	high
+lat: aer	rel:conjecture	grc: aēr	mist, air, the lower air	high
+eng: money	rel:conjecture	lat: moneta	the mint — from the temple of Juno Moneta, where Rome struck coin	high
+lat: moneta	rel:conjecture	lat: monere	to warn, to advise	high
+lat: monere	rel:conjecture	ine: *men-	to think	high
+eng: table	rel:conjecture	lat: tabula	a plank, a board, a writing tablet	high
+eng: doctor	rel:conjecture	lat: doctor	a teacher	high
+lat: doctor	rel:conjecture	lat: docere	to teach, to show	high
+lat: docere	rel:conjecture	ine: *deḱ-	to take, to accept, and so to teach	high
+eng: cross	rel:conjecture	lat: crux	a stake, a gallows, a cross	high
+eng: party	rel:conjecture	lat: partire	to divide	high
+lat: partire	rel:conjecture	lat: pars	a part, a share	high
+lat: pars	rel:conjecture	ine: *per-	to grant, to allot	medium
+eng: space	rel:conjecture	lat: spatium	room, extent, a stretch	high
+eng: front	rel:conjecture	lat: frons	the forehead, the brow	high
+eng: note	rel:conjecture	lat: nota	a mark, a sign, a written note	high
+eng: mark	rel:conjecture	ang: mearc	a boundary, a sign, a limit	high
+ang: mearc	rel:conjecture	gem: *markō	a boundary, a border region	high
+gem: *markō	rel:conjecture	ine: *merǵ-	a boundary, a border	high
+eng: box	rel:conjecture	lat: buxus	the boxwood tree, and vessels turned from it	high
+lat: buxus	rel:conjecture	grc: puxos	box tree	high
+eng: copper	rel:conjecture	lat: cuprum	Cyprian metal — the island was Rome's source	high
+eng: elephant	rel:conjecture	grc: elephas	elephant, ivory	high
+eng: rose	rel:conjecture	lat: rosa	rose	high
+lat: rosa	rel:conjecture	grc: rhodon	rose	high
+eng: bank	rel:conjecture	ita: banca	a bench, a money-changer's table	high
+ita: banca	rel:conjecture	gem: *bankiz	a bench	high
+eng: march	rel:conjecture	frk: *markōn	to mark out, to tread a boundary	medium
+eng: pass	rel:conjecture	lat: passus	a step, a pace	high
+lat: passus	rel:conjecture	lat: pandere	to stretch out, to spread	high
+eng: cake	rel:conjecture	non: kaka	cake	high
+non: kaka	rel:conjecture	gem: *kakō	a small baked mass	high
+eng: law	rel:conjecture	non: lag	that which is laid down	high
+non: lag	rel:conjecture	gem: *lagą	something laid, an order	high
+gem: *lagą	rel:conjecture	ine: *legʰ-	to lie down, to lay	high
+eng: thermometer	rel:conjecture	grc: thermos	hot, warm	high
+grc: thermos	rel:conjecture	ine: *gʷʰer-	to warm, to heat	high
+
+# ---- surface forms that never recorded their Old English step -------------
+# The chain above each of these existed already; what was missing was the first
+# hop, so the modern word could not reach it.
+eng: water	rel:conjecture	ang: wæter	water	high
+eng: love	rel:conjecture	ang: lufu	love, affection, friendliness	high
+ang: lufu	rel:conjecture	gem: *lubō	love	high
+gem: *lubō	rel:conjecture	ine: *lewbʰ-	to care for, to desire, to love	high
+eng: moon	rel:conjecture	ang: mōna	moon	high
+eng: hand	rel:conjecture	ang: hand	hand, side, power	high
+ang: hand	rel:conjecture	gem: *handuz	hand — perhaps the seizer	medium
+eng: mother	rel:conjecture	ang: mōdor	mother	high
+ang: mōdor	rel:conjecture	gem: *mōdēr	mother	high
+gem: *mōdēr	rel:conjecture	ine: *méh₂tēr	mother	high
+eng: father	rel:conjecture	ang: fæder	father	high
+ang: fæder	rel:conjecture	gem: *fadēr	father	high
+gem: *fadēr	rel:conjecture	ine: *ph₂tḗr	father	high
+eng: name	rel:conjecture	ang: nama	name	high
+ang: nama	rel:conjecture	gem: *namô	name	high
+gem: *namô	rel:conjecture	ine: *h₁nómn̥	name	high
+eng: fire	rel:conjecture	ang: fȳr	fire	high
+ang: fȳr	rel:conjecture	gem: *fōr	fire, considered as a substance rather than a living force	high
+gem: *fōr	rel:conjecture	ine: *péh₂wr̥	fire	high
+eng: wind	rel:conjecture	ang: wind	wind	high
+eng: sun	rel:conjecture	ang: sunne	sun	high
+ang: sunne	rel:conjecture	gem: *sunnōn	sun	high
+gem: *sunnōn	rel:conjecture	ine: *sóh₂wl̥	sun	high
+eng: home	rel:conjecture	ang: hām	a dwelling, an estate, a village	high
+eng: work	rel:conjecture	ang: weorc	work, deed, action	high
+eng: tree	rel:conjecture	ang: trēow	tree, wood, and also truth and trust	high
+eng: bone	rel:conjecture	ang: bān	bone	high
+eng: mouth	rel:conjecture	ang: mūþ	mouth, door, opening	high
+eng: foot	rel:conjecture	ang: fōt	foot	high
+eng: arm	rel:conjecture	ang: earm	arm	high
+eng: sea	rel:conjecture	ang: sǣ	sea, lake, pool	high
+eng: brain	rel:conjecture	ang: brægen	brain	high
+eng: sleep	rel:conjecture	ang: slǣp	sleep	high
+eng: summer	rel:conjecture	ang: sumor	summer	high
+eng: winter	rel:conjecture	ang: winter	winter, and so a year of one's age	high
+ang: winter	rel:conjecture	gem: *wintruz	winter — the wet season	high
+eng: bird	rel:conjecture	ang: bridd	a young bird, a nestling	high
+eng: dog	rel:conjecture	ang: docga	a powerful breed of dog	high
+eng: stone	rel:conjecture	ang: stān	stone, rock	high
+eng: white	rel:conjecture	ang: hwīt	white, bright, radiant	high
+eng: green	rel:conjecture	ang: grēne	green, young, immature	high
+eng: red	rel:conjecture	ang: rēad	red	high
+eng: long	rel:conjecture	ang: lang	long, tall, lasting	high
+eng: day	rel:conjecture	ang: dæg	day, lifetime	high
+eng: word	rel:conjecture	ang: word	word, speech, sentence	high
+eng: heart	rel:conjecture	ang: heorte	heart, breast, soul, courage	high
+eng: star	rel:conjecture	ang: steorra	star	high
+eng: fish	rel:conjecture	ang: fisc	fish	high
+eng: man	rel:conjecture	ang: mann	human being, person	high

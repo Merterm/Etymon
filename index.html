@@ -1,411 +1,325 @@
-<!DOCTYPE HTML>
-<!--
-	Overflow by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52764232-7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-52764232-7');
-  </script>
-
-  <title>Etymøn</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="website/assets/css/main.css" />
-  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-  <link rel="icon" type="image/png" href="website/images/etymon_favicon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etymøn — a journey through languages, connections and time</title>
+<meta name="description" content="Etymøn is an open-source map of where words come from: 3.1 million etymological connections across 255 languages, and a projected installation built on top of them.">
+<meta property="og:title" content="Etymøn">
+<meta property="og:description" content="An ocean of words. 3.1 million etymological connections across 255 languages, as a projected installation.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="website/images/etymon_favicon.png">
+<link rel="stylesheet" href="site/site.css">
 </head>
-
 <body>
-  <!-- Header -->
-  <section id="header">
-    <header>
-      <h1>Etymøn</h1>
-      <p> A Journey Through Languages, Connections and Time</p>
-    </header>
-    </br></br></br></br>
-    <footer>
-      <a href="website/etymon/index.html" class="button style2 scrolly-middle">Launch App</a>
-      </br></br>
-      <p>Discover More</p>
-    </footer>
-  </section>
 
-	<a href="https://github.com/Merterm/Etymon" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-
-  <!-- Banner -->
-  <section id="banner">
-    <header>
-      <h2>Welcome</h2>
-    </header>
-    <p>Etymøn is an open-source analysis and tracing tool for etymological origins of words in all languages.
-      <br /> It draws its data from established linguistics datasets like
-      <a href="https://wiktionary.org">Wiktionary</a>, <a href="https://etymonline.com">Etymonline</a>, <a href="http://starling.rinet.ru/cgi-bin/main.cgi?root=config&morpho=0">Starling</a>,
-      <a href="http://www1.icsi.berkeley.edu/~demelo/etymwn/">WordNet</a>, and <a href="http://www.nisanyansozluk.com/">Nisanyan</a>.
-      <br /> You can search for origins, etymologically-related words, and descendants.
-      <br /> Etymøn shows etymological connections with lovely network graphs.
-      <br /> When idle, it starts generating new connections using deep learning.
-      <br /> You can try Etymøn now on any platform.
-    </p>
-    <footer>
-      <a href="#about" class="button style2 scrolly">Unravel Etymological Secrets</a>
-    </footer>
-  </section>
-
-  <!-- Video -->
-  <article id="about" class="container box style2">
-    </br>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/tUKgwMWugbE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </article>
-
-  <!-- About -->
-  <article id="about" class="container box style1 right">
-    <header>
-      <h2>About<br />
-					Etymøn</h2>
-    </header>
-    <p>Etymøn currently holds <b>6,329,746</b> etymological connections in its dataset. </br>
-      It contains etymological information for <b> more than 200 </b> present-day languages. </br>
-      All the languages need equal etymological treatment without distinctions. </br>
-      Learn more about the diverse set of languages that Etymøn presents,
-      <a href="#languages">here</a>.</br>
-      All of the data were collected and parsed as explained in the following sections.
-    </p>
-  </article>
-
-  <!-- Languages -->
-  <article id="languages" class="container box style3">
-    <header>
-      <h2>Languages of<br />
-					Etymøn</h2>
-    </header>
-    <p>Here is a list of languages with highest connections in Etymøn's dataset: </br>
-    { English <b> 1,276,009 </b>| French <b> 573,554 </b>| German <b> 183,401 </b>|
-    Turkish <b> 44,610 </b>| Japanese <b> 26,454 </b>| Arabic <b> 20,569 </b>|
-     Persian <b> 11,949 </b>| Georgian <b> 11,100 </b>}
-    </p>
-  </article>
-
-  <article class="container box style2">
-    <header>
-      <h2>Project Reports</h2>
-      <p>Etymøn started as an undergraduate capstone project.
-        <br/> So here are its reports.</p>
-    </header>
-  </article>
-
-  <!-- Feature 1 -->
-  <article id="first" class="container box style1 right">
-    <a href="#" class="image fit"><img src="website/images/pic01.jpg" alt="" /></a>
-    <div class="inner">
-      <header>
-        <h2>Project<br />
-						Specifications</h2>
-      </header>
-      <p>We have summoned a report for this purpose, just for you! Here you go:
-        <br />
-        <a href="docs/Senior Design Project-Project Specifications.pdf">Project Specifications Report</a> </p>
+<!-- ===================== masthead ===================== -->
+<div id="hero">
+  <div class="hero-inner">
+    <h1 class="wordmark">ETYMØN</h1>
+    <p class="tagline">A journey through languages, connections and time</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="installation/">Enter the installation</a>
+      <a class="btn" href="#dataset">The dataset</a>
+      <a class="btn" href="https://github.com/merterm/Etymon">Source</a>
     </div>
-  </article>
+  </div>
+  <a class="scroll-hint" href="#what">scroll</a>
+</div>
 
-  <!-- Feature 2 -->
-  <article class="container box style1 left">
-    <a href="#" class="image fit"><img src="website/images/pic02.jpg" alt="" /></a>
-    <div class="inner">
-      <header>
-        <h2>Analysis<br />
-						Report</h2>
-      </header>
-      <p>Here is the <a href="docs/Senior Design Project-Analysis.pdf">Analysis Report</a> </p>
+<!-- ===================== what it is ===================== -->
+<section class="band" id="what">
+  <div class="wrap">
+    <p class="eyebrow">What this is</p>
+    <h2>Every word you use is<br>a salvaged older word.</h2>
+    <p class="lead">Etymøn is an open-source map of where words come from, and a
+      projected installation built on top of it. It began in 2018 as an
+      undergraduate capstone project at Bilkent University: scrape the world's
+      etymological dictionaries, fold them into one graph, and see whether the
+      shape of that graph says anything the dictionaries do not.</p>
+
+    <p>The map holds <strong>3,161,104</strong> etymological relations between
+      <strong>2,970,656</strong> words in <strong>255</strong> languages,
+      assembled from four sources that had never been joined up before. The
+      installation takes a few hundred paths through it and makes them
+      readable: a word is picked, and its ancestry is dived for, one language
+      at a time, until it reaches a form no one ever wrote down.</p>
+
+    <p>The argument is in what surfaces. Almost every word we have coined for
+      this technological moment turns out to be a much older word pressed back
+      into service, and usually a physical one:</p>
+
+    <div class="chain">
+      <div class="chain-row"><span class="chain-lang">English</span><span class="chain-word" style="color:var(--germanic)">text</span></div>
+      <div class="chain-row"><span class="chain-lang">Old French</span><span class="chain-word" style="color:var(--romance)">texte</span></div>
+      <div class="chain-row"><span class="chain-lang">Latin</span><span class="chain-word" style="color:var(--romance)">texere</span><span class="chain-gloss">to weave</span></div>
+      <div class="chain-row"><span class="chain-lang">Proto-Indo-European</span><span class="chain-word" style="color:var(--hellenic)">*teks-</span><span class="chain-gloss">to weave, to fabricate</span></div>
     </div>
-  </article>
 
-  <!-- Feature 3 -->
-  <article class="container box style1 left">
-    <a href="#" class="image fit"><img src="website/images/pic02.jpg" alt="" /></a>
-    <div class="inner">
-      <header>
-        <h2>High-Level Design<br />
-						Report</h2>
-      </header>
-      <p>We now have our <a href="docs/Senior Design Project-High Level Design Report.pdf">High Level Design Report</a> </p>
-    </div>
-  </article>
+    <p>A text is a thing woven. So is a <em>textile</em>, and so is
+      <em>subtle</em> — <span style="color:var(--ink)">sub tela</span>, under
+      the warp of the loom. <em>Code</em> was a tree trunk split into tablets.
+      <em>Noise</em> descends, by way of Old French, from Latin
+      <em>nausea</em>, seasickness, and so from <em>naus</em>, a ship. The
+      <em>divan</em> you sit on is named for a Persian account-book, which is
+      named for an Old Persian word for writing, which is a Sumerian clay
+      tablet. And <em>hallucinate</em>, the word we reached for when machines
+      started inventing things, is Latin <em>alucinari</em>: to wander in the
+      mind.</p>
+  </div>
+</section>
 
-  <!-- Feature 4  -->
-  <article class="container box style1 left">
-    <a href="#" class="image fit"><img src="website/images/pic02.jpg" alt="" /></a>
-    <div class="inner">
-      <header>
-        <h2>Low-Level Design<br />
-						Report</h2>
-      </header>
-      <p>Ceci la <a href="docs/Senior Design Project-Final Report.pdf">Low Level Design Report</a> </p>
-    </div>
-  </article>
+<!-- ===================== the installation ===================== -->
+<section class="band alt" id="installation">
+  <div class="wrap">
+    <p class="eyebrow">The installation</p>
+    <h2>An ocean of words.</h2>
+    <p class="lead">A projection that runs unattended, forever — and a chart
+      you can read. The field above is it: sixty thousand real words from 224
+      languages, moving on the same two sine waves the 2018 site used for its
+      landing screen.</p>
 
-  <!-- Feature 5  -->
-  <article class="container box style1 left">
-    <a href="#" class="image fit"><img src="website/images/pic02.jpg" alt="" /></a>
-    <div class="inner">
-      <header>
-        <h2>Final Design<br />
-						Report</h2>
-      </header>
-      <p>Last but not least: <a href="docs/Senior Design Project-Final Report.pdf">Final Design Report</a> </p>
-    </div>
-  </article>
+    <p>A word's position is an argument, not decoration, and it works at two
+      scales. <strong>Which region</strong> a word lies in is its language
+      family — and the regions are arranged by how much they actually exchange
+      words, by multidimensional scaling on the corpus's own edge counts. So
+      Romance sits against Germanic because that is where the borrowing went,
+      Turkic borders Semitic and Iranian for the same reason, and the invented
+      languages end up alone offshore. Nobody chose the arrangement.
+      <strong>Where it sits inside that region</strong> is resemblance:
+      character n-grams embedded with t-SNE, so spelling neighbourhoods form
+      and languages clump without being told to.</p>
 
-  <!-- Portfolio -->
-  <article class="container box style2">
-    <header>
-      <h2>Our Team</h2>
-      <p>Come, join us!
-        <br /> We have cookies.</p>
-    </header>
-    <div class="inner gallery">
-      <div class="row 0%">
-        <div class="3u 12u(mobile)">
-          <a href="website/images/mert.jpeg" class="image fit"><img src="website/images/mert.jpeg" alt="" title="Mert" /></a>
-        </div>
-        <div class="3u 12u(mobile)">
-          <a href="website/images/utku.jpeg" class="image fit"><img src="website/images/utku.jpeg" alt="" title="Utku" /></a>
-        </div>
-        <div class="3u 12u(mobile)">
-          <a href="website/images/nashiha.jpeg" class="image fit"><img src="website/images/nashiha.jpeg" alt="" title="Nashiha" /></a>
-        </div>
-        <div class="3u 12u(mobile)">
-          <a href="website/images/cholpon.jpeg" class="image fit"><img src="website/images/cholpon.jpeg" alt="" title="Cholpon" /></a>
-        </div>
+    <p>The third axis is time. A word lies at the era of its language, so every
+      region is layered — living languages floating, Latin and Ancient Greek
+      well under, the reconstructed proto-forms resting on the floor. Colour is
+      family, dimmed and pushed toward blue with depth, the way water actually
+      takes the red out of things.</p>
 
+    <p>Every twenty seconds the piece dives. A word is chosen, its ancestry
+      rises out of its own region and turns to face the room, holds long enough
+      to be read, and sinks back. It works through eleven movements and begins
+      again.</p>
+
+    <h3>Or you can drive it</h3>
+    <p>Move the mouse and it stops performing: the cursor returns, words light
+      up under it, and clicking one opens its ancestry beside its Wiktionary
+      entry — the panel the 2018 app had, with its <em>Jump to word</em> button
+      still in it. Press <code>/</code> and you can search
+      <strong>2,562,401</strong> words, every one in the corpus that has a real
+      chain, held locally in sharded files so it works with the network
+      unplugged. Leave it alone for a minute and it goes back to running
+      itself. There is a microphone too, if you want to just say a word.</p>
+
+    <h3>Three kinds of light</h3>
+    <p>The 2018 project had a button marked <em>hallucinate</em>, six years
+      before that word meant what it means now. It ran a character-level LSTM
+      over the corpus and produced things shaped like etymologies that never
+      quite held a meaning. The idea was right and the model was too small.
+      That button is still here, rebuilt — which raises the question of how an
+      audience is supposed to tell an invention from a record. The piece
+      answers it by giving each its own light, and saying so on the wall:</p>
+
+    <div class="registers">
+      <div class="register">
+        <span class="dot a"></span>
+        <div><h4>Attested</h4>
+        <p>Asserted by one of the four source corpora. Drawn as a steady
+           filament.</p></div>
       </div>
-      <div class="row 0%"></div>
-    </div>
-  </article>
-
-  <!-- Contact -->
-  <!--
-  <article class="container box style3">
-    <header>
-      <h2>Contact Us</h2>
-      <p>We value communication.</p>
-    </header>
-    <form method="post" action="#">
-      <div class="row 50%">
-        <div class="6u 12u$(mobile)">
-          <input type="text" class="text" name="name" placeholder="Name" />
-        </div>
-        <div class="6u$ 12u$(mobile)">
-          <input type="text" class="text" name="email" placeholder="Email" />
-        </div>
-        <div class="12u$">
-          <textarea name="message" placeholder="Message"></textarea>
-        </div>
-        <div class="12u$">
-          <ul class="actions">
-            <li>
-              <input type="submit" value="Send Message" />
-            </li>
-          </ul>
-        </div>
+      <div class="register">
+        <span class="dot c"></span>
+        <div><h4>Conjectured</h4>
+        <p>Absent from every corpus, and proposed. The scrapes are patchy —
+           <em>token</em> stopped dead at Middle English, <em>abyss</em> had no
+           ancestry at all — so a language model was asked for the next real
+           step, and 478 of these fill the gaps. Standard scholarship, but
+           because no source asserts it, it is drawn as a proposal: a pulse
+           travelling down the edge.</p></div>
       </div>
-    </form>
-  </article>
--->
-  <!-- Generic -->
-  <!--
-			<article class="container box style3">
-				<header>
-					<h2>Generic Box</h2>
-					<p>Just a generic box. Nothing to see here.</p>
-				</header>
-				<section>
-					<header>
-						<h3>Paragraph</h3>
-						<p>This is a subtitle</p>
-					</header>
-					<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
-					habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
-					leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
-					amet risus elit.</p>
-				</section>
-				<section>
-					<header>
-						<h3>Blockquote</h3>
-					</header>
-					<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
-					tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
-				</section>
-				<section>
-					<header>
-						<h3>Divider</h3>
-					</header>
-					<p>Donec consectetur <a href="#">vestibulum dolor et pulvinar</a>. Etiam vel felis enim, at viverra
-					ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-					facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-					tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-					posuere cubilia.</p>
-					<hr />
-					<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-					ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-					facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-					tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-					posuere cubilia.</p>
-				</section>
-				<section>
-					<header>
-						<h3>Unordered List</h3>
-					</header>
-					<ul class="default">
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-					</ul>
-				</section>
-				<section>
-					<header>
-						<h3>Ordered List</h3>
-					</header>
-					<ol class="default">
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-					</ol>
-				</section>
-				<section>
-					<header>
-						<h3>Table</h3>
-					</header>
-					<div class="table-wrapper">
-						<table class="default">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>45815</td>
-									<td>Something</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>29.99</td>
-								</tr>
-								<tr>
-									<td>24524</td>
-									<td>Nothing</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>19.99</td>
-								</tr>
-								<tr>
-									<td>45815</td>
-									<td>Something</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>29.99</td>
-								</tr>
-								<tr>
-									<td>24524</td>
-									<td>Nothing</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>19.99</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td colspan="3"></td>
-									<td>100.00</td>
-								</tr>
-							</tfoot>
-						</table>
-					</div>
-				</section>
-				<section>
-					<header>
-						<h3>Form</h3>
-					</header>
-					<form method="post" action="#">
-						<div class="row">
-							<div class="6u">
-								<input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
-							</div>
-							<div class="6u">
-								<input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<select name="department" id="department">
-									<option value="">Choose a department</option>
-									<option value="1">Manufacturing</option>
-									<option value="2">Administration</option>
-									<option value="3">Support</option>
-								</select>
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<textarea name="message" id="message" placeholder="Enter your message"></textarea>
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<ul class="actions">
-									<li><input type="submit" value="Submit" /></li>
-									<li><input type="reset" class="style3" value="Clear Form" /></li>
-								</ul>
-							</div>
-						</div>
-					</form>
-				</section>
-			</article>
-		-->
+      <div class="register">
+        <span class="dot d"></span>
+        <div><h4>Dreamed</h4>
+        <p>Invented. No such word has ever existed. Built to the right shape —
+           laryngeals and ablaut for Proto-Indo-European, triconsonantal roots
+           for Proto-Semitic — so that it sits at exactly the same depth as the
+           genuine reconstructions and cannot be told apart by position. It
+           shimmers, drifts off its own colour, and evaporates. Confined to the
+           closing movement: spread across the whole score it stopped being an
+           argument and became wallpaper.</p></div>
+      </div>
+    </div>
 
-  <section id="footer">
-    <ul class="icons">
-      <li><a href="https://fb.me/etymon.org" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-      <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-      <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-      <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <p style="margin-top:2.4rem">Given the machine's own vocabulary, the
+      dreaming turns inward. It gives <em>prompt</em> a Proto-Indo-European
+      ancestor meaning <span style="color:var(--dream)">that which is drawn out
+      of another's mouth</span>; <em>token</em>, <span style="color:var(--dream)">the
+      mark a finger leaves in wet clay</span>; and <em>hallucinate</em>,
+      <span style="color:var(--dream)">to wander a great distance while
+      standing still</span>. None of them are real. All of them are the right
+      shape.</p>
+
+    <p>It has a soundtrack, as the original did: <em>The Meaning of Words</em>
+      by Savfk, used under CC&nbsp;BY&nbsp;4.0. The six-bar equalizer in the
+      corner still turns it on and off.</p>
+
+    <div class="hero-cta" style="justify-content:flex-start;margin-top:3rem">
+      <a class="btn btn-primary" href="installation/">Enter the installation</a>
+      <a class="btn" href="https://github.com/merterm/Etymon/tree/master/installation">Install it in a room</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== the score ===================== -->
+<section class="band" id="score">
+  <div class="wrap">
+    <p class="eyebrow">The score</p>
+    <h2>Eleven movements.</h2>
+    <p>The piece is composed rather than shuffled. Each movement is a set of
+      seed words chosen so that the dives rhyme with each other.</p>
+    <dl class="movements">
+      <div class="movement"><dt>I &nbsp; The Machine Dreams</dt><dd>the vocabulary of this moment, and where it was dug up from</dd></div>
+      <div class="movement"><dt>II &nbsp; Mind and Meaning</dt><dd>what we were calling thought before we built one</dd></div>
+      <div class="movement"><dt>III &nbsp; The Woven Text</dt><dd>text is a thing woven; every one of these is the same thread</dd></div>
+      <div class="movement"><dt>IV &nbsp; Making the Artificial</dt><dd>the long human habit of building a servant that speaks</dd></div>
+      <div class="movement"><dt>V &nbsp; Ghosts and Oracles</dt><dd>the previous technology for asking a question and being answered</dd></div>
+      <div class="movement"><dt>VI &nbsp; The Ocean</dt><dd>the surface you are looking at</dd></div>
+      <div class="movement"><dt>VII &nbsp; Kinship and Descent</dt><dd>the metaphor this whole field is built on</dd></div>
+      <div class="movement"><dt>VIII &nbsp; Signal and Noise</dt><dd>the mathematics that made the machine possible</dd></div>
+      <div class="movement"><dt>IX &nbsp; Turkic Waters</dt><dd>the corpus this project was built out of, in its own language</dd></div>
+      <div class="movement"><dt>X &nbsp; Loanword Currents</dt><dd>words that already crossed every border this map draws</dd></div>
+      <div class="movement"><dt>XI &nbsp; The Machine Dreams Itself</dt><dd>none of the deepest words in this movement have ever existed</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ===================== dataset ===================== -->
+<section class="band alt" id="dataset">
+  <div class="wrap">
+    <p class="eyebrow">The dataset</p>
+    <h2>Four dictionaries,<br>one format.</h2>
+    <p class="lead">The 2018 project's most useful contribution was mundane: a
+      single interchange format that four incompatible sources could all be
+      flattened into. It is still the format everything here uses.</p>
+
+    <pre>&lt;language tag&gt;: &lt;word&gt;    rel:&lt;TYPE&gt;    &lt;language tag&gt;: &lt;word&gt;
+
+eng: text        rel:etymology               fro: texte
+lat: texere      rel:etymological_origin_of  lat: textus
+tur: dil         rel:etymology               trk: *dɨl</pre>
+
+    <div class="stats">
+      <div><div class="stat-n">3,161,104</div><div class="stat-l">relations</div></div>
+      <div><div class="stat-n">2,970,656</div><div class="stat-l">words</div></div>
+      <div><div class="stat-n">255</div><div class="stat-l">languages</div></div>
+      <div><div class="stat-n">4</div><div class="stat-l">sources</div></div>
+    </div>
+
+    <h3>Sources</h3>
+    <ul class="plain">
+      <li><strong>Etymonline</strong> — Douglas Harper's Online Etymology Dictionary. English, with dense Latin, Greek and Old French ancestry.</li>
+      <li><strong>Nişanyan Sözlük</strong> — Sevan Nişanyan's dictionary of contemporary Turkish, and its Arabic, Persian and Old Turkic sources.</li>
+      <li><strong>Starling</strong> — the Tower of Babel comparative databases; Turkic and Abkhaz-Adyghe reconstructions.</li>
+      <li><strong>Etymological Wordnet</strong> — Gerard de Melo's machine-readable set derived from Wiktionary, which supplies most of the breadth.</li>
     </ul>
-    <div class="copyright">
-      <ul class="menu">
-        <li>&copy; Etymøn. All rights reserved.</li>
-        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-      </ul>
+
+    <h3>Most connected languages</h3>
+    <div class="langs" id="langs"></div>
+
+    <h3>Two things the 2018 pipeline got wrong</h3>
+    <p>Both were found by rebuilding it, and both are fixed in
+      <code>installation/pipeline/</code>. First, the master file stores every
+      relation alongside its own inverse, so 6.7 million lines describe about
+      3.1 million facts; they are now collapsed into one canonical direction.
+      Second, and worse, the Etymonline scraper wrote human-readable language
+      names while every other source wrote ISO codes — so <em>Latin</em>,
+      <em>Old French</em>, <em>Greek</em> and <em>PIE</em>, the four most
+      important languages in the whole dataset, were dangling strings that
+      joined up with nothing. Resolving them recovered <strong>34,790</strong>
+      descent relations and 87,000 references that had been silently dropped
+      for seven years.</p>
+
+    <p>The data is in <a href="data/">data/</a> as CSV and TSV, and the full
+      graph is in the repository's releases. Everything is open; the
+      dictionaries it derives from belong to their authors, who are credited
+      above.</p>
+  </div>
+</section>
+
+<!-- ===================== reports ===================== -->
+<section class="band" id="reports">
+  <div class="wrap">
+    <p class="eyebrow">Where it came from</p>
+    <h2>An undergraduate capstone,<br>2017–2018.</h2>
+    <p>Etymøn was submitted to the Department of Computer Engineering at
+      Bilkent University in partial fulfilment of CS491/2. The reports are kept
+      here in full, including the parts that did not work.</p>
+    <ul class="plain">
+      <li><a href="docs/Senior Design Project-Project Specifications.pdf">Project Specifications</a></li>
+      <li><a href="docs/Senior Design Project-Analysis.pdf">Analysis Report</a></li>
+      <li><a href="docs/Senior Design Project-High Level Design Report.pdf">High-Level Design Report</a></li>
+      <li><a href="docs/Senior Design Project-Low Level Design Report.pdf">Low-Level Design Report</a></li>
+      <li><a href="docs/Senior Design Project-Final Report.pdf">Final Report</a></li>
+      <li><a href="docs/Etymon-Senior Design Project-All Project Reports.pdf">All reports, collected</a></li>
+      <li><a href="index.2018.html">The 2018 website, as it was</a></li>
+    </ul>
+
+    <h3>The team</h3>
+    <div class="people">
+      <div class="person"><div class="n">Nashiha Ahmed</div></div>
+      <div class="person"><div class="n">Mert İnan</div></div>
+      <div class="person"><div class="n">Cholpon Mambetova</div></div>
+      <div class="person"><div class="n">Utku Uçkun</div></div>
     </div>
-  </section>
+    <div class="people" style="margin-top:2.6rem">
+      <div class="person"><div class="n">Mehmet Koyutürk</div><div class="r">Supervisor</div></div>
+      <div class="person"><div class="n">Uğur Doğrusöz</div><div class="r">Jury</div></div>
+      <div class="person"><div class="n">Çiğdem Gündüz Demir</div><div class="r">Jury</div></div>
+      <div class="person"><div class="n">Çağla Çığ Karaman</div><div class="r">Innovation expert</div></div>
+    </div>
+  </div>
+</section>
 
-  <!-- Scripts -->
-  <script src="website/assets/js/jquery.min.js"></script>
-  <script src="website/assets/js/jquery.scrolly.min.js"></script>
-  <script src="website/assets/js/jquery.poptrox.min.js"></script>
-  <script src="website/assets/js/skel.min.js"></script>
-  <script src="website/assets/js/util.js"></script>
-  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-  <script src="website/assets/js/main.js"></script>
+<footer class="site">
+  <div class="wrap">
+    <p style="margin:0">Etymøn — <a href="https://github.com/merterm/Etymon">source on GitHub</a>
+      · MIT licensed · the etymological data belongs to the dictionaries it was
+      derived from.</p>
+    <p style="margin:0.6rem 0 0">Words are older than the things we use them for.</p>
+  </div>
+</footer>
 
+<script>
+  // The language bars are drawn from the same currents the installation uses,
+  // so Latin is gold on this page for the same reason it is gold in the room.
+  const LANGS = [
+    ["Latin", 1315674, "--romance"], ["English", 1156584, "--germanic"],
+    ["Italian", 978697, "--romance"], ["French", 551863, "--romance"],
+    ["Spanish", 481780, "--romance"], ["Finnish", 211633, "--slavic"],
+    ["Esperanto", 207429, "--ink-faint"], ["German", 178300, "--germanic"],
+    ["Dutch", 123928, "--germanic"], ["Classical Armenian", 73281, "--slavic"],
+    ["Russian", 67789, "--slavic"], ["Hungarian", 63586, "--slavic"],
+    ["Polish", 56301, "--slavic"], ["Swedish", 53018, "--germanic"],
+    ["Turkish", 39592, "--turkic"], ["Irish", 33552, "--celtic"],
+    ["Japanese", 25077, "--ink-faint"], ["Arabic", 25992, "--semitic"],
+    ["Ancient Greek", 20285, "--hellenic"], ["Persian", 9099, "--indo-iran"],
+  ];
+  const max = LANGS[0][1];
+  document.getElementById('langs').innerHTML = LANGS.map(([n, c, v]) => `
+    <div class="lang">
+      <span class="lang-name">${n}</span>
+      <span class="lang-bar"><i style="width:${(c / max * 100).toFixed(2)}%;
+        background:var(${v})"></i></span>
+      <span class="lang-n">${c.toLocaleString('en-US')}</span>
+    </div>`).join('');
+</script>
+<script type="module">
+  // The masthead is the installation's own ocean module, with the score off.
+  // It degrades to a still gradient if WebGL or the graph file is unavailable.
+  import { mountHero } from './site/hero.js';
+  mountHero(document.getElementById('hero')).catch(() => {
+    document.getElementById('hero').classList.add('hero-static');
+  });
+</script>
 </body>
-
 </html>

@@ -1,0 +1,211 @@
+/* Etymøn — etymon.org
+   Rebuilt from the 2018 HTML5 UP "Overflow" page (kept at index.2018.html).
+   Same single-scroll structure and the same sections; the type, colour and
+   depth language are now the installation's, so the site and the piece read
+   as one work rather than two. No framework, no jQuery, one stylesheet. */
+
+:root {
+  --bg:        #01060b;
+  --bg-2:      #04101a;
+  --ink:       #e8e2d4;
+  --ink-dim:   rgba(232,226,212,0.62);
+  --ink-faint: rgba(232,226,212,0.34);
+  --rule:      rgba(232,226,212,0.13);
+
+  /* the installation's currents, so a colour means the same thing in both */
+  --romance:   #f7c244;
+  --germanic:  #4fcde8;
+  --hellenic:  #b486ff;
+  --slavic:    #ff6a93;
+  --celtic:    #57e39b;
+  --turkic:    #2fe0c0;
+  --semitic:   #c8de4c;
+  --indo-iran: #ff7a5c;
+
+  --attested:   #7fd8e8;
+  --conjecture: #ffcf6b;
+  --dream:      #d9a0ff;
+
+  --serif: "Iowan Old Style", "Palatino", "Charter", Georgia, serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--serif); font-size: 18px; line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--attested); text-decoration: none;
+    border-bottom: 1px solid rgba(127,216,232,0.32); }
+a:hover { border-bottom-color: var(--attested); }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 8vw; }
+
+/* ---------- masthead ---------- */
+#hero {
+  position: relative; height: 100vh; min-height: 560px;
+  overflow: hidden; background: radial-gradient(ellipse at 50% 70%, #04121c, #01060b 70%);
+}
+#hero canvas { position: absolute; inset: 0; display: block; }
+#hero::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    /* a scrim under the wordmark: without it the sea drifts straight through
+       the tagline and the buttons, and neither can be read */
+    radial-gradient(ellipse 46% 30% at 50% 44%,
+      rgba(1,6,11,0.86) 0%, rgba(1,6,11,0.55) 55%, rgba(1,6,11,0) 100%),
+    radial-gradient(ellipse 80% 66% at 50% 46%,
+      rgba(0,0,0,0) 42%, rgba(1,6,11,0.62) 84%, rgba(1,6,11,0.95) 100%);
+}
+.hero-inner {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 0 6vw;
+}
+.wordmark {
+  font-size: clamp(3rem, 9vmin, 7.5rem); font-weight: 300;
+  letter-spacing: 0.42em; text-indent: 0.42em; margin: 0;
+  text-shadow: 0 0 7vmin rgba(127,216,232,0.26);
+}
+.tagline {
+  margin: 2.2vmin 0 0; font-size: clamp(0.72rem, 1.5vmin, 1rem);
+  letter-spacing: 0.5em; text-indent: 0.5em; text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.hero-cta { margin-top: 6vmin; display: flex; gap: 1.6rem; flex-wrap: wrap; justify-content: center; }
+.btn {
+  display: inline-block; border: 1px solid var(--rule); border-radius: 2px;
+  padding: 0.85rem 1.9rem; font-size: 0.82rem; letter-spacing: 0.26em;
+  text-transform: uppercase; color: var(--ink); background: rgba(232,226,212,0.02);
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+.btn:hover { background: rgba(127,216,232,0.10); border-color: rgba(127,216,232,0.5); }
+.btn-primary { border-color: rgba(127,216,232,0.42); }
+.scroll-hint {
+  position: absolute; bottom: 3.4vmin; left: 50%; transform: translateX(-50%);
+  z-index: 2; font-size: 0.66rem; letter-spacing: 0.34em; text-transform: uppercase;
+  color: var(--ink-faint); border: 0;
+}
+
+/* ---------- sections ---------- */
+section.band { padding: 12vmin 0; border-top: 1px solid var(--rule); }
+section.band.alt { background: var(--bg-2); }
+
+.eyebrow {
+  font-size: 0.68rem; letter-spacing: 0.36em; text-transform: uppercase;
+  color: var(--ink-faint); margin: 0 0 1.6rem;
+}
+h2 {
+  font-size: clamp(1.8rem, 4.4vmin, 3rem); font-weight: 300;
+  letter-spacing: 0.02em; line-height: 1.15; margin: 0 0 1.6rem;
+}
+h3 {
+  font-size: 1.24rem; font-weight: 400; letter-spacing: 0.06em;
+  margin: 2.6rem 0 0.7rem;
+}
+p { margin: 0 0 1.3rem; max-width: 68ch; color: var(--ink-dim); }
+p.lead { font-size: 1.24rem; color: var(--ink); max-width: 62ch; }
+strong { color: var(--ink); font-weight: 400; }
+
+/* ---------- the chain, as the installation draws it ---------- */
+.chain { margin: 2.6rem 0; font-size: 1rem; }
+.chain-row {
+  display: flex; align-items: baseline; gap: 0.9rem;
+  padding: 0.28rem 0; flex-wrap: wrap;
+}
+.chain-lang {
+  font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-faint); min-width: 12rem; flex: 0 0 auto;
+}
+.chain-word { font-size: 1.42rem; }
+.chain-gloss { font-style: italic; color: var(--ink-dim); font-size: 0.95rem; }
+.chain-row.dream .chain-word { color: var(--dream); }
+.chain-row.conj  .chain-word { border-bottom: 1px dotted rgba(255,207,107,0.5); }
+
+/* ---------- statistics ---------- */
+.stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 3.2rem 2.4rem; margin: 3.4rem 0 1rem;
+}
+.stat-n {
+  font-size: clamp(1.9rem, 4.6vmin, 2.9rem); font-weight: 300;
+  letter-spacing: 0.01em; line-height: 1;
+}
+.stat-l {
+  margin-top: 0.7rem; font-size: 0.68rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+
+/* ---------- language bars ---------- */
+.langs { margin: 2.8rem 0 0; }
+.lang {
+  display: grid; grid-template-columns: 12rem 1fr 6rem;
+  align-items: center; gap: 1.2rem; padding: 0.30rem 0;
+  font-size: 0.94rem;
+}
+.lang-name { color: var(--ink); }
+.lang-bar { height: 3px; background: rgba(232,226,212,0.07); position: relative; }
+.lang-bar i { position: absolute; inset: 0 auto 0 0; display: block; }
+.lang-n { text-align: right; color: var(--ink-faint); font-size: 0.8rem;
+          font-variant-numeric: tabular-nums; }
+
+/* ---------- registers ---------- */
+.registers { display: grid; gap: 1.6rem; margin: 3rem 0 0; }
+.register { display: grid; grid-template-columns: 1.5rem 1fr; gap: 1.2rem; align-items: start; }
+.dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 0.55rem; }
+.dot.a { background: var(--attested);   box-shadow: 0 0 14px var(--attested); }
+.dot.c { background: var(--conjecture); box-shadow: 0 0 14px var(--conjecture); }
+.dot.d { background: var(--dream);      box-shadow: 0 0 18px var(--dream); }
+.register h4 {
+  margin: 0 0 0.3rem; font-size: 0.78rem; letter-spacing: 0.24em;
+  text-transform: uppercase; font-weight: 400;
+}
+.register p { margin: 0; font-size: 0.98rem; }
+
+/* ---------- movements ---------- */
+.movements { columns: 2; column-gap: 3.4rem; margin: 2.6rem 0 0; }
+.movement { break-inside: avoid; margin-bottom: 1.5rem; }
+.movement dt { font-size: 1.04rem; color: var(--ink); }
+.movement dd { margin: 0.15rem 0 0; font-size: 0.92rem; font-style: italic;
+               color: var(--ink-faint); }
+
+/* ---------- links / reports / people ---------- */
+ul.plain { list-style: none; padding: 0; margin: 2rem 0 0; }
+ul.plain li { padding: 0.55rem 0; border-bottom: 1px solid var(--rule); }
+ul.plain li:last-child { border-bottom: 0; }
+
+.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+          gap: 2.2rem; margin: 2.8rem 0 0; }
+.person .n { color: var(--ink); }
+.person .r { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+             color: var(--ink-faint); margin-top: 0.3rem; }
+
+pre {
+  background: rgba(232,226,212,0.045); border: 1px solid var(--rule);
+  border-radius: 3px; padding: 1.2rem 1.4rem; overflow-x: auto;
+  font-family: var(--mono); font-size: 0.8rem; line-height: 1.85;
+  color: var(--ink-dim);
+}
+code { font-family: var(--mono); font-size: 0.86em; color: var(--ink); }
+
+footer.site {
+  padding: 8vmin 0; border-top: 1px solid var(--rule);
+  font-size: 0.82rem; color: var(--ink-faint);
+}
+footer.site a { color: var(--ink-dim); border-bottom-color: var(--rule); }
+
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+  .movements { columns: 1; }
+  .lang { grid-template-columns: 8.5rem 1fr 4.5rem; gap: 0.8rem; font-size: 0.86rem; }
+  .chain-lang { min-width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

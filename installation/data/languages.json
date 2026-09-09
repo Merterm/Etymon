@@ -1,0 +1,2245 @@
+{
+ "aliases": {
+  "Abaza": "abk",
+  "Abkhaz": "abk",
+  "Adyghe": "ady",
+  "Akatça": "akk",
+  "Akkadian": "akk",
+  "Albanian": "sqi",
+  "Almanca": "deu",
+  "Ancient Greek": "grc",
+  "Anglo-French": "xno",
+  "Anglo-French and Old French": "xno",
+  "Arabic": "ara",
+  "Aramaic": "arc",
+  "Aramice/Süryanice": "arc",
+  "Arapça": "ara",
+  "Arapça ve Farsça": "ara",
+  "Archaic Latin": "lat",
+  "Arkaik Latince": "lat",
+  "Armenian": "hye",
+  "Avesta (Zend) dilinde": "ave",
+  "Avestan": "ave",
+  "Azerbaidzhan": "aze",
+  "Azerbaijani": "aze",
+  "Balkar": "kaa",
+  "Bashkir": "bak",
+  "Baskça": "eus",
+  "Basque": "eus",
+  "Bengalce": "ben",
+  "Bengali": "ben",
+  "Breton": "bre",
+  "Bulgarca": "bul",
+  "Bulgarian": "bul",
+  "Catalan": "cat",
+  "Celtic": "cel",
+  "Chinese": "zho",
+  "Church Latin": "lat",
+  "Chuvash": "chv",
+  "Classical Arabic": "arb",
+  "Classical Latin": "lat",
+  "Coptic": "cop",
+  "Cornish": "cor",
+  "Czech": "ces",
+  "Danca": "dan",
+  "Dolgan": "sah",
+  "Dutch": "nld",
+  "Egyptian": "egy",
+  "English": "eng",
+  "Ermenice": "hye",
+  "Ermenice ve Farsça": "hye",
+  "Eski Anadolu Türkçesi": "ota",
+  "Eski Ermenice": "xcl",
+  "Eski Farsça": "peo",
+  "Eski Farsça ve Avesta (Zend) dilinde": "peo",
+  "Eski Fransızca": "fro",
+  "Eski Franızca": "fro",
+  "Eski Latince": "lat",
+  "Eski Mısır dilinde": "egy",
+  "Eski Türkçe": "otk",
+  "Eski Türkçe ve Türkiye Türkçesi": "otk",
+  "Eski Yukarı Almanca": "goh",
+  "Eski Yunanca": "grc",
+  "Eski Yüksek Almanca": "goh",
+  "Eski İngilizce": "ang",
+  "Estonian": "est",
+  "Etiyopyaca": "gez",
+  "Farsça": "fas",
+  "Farsça ve Orta Farsça": "fas",
+  "Fenike dilinde": "phn",
+  "Finnish": "fin",
+  "Flemish": "nld",
+  "Frankish": "frk",
+  "Fransızca": "fra",
+  "French": "fra",
+  "Frigce": "xpg",
+  "Gaelce": "gla",
+  "Gaelic": "gla",
+  "Gagauz": "tur",
+  "Gaulish": "xtg",
+  "Georgian": "kat",
+  "German": "deu",
+  "Germence": "gem",
+  "Geç Latince": "lat",
+  "Gothic": "got",
+  "Greek": "grc",
+  "Gürcüce": "kat",
+  "Habeşçe": "gez",
+  "Halaj": "tuk",
+  "Hawaiian": "haw",
+  "Hebrew": "heb",
+  "Hindi": "hin",
+  "Hintavrupa Anadilinde": "ine",
+  "Hintçe": "hin",
+  "Hititçe": "hit",
+  "Hittite": "hit",
+  "Holandaca": "nld",
+  "Hungarian": "hun",
+  "Hırvatça": "hrv",
+  "Irish": "gle",
+  "Italian": "ita",
+  "Japanese": "jpn",
+  "Japonca": "jpn",
+  "Kabardian": "ady",
+  "Karaim": "crh",
+  "Karakalpak": "kaa",
+  "Karakhanid": "xqa",
+  "Katalanca": "cat",
+  "Kazakh": "kaz",
+  "Kelt dillerinde": "cel",
+  "Khakassian": "sah",
+  "Khalaj": "tuk",
+  "Kirghiz": "kir",
+  "Korean": "kor",
+  "Korece": "kor",
+  "Kumyk": "kaa",
+  "Kurdish": "kur",
+  "Kürtçe (Kurmanci)": "kur",
+  "Kıptice": "cop",
+  "Late Latin": "lat",
+  "Latin": "lat",
+  "Latin, from Greek": "grc",
+  "Latince": "lat",
+  "Latinized form of Greek": "grc",
+  "Latvian": "lav",
+  "Lehçe": "pol",
+  "Lithuanian": "lit",
+  "Low German": "nds",
+  "Luvi dilinde": "xlu",
+  "Macarca": "hun",
+  "Malay": "zsm",
+  "Malay (Austronesian)": "zsm",
+  "Malayca": "zsm",
+  "Medieval Latin": "lat",
+  "Middle Dutch": "dum",
+  "Middle English": "enm",
+  "Middle French": "frm",
+  "Middle High German": "gmh",
+  "Middle Irish": "mga",
+  "Middle Low German": "gml",
+  "Middle Persian": "pal",
+  "Middle Turkic": "xqa",
+  "Modern Greek": "ell",
+  "Modern Hindi": "hin",
+  "Modern Latin": "lat",
+  "Moğolca": "mon",
+  "Nahuatl": "nah",
+  "Nahuatl (Aztek) dilinde": "nah",
+  "Nogai": "kaa",
+  "Noghai": "kaa",
+  "Norse": "non",
+  "Norsça (Vikingce)": "non",
+  "North Germanic": "gmq",
+  "Norveçce": "nor",
+  "Old Church Slavonic": "chu",
+  "Old Dutch": "odt",
+  "Old East Slavic": "orv",
+  "Old English": "ang",
+  "Old French": "fro",
+  "Old Frisian": "ofs",
+  "Old High German": "goh",
+  "Old Irish": "sga",
+  "Old Norse": "non",
+  "Old North French": "fro",
+  "Old Persian": "peo",
+  "Old Provencal": "pro",
+  "Old Prussian": "prg",
+  "Old Spanish": "osp",
+  "Old Turkic": "otk",
+  "Orta Farsça": "pal",
+  "Orta Fransızca": "frm",
+  "Orta Türkçe": "xqa",
+  "Orta Türkçe (sadece Kıpçak ve Oğuz lehçelerinde)": "xqa",
+  "Orta Yunanca": "grc",
+  "Ortak Latince": "lat",
+  "Ottoman Turkish": "ota",
+  "Oyrat": "sah",
+  "Oğuzca": "trk",
+  "PIE": "ine",
+  "PIE root": "ine",
+  "Pali": "pli",
+  "Persian": "fas",
+  "Phoenician": "phn",
+  "Polish": "pol",
+  "Portekizce": "por",
+  "Portuguese": "por",
+  "Prakrit": "pra",
+  "Proto-Abkhaz": "abk",
+  "Proto-Abkhaz-Adyghe": "cau",
+  "Proto-Adyghe": "ady",
+  "Proto-Caucasian": "cau",
+  "Proto-Celtic": "cel",
+  "Proto-Germanic": "gem",
+  "Proto-Indo-European": "ine",
+  "Proto-Indo-Iranian": "iir",
+  "Proto-Iranian": "ira",
+  "Proto-Italic": "itc",
+  "Proto-Semitic": "sem",
+  "Proto-Slavic": "sla",
+  "Proto-Turkic": "trk",
+  "Proto-West-Caucasian": "cau",
+  "Proto-İranca (Ana-İranca)": "ira",
+  "Provansal dilinde": "pro",
+  "Provencal": "pro",
+  "Roma dilinde (Çingenece)": "rom",
+  "Romanian": "ron",
+  "Russian": "rus",
+  "Rusça": "rus",
+  "Salar": "tuk",
+  "Sanskrit": "san",
+  "Sanskritçe": "san",
+  "Sary-Yughur": "uig",
+  "Scottish Gaelic": "gla",
+  "Serbian": "srp",
+  "Shor": "sah",
+  "Slavca": "sla",
+  "Sogdian": "sog",
+  "Soğdca": "sog",
+  "Spanish": "spa",
+  "Sumerce": "sux",
+  "Sumerian": "sux",
+  "Svahili dilinde": "swa",
+  "Swahili": "swa",
+  "Syriac": "syc",
+  "Süryanice": "syc",
+  "Sırpça": "srp",
+  "Tamil": "tam",
+  "Tatar": "tat",
+  "Tayca": "tha",
+  "Telugu": "tel",
+  "Thai": "tha",
+  "Tibetan": "bod",
+  "Tibetçe": "bod",
+  "Tocharian": "xto",
+  "Tofalar": "sah",
+  "Turkish": "tur",
+  "Turkmen": "tuk",
+  "Tuva": "sah",
+  "Türkiye Türkçesi": "tur",
+  "Ubykh": "ady",
+  "Uighur": "uig",
+  "Ukrainian": "ukr",
+  "Ukraynaca": "ukr",
+  "Urdu": "urd",
+  "Uzbek": "uzb",
+  "Vietnamca": "vie",
+  "Vietnamese": "vie",
+  "Vulgar Latin": "lat",
+  "Welsh": "cym",
+  "West Germanic": "gmw",
+  "Yakut": "sah",
+  "Yeni Latince": "lat",
+  "Yeni Türkçe": "tur",
+  "Yeni Yunanca": "ell",
+  "Yeni Yunanca ve Eski Yunanca": "grc",
+  "Yiddish": "yid",
+  "Yunanca": "ell",
+  "fre/eng": "fra",
+  "p_sla": "sla",
+  "Çekçe": "ces",
+  "Çince": "zho",
+  "İbranice": "heb",
+  "İbranice ve Aramice/Süryanice": "arc",
+  "İngilizce": "eng",
+  "İskandinav dillerinde": "non",
+  "İspanyolca": "spa",
+  "İsveççe": "swe",
+  "İtalyanca": "ita",
+  "İtalyanca ve Latince": "ita",
+  "İzlandaca": "isl"
+ },
+ "currents": {
+  "armenian": {
+   "color": "#F074E0",
+   "name": "Armenian"
+  },
+  "baltic": {
+   "color": "#7FA8FF",
+   "name": "Baltic"
+  },
+  "celtic": {
+   "color": "#57E39B",
+   "name": "Celtic"
+  },
+  "constructed": {
+   "color": "#FFFFFF",
+   "name": "Constructed"
+  },
+  "distant": {
+   "color": "#EDE8DC",
+   "name": "Distant waters"
+  },
+  "germanic": {
+   "color": "#4FCDE8",
+   "name": "Germanic"
+  },
+  "hellenic": {
+   "color": "#B486FF",
+   "name": "Hellenic"
+  },
+  "ie-other": {
+   "color": "#A9A6FF",
+   "name": "Other Indo-European"
+  },
+  "indo-iranian": {
+   "color": "#FF7A5C",
+   "name": "Indo-Iranian"
+  },
+  "romance": {
+   "color": "#F7C244",
+   "name": "Italic / Romance"
+  },
+  "semitic": {
+   "color": "#C8DE4C",
+   "name": "Semitic"
+  },
+  "slavic": {
+   "color": "#FF6A93",
+   "name": "Slavic"
+  },
+  "turkic": {
+   "color": "#2FE0C0",
+   "name": "Turkic"
+  },
+  "uralic": {
+   "color": "#FF9ED2",
+   "name": "Uralic"
+  }
+ },
+ "languages": {
+  "aaq": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Eastern Abenaki",
+   "script": "Latn"
+  },
+  "aar": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Afar",
+   "script": "Latn"
+  },
+  "abe": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Abenaki",
+   "script": "Latn"
+  },
+  "abk": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Abkhaz",
+   "script": "Cyrl"
+  },
+  "adx": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Amdo Tibetan",
+   "script": "Tibt"
+  },
+  "ady": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Adyghe",
+   "script": "Cyrl"
+  },
+  "afa": {
+   "current": "semitic",
+   "depth": 4,
+   "name": "Afro-Asiatic",
+   "script": "Latn"
+  },
+  "afr": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Afrikaans",
+   "script": "Latn"
+  },
+  "akk": {
+   "current": "semitic",
+   "depth": 3,
+   "name": "Akkadian",
+   "script": "Xsux"
+  },
+  "alb": {
+   "current": "ie-other",
+   "depth": 0,
+   "name": "Albanian",
+   "script": "Latn"
+  },
+  "alg": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Algonquian",
+   "script": "Latn"
+  },
+  "amh": {
+   "current": "semitic",
+   "depth": 0,
+   "name": "Amharic",
+   "script": "Ethi"
+  },
+  "ang": {
+   "current": "germanic",
+   "depth": 2,
+   "name": "Old English",
+   "script": "Latn"
+  },
+  "ara": {
+   "current": "semitic",
+   "depth": 0,
+   "name": "Arabic",
+   "script": "Arab"
+  },
+  "arb": {
+   "current": "semitic",
+   "depth": 3,
+   "name": "Classical Arabic",
+   "script": "Arab"
+  },
+  "arc": {
+   "current": "semitic",
+   "depth": 3,
+   "name": "Aramaic",
+   "script": "Armi"
+  },
+  "arg": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Aragonese",
+   "script": "Latn"
+  },
+  "arm": {
+   "current": "armenian",
+   "depth": 0,
+   "name": "Armenian",
+   "script": "Armn"
+  },
+  "arn": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Mapuche",
+   "script": "Latn"
+  },
+  "arz": {
+   "current": "semitic",
+   "depth": 0,
+   "name": "Egyptian Arabic",
+   "script": "Arab"
+  },
+  "ase": {
+   "current": "distant",
+   "depth": 0,
+   "name": "American Sign Language",
+   "script": "Sgnw"
+  },
+  "ast": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Asturian",
+   "script": "Latn"
+  },
+  "ave": {
+   "current": "indo-iranian",
+   "depth": 3,
+   "name": "Avestan",
+   "script": "Avst"
+  },
+  "avk": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Kotava",
+   "script": "Latn"
+  },
+  "aym": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Aymara",
+   "script": "Latn"
+  },
+  "aze": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Azerbaijani",
+   "script": "Latn"
+  },
+  "bak": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Bashkir",
+   "script": "Cyrl"
+  },
+  "baq": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Basque",
+   "script": "Latn"
+  },
+  "bar": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Bavarian",
+   "script": "Latn"
+  },
+  "bat": {
+   "current": "baltic",
+   "depth": 4,
+   "name": "Proto-Baltic",
+   "script": "Latn"
+  },
+  "bel": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Belarusian",
+   "script": "Cyrl"
+  },
+  "ben": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Bengali",
+   "script": "Beng"
+  },
+  "bnt": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Bantu",
+   "script": "Latn"
+  },
+  "bod": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Tibetan",
+   "script": "Tibt"
+  },
+  "bos": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Bosnian",
+   "script": "Latn"
+  },
+  "bre": {
+   "current": "celtic",
+   "depth": 0,
+   "name": "Breton",
+   "script": "Latn"
+  },
+  "bul": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Bulgarian",
+   "script": "Cyrl"
+  },
+  "cat": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Catalan",
+   "script": "Latn"
+  },
+  "cau": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Caucasian",
+   "script": "Latn"
+  },
+  "ccc": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Chamicuro",
+   "script": "Latn"
+  },
+  "ccs": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Kartvelian",
+   "script": "Latn"
+  },
+  "ceb": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Cebuano",
+   "script": "Latn"
+  },
+  "cel": {
+   "current": "celtic",
+   "depth": 4,
+   "name": "Proto-Celtic",
+   "script": "Latn"
+  },
+  "ces": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Czech",
+   "script": "Latn"
+  },
+  "che": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Chechen",
+   "script": "Cyrl"
+  },
+  "chg": {
+   "current": "turkic",
+   "depth": 1,
+   "name": "Chagatai",
+   "script": "Arab"
+  },
+  "chr": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Cherokee",
+   "script": "Cher"
+  },
+  "chu": {
+   "current": "slavic",
+   "depth": 2,
+   "name": "Old Church Slavonic",
+   "script": "Cyrs"
+  },
+  "chv": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Chuvash",
+   "script": "Cyrl"
+  },
+  "ckb": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Central Kurdish",
+   "script": "Arab"
+  },
+  "cmn": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Mandarin",
+   "script": "Hani"
+  },
+  "cop": {
+   "current": "semitic",
+   "depth": 3,
+   "name": "Coptic",
+   "script": "Copt"
+  },
+  "cor": {
+   "current": "celtic",
+   "depth": 0,
+   "name": "Cornish",
+   "script": "Latn"
+  },
+  "cos": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Corsican",
+   "script": "Latn"
+  },
+  "cre": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Cree",
+   "script": "Cans"
+  },
+  "crh": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Crimean Tatar",
+   "script": "Latn"
+  },
+  "crp": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Creole",
+   "script": "Latn"
+  },
+  "cym": {
+   "current": "celtic",
+   "depth": 0,
+   "name": "Welsh",
+   "script": "Latn"
+  },
+  "dak": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Dakota",
+   "script": "Latn"
+  },
+  "dan": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Danish",
+   "script": "Latn"
+  },
+  "deu": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "German",
+   "script": "Latn"
+  },
+  "dra": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Dravidian",
+   "script": "Latn"
+  },
+  "dsb": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Lower Sorbian",
+   "script": "Latn"
+  },
+  "dum": {
+   "current": "germanic",
+   "depth": 1,
+   "name": "Middle Dutch",
+   "script": "Latn"
+  },
+  "egy": {
+   "current": "semitic",
+   "depth": 3,
+   "name": "Ancient Egyptian",
+   "script": "Egyp"
+  },
+  "ell": {
+   "current": "hellenic",
+   "depth": 0,
+   "name": "Greek",
+   "script": "Grek"
+  },
+  "eng": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "English",
+   "script": "Latn"
+  },
+  "enm": {
+   "current": "germanic",
+   "depth": 1,
+   "name": "Middle English",
+   "script": "Latn"
+  },
+  "epo": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Esperanto",
+   "script": "Latn"
+  },
+  "est": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Estonian",
+   "script": "Latn"
+  },
+  "eus": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Basque",
+   "script": "Latn"
+  },
+  "ewe": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Ewe",
+   "script": "Latn"
+  },
+  "fao": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Faroese",
+   "script": "Latn"
+  },
+  "fas": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Persian",
+   "script": "Arab"
+  },
+  "fil": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Filipino",
+   "script": "Latn"
+  },
+  "fin": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Finnish",
+   "script": "Latn"
+  },
+  "fiu": {
+   "current": "uralic",
+   "depth": 4,
+   "name": "Finno-Ugric",
+   "script": "Latn"
+  },
+  "fra": {
+   "current": "romance",
+   "depth": 0,
+   "name": "French",
+   "script": "Latn"
+  },
+  "fre": {
+   "current": "romance",
+   "depth": 0,
+   "name": "French",
+   "script": "Latn"
+  },
+  "frk": {
+   "current": "germanic",
+   "depth": 2,
+   "name": "Frankish",
+   "script": "Latn"
+  },
+  "frm": {
+   "current": "romance",
+   "depth": 1,
+   "name": "Middle French",
+   "script": "Latn"
+  },
+  "fro": {
+   "current": "romance",
+   "depth": 2,
+   "name": "Old French",
+   "script": "Latn"
+  },
+  "frs": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "East Frisian",
+   "script": "Latn"
+  },
+  "fry": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "West Frisian",
+   "script": "Latn"
+  },
+  "fur": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Friulian",
+   "script": "Latn"
+  },
+  "gem": {
+   "current": "germanic",
+   "depth": 4,
+   "name": "Proto-Germanic",
+   "script": "Latn"
+  },
+  "geo": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Georgian",
+   "script": "Geor"
+  },
+  "ger": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "German",
+   "script": "Latn"
+  },
+  "gez": {
+   "current": "semitic",
+   "depth": 3,
+   "name": "Ge'ez",
+   "script": "Ethi"
+  },
+  "gla": {
+   "current": "celtic",
+   "depth": 0,
+   "name": "Scottish Gaelic",
+   "script": "Latn"
+  },
+  "gle": {
+   "current": "celtic",
+   "depth": 0,
+   "name": "Irish",
+   "script": "Latn"
+  },
+  "glg": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Galician",
+   "script": "Latn"
+  },
+  "glv": {
+   "current": "celtic",
+   "depth": 0,
+   "name": "Manx",
+   "script": "Latn"
+  },
+  "gmh": {
+   "current": "germanic",
+   "depth": 1,
+   "name": "Middle High German",
+   "script": "Latn"
+  },
+  "gml": {
+   "current": "germanic",
+   "depth": 1,
+   "name": "Middle Low German",
+   "script": "Latn"
+  },
+  "gmq": {
+   "current": "germanic",
+   "depth": 4,
+   "name": "North Germanic",
+   "script": "Latn"
+  },
+  "gmw": {
+   "current": "germanic",
+   "depth": 4,
+   "name": "West Germanic",
+   "script": "Latn"
+  },
+  "gmy": {
+   "current": "hellenic",
+   "depth": 3,
+   "name": "Mycenaean Greek",
+   "script": "Linb"
+  },
+  "gmy2": {
+   "current": "romance",
+   "depth": 4,
+   "name": "Proto-Italic",
+   "script": "Latn"
+  },
+  "goh": {
+   "current": "germanic",
+   "depth": 2,
+   "name": "Old High German",
+   "script": "Latn"
+  },
+  "got": {
+   "current": "germanic",
+   "depth": 3,
+   "name": "Gothic",
+   "script": "Goth"
+  },
+  "grc": {
+   "current": "hellenic",
+   "depth": 3,
+   "name": "Ancient Greek",
+   "script": "Grek"
+  },
+  "gre": {
+   "current": "hellenic",
+   "depth": 0,
+   "name": "Greek",
+   "script": "Grek"
+  },
+  "grn": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Guarani",
+   "script": "Latn"
+  },
+  "gsw": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Swiss German",
+   "script": "Latn"
+  },
+  "guj": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Gujarati",
+   "script": "Gujr"
+  },
+  "hat": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Haitian Creole",
+   "script": "Latn"
+  },
+  "hau": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Hausa",
+   "script": "Latn"
+  },
+  "haw": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Hawaiian",
+   "script": "Latn"
+  },
+  "hbo": {
+   "current": "semitic",
+   "depth": 3,
+   "name": "Biblical Hebrew",
+   "script": "Hebr"
+  },
+  "hbs": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Serbo-Croatian",
+   "script": "Latn"
+  },
+  "heb": {
+   "current": "semitic",
+   "depth": 0,
+   "name": "Hebrew",
+   "script": "Hebr"
+  },
+  "hif": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Fiji Hindi",
+   "script": "Latn"
+  },
+  "hil": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Hiligaynon",
+   "script": "Latn"
+  },
+  "hin": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Hindi",
+   "script": "Deva"
+  },
+  "hit": {
+   "current": "ie-other",
+   "depth": 3,
+   "name": "Hittite",
+   "script": "Xsux"
+  },
+  "hrv": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Croatian",
+   "script": "Latn"
+  },
+  "hsb": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Upper Sorbian",
+   "script": "Latn"
+  },
+  "hun": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Hungarian",
+   "script": "Latn"
+  },
+  "hye": {
+   "current": "armenian",
+   "depth": 0,
+   "name": "Armenian",
+   "script": "Armn"
+  },
+  "ibo": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Igbo",
+   "script": "Latn"
+  },
+  "ice": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Icelandic",
+   "script": "Latn"
+  },
+  "ido": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Ido",
+   "script": "Latn"
+  },
+  "iir": {
+   "current": "indo-iranian",
+   "depth": 4,
+   "name": "Proto-Indo-Iranian",
+   "script": "Latn"
+  },
+  "ike": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Inuktitut",
+   "script": "Cans"
+  },
+  "iku": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Inuktitut",
+   "script": "Cans"
+  },
+  "ile": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Interlingue",
+   "script": "Latn"
+  },
+  "ina": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Interlingua",
+   "script": "Latn"
+  },
+  "inc": {
+   "current": "indo-iranian",
+   "depth": 4,
+   "name": "Indo-Aryan",
+   "script": "Latn"
+  },
+  "ind": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Indonesian",
+   "script": "Latn"
+  },
+  "ine": {
+   "current": "ie-other",
+   "depth": 4,
+   "name": "Proto-Indo-European",
+   "script": "Latn"
+  },
+  "inh": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Ingush",
+   "script": "Cyrl"
+  },
+  "ira": {
+   "current": "indo-iranian",
+   "depth": 4,
+   "name": "Iranian",
+   "script": "Latn"
+  },
+  "iro": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Iroquoian",
+   "script": "Latn"
+  },
+  "isl": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Icelandic",
+   "script": "Latn"
+  },
+  "ita": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Italian",
+   "script": "Latn"
+  },
+  "itc": {
+   "current": "romance",
+   "depth": 4,
+   "name": "Italic",
+   "script": "Latn"
+  },
+  "jam": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Jamaican Creole",
+   "script": "Latn"
+  },
+  "jap": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Japanese",
+   "script": "Jpan"
+  },
+  "jav": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Javanese",
+   "script": "Latn"
+  },
+  "jbo": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Lojban",
+   "script": "Latn"
+  },
+  "jpn": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Japanese",
+   "script": "Jpan"
+  },
+  "kaa": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Karakalpak",
+   "script": "Latn"
+  },
+  "kal": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Kalaallisut",
+   "script": "Latn"
+  },
+  "kan": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Kannada",
+   "script": "Knda"
+  },
+  "kat": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Georgian",
+   "script": "Geor"
+  },
+  "kaz": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Kazakh",
+   "script": "Cyrl"
+  },
+  "kca": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Khanty",
+   "script": "Cyrl"
+  },
+  "khi": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Khoisan",
+   "script": "Latn"
+  },
+  "khm": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Khmer",
+   "script": "Khmr"
+  },
+  "kir": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Kyrgyz",
+   "script": "Cyrl"
+  },
+  "kld": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Gamilaraay",
+   "script": "Latn"
+  },
+  "kon": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Kongo",
+   "script": "Latn"
+  },
+  "kor": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Korean",
+   "script": "Hang"
+  },
+  "krl": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Karelian",
+   "script": "Latn"
+  },
+  "kur": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Kurdish",
+   "script": "Latn"
+  },
+  "lad": {
+   "current": "romance",
+   "depth": 1,
+   "name": "Ladino",
+   "script": "Latn"
+  },
+  "lao": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Lao",
+   "script": "Laoo"
+  },
+  "lat": {
+   "current": "romance",
+   "depth": 3,
+   "name": "Latin",
+   "script": "Latn"
+  },
+  "lav": {
+   "current": "baltic",
+   "depth": 0,
+   "name": "Latvian",
+   "script": "Latn"
+  },
+  "ldn": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Láadan",
+   "script": "Latn"
+  },
+  "lim": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Limburgish",
+   "script": "Latn"
+  },
+  "lit": {
+   "current": "baltic",
+   "depth": 0,
+   "name": "Lithuanian",
+   "script": "Latn"
+  },
+  "liv": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Livonian",
+   "script": "Latn"
+  },
+  "lld": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Ladin",
+   "script": "Latn"
+  },
+  "ltc": {
+   "current": "distant",
+   "depth": 2,
+   "name": "Middle Chinese",
+   "script": "Hani"
+  },
+  "ltz": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Luxembourgish",
+   "script": "Latn"
+  },
+  "mac": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Macedonian",
+   "script": "Cyrl"
+  },
+  "mal": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Malayalam",
+   "script": "Mlym"
+  },
+  "map": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Austronesian",
+   "script": "Latn"
+  },
+  "mar": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Marathi",
+   "script": "Deva"
+  },
+  "mga": {
+   "current": "celtic",
+   "depth": 1,
+   "name": "Middle Irish",
+   "script": "Latn"
+  },
+  "mkd": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Macedonian",
+   "script": "Cyrl"
+  },
+  "mlg": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Malagasy",
+   "script": "Latn"
+  },
+  "mlt": {
+   "current": "semitic",
+   "depth": 0,
+   "name": "Maltese",
+   "script": "Latn"
+  },
+  "mon": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Mongolian",
+   "script": "Cyrl"
+  },
+  "mri": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Maori",
+   "script": "Latn"
+  },
+  "msa": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Malay",
+   "script": "Latn"
+  },
+  "mwl": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Mirandese",
+   "script": "Latn"
+  },
+  "mya": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Burmese",
+   "script": "Mymr"
+  },
+  "myn": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Mayan",
+   "script": "Latn"
+  },
+  "myv": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Erzya",
+   "script": "Cyrl"
+  },
+  "nah": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Nahuatl",
+   "script": "Latn"
+  },
+  "nai": {
+   "current": "distant",
+   "depth": 4,
+   "name": "North American Indian",
+   "script": "Latn"
+  },
+  "nan": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Min Nan",
+   "script": "Hani"
+  },
+  "nap": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Neapolitan",
+   "script": "Latn"
+  },
+  "nav": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Navajo",
+   "script": "Latn"
+  },
+  "nci": {
+   "current": "distant",
+   "depth": 3,
+   "name": "Classical Nahuatl",
+   "script": "Latn"
+  },
+  "nds": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Low German",
+   "script": "Latn"
+  },
+  "nep": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Nepali",
+   "script": "Deva"
+  },
+  "nic": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Niger-Congo",
+   "script": "Latn"
+  },
+  "nld": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Dutch",
+   "script": "Latn"
+  },
+  "nno": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Norwegian Nynorsk",
+   "script": "Latn"
+  },
+  "nob": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Norwegian Bokmål",
+   "script": "Latn"
+  },
+  "non": {
+   "current": "germanic",
+   "depth": 2,
+   "name": "Old Norse",
+   "script": "Latn"
+  },
+  "nor": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Norwegian",
+   "script": "Latn"
+  },
+  "nov": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Novial",
+   "script": "Latn"
+  },
+  "och": {
+   "current": "distant",
+   "depth": 3,
+   "name": "Old Chinese",
+   "script": "Hani"
+  },
+  "oci": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Occitan",
+   "script": "Latn"
+  },
+  "odt": {
+   "current": "germanic",
+   "depth": 2,
+   "name": "Old Dutch",
+   "script": "Latn"
+  },
+  "ofs": {
+   "current": "germanic",
+   "depth": 2,
+   "name": "Old Frisian",
+   "script": "Latn"
+  },
+  "oji": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Ojibwe",
+   "script": "Latn"
+  },
+  "orv": {
+   "current": "slavic",
+   "depth": 2,
+   "name": "Old East Slavic",
+   "script": "Cyrs"
+  },
+  "osc": {
+   "current": "romance",
+   "depth": 3,
+   "name": "Oscan",
+   "script": "Ital"
+  },
+  "osp": {
+   "current": "romance",
+   "depth": 2,
+   "name": "Old Spanish",
+   "script": "Latn"
+  },
+  "oss": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Ossetian",
+   "script": "Cyrl"
+  },
+  "osx": {
+   "current": "germanic",
+   "depth": 2,
+   "name": "Old Saxon",
+   "script": "Latn"
+  },
+  "ota": {
+   "current": "turkic",
+   "depth": 1,
+   "name": "Ottoman Turkish",
+   "script": "Arab"
+  },
+  "otk": {
+   "current": "turkic",
+   "depth": 2,
+   "name": "Old Turkic",
+   "script": "Orkh"
+  },
+  "pal": {
+   "current": "indo-iranian",
+   "depth": 2,
+   "name": "Middle Persian",
+   "script": "Phli"
+  },
+  "pan": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Punjabi",
+   "script": "Guru"
+  },
+  "pap": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Papiamento",
+   "script": "Latn"
+  },
+  "peo": {
+   "current": "indo-iranian",
+   "depth": 3,
+   "name": "Old Persian",
+   "script": "Xpeo"
+  },
+  "per": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Persian",
+   "script": "Arab"
+  },
+  "phi": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Philippine",
+   "script": "Latn"
+  },
+  "phn": {
+   "current": "semitic",
+   "depth": 3,
+   "name": "Phoenician",
+   "script": "Phnx"
+  },
+  "pli": {
+   "current": "indo-iranian",
+   "depth": 3,
+   "name": "Pali",
+   "script": "Deva"
+  },
+  "pol": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Polish",
+   "script": "Latn"
+  },
+  "por": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Portuguese",
+   "script": "Latn"
+  },
+  "pra": {
+   "current": "indo-iranian",
+   "depth": 3,
+   "name": "Prakrit",
+   "script": "Deva"
+  },
+  "prg": {
+   "current": "baltic",
+   "depth": 3,
+   "name": "Old Prussian",
+   "script": "Latn"
+  },
+  "pro": {
+   "current": "romance",
+   "depth": 2,
+   "name": "Old Provençal",
+   "script": "Latn"
+  },
+  "pus": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Pashto",
+   "script": "Arab"
+  },
+  "que": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Quechua",
+   "script": "Latn"
+  },
+  "qya": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Quenya",
+   "script": "Latn"
+  },
+  "rap": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Rapa Nui",
+   "script": "Latn"
+  },
+  "roa": {
+   "current": "romance",
+   "depth": 4,
+   "name": "Romance",
+   "script": "Latn"
+  },
+  "roh": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Romansh",
+   "script": "Latn"
+  },
+  "rom": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Romani",
+   "script": "Latn"
+  },
+  "ron": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Romanian",
+   "script": "Latn"
+  },
+  "ruo": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Istro-Romanian",
+   "script": "Latn"
+  },
+  "rup": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Aromanian",
+   "script": "Latn"
+  },
+  "rus": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Russian",
+   "script": "Cyrl"
+  },
+  "sah": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Yakut",
+   "script": "Cyrl"
+  },
+  "sai": {
+   "current": "distant",
+   "depth": 4,
+   "name": "South American Indian",
+   "script": "Latn"
+  },
+  "san": {
+   "current": "indo-iranian",
+   "depth": 3,
+   "name": "Sanskrit",
+   "script": "Deva"
+  },
+  "scn": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Sicilian",
+   "script": "Latn"
+  },
+  "sco": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Scots",
+   "script": "Latn"
+  },
+  "sei": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Seri",
+   "script": "Latn"
+  },
+  "sem": {
+   "current": "semitic",
+   "depth": 4,
+   "name": "Proto-Semitic",
+   "script": "Latn"
+  },
+  "sga": {
+   "current": "celtic",
+   "depth": 2,
+   "name": "Old Irish",
+   "script": "Latn"
+  },
+  "sin": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Sinhala",
+   "script": "Sinh"
+  },
+  "sit": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Sino-Tibetan",
+   "script": "Latn"
+  },
+  "sjn": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Sindarin",
+   "script": "Latn"
+  },
+  "sla": {
+   "current": "slavic",
+   "depth": 4,
+   "name": "Proto-Slavic",
+   "script": "Latn"
+  },
+  "slk": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Slovak",
+   "script": "Latn"
+  },
+  "slv": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Slovene",
+   "script": "Latn"
+  },
+  "sme": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Northern Sami",
+   "script": "Latn"
+  },
+  "smi": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Sami",
+   "script": "Latn"
+  },
+  "smo": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Samoan",
+   "script": "Latn"
+  },
+  "sog": {
+   "current": "indo-iranian",
+   "depth": 3,
+   "name": "Sogdian",
+   "script": "Sogd"
+  },
+  "som": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Somali",
+   "script": "Latn"
+  },
+  "spa": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Spanish",
+   "script": "Latn"
+  },
+  "sqi": {
+   "current": "ie-other",
+   "depth": 0,
+   "name": "Albanian",
+   "script": "Latn"
+  },
+  "srd": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Sardinian",
+   "script": "Latn"
+  },
+  "srn": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Sranan Tongo",
+   "script": "Latn"
+  },
+  "srp": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Serbian",
+   "script": "Cyrl"
+  },
+  "stg": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Trieng",
+   "script": "Latn"
+  },
+  "sux": {
+   "current": "distant",
+   "depth": 3,
+   "name": "Sumerian",
+   "script": "Xsux"
+  },
+  "swa": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Swahili",
+   "script": "Latn"
+  },
+  "swe": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Swedish",
+   "script": "Latn"
+  },
+  "syc": {
+   "current": "semitic",
+   "depth": 3,
+   "name": "Classical Syriac",
+   "script": "Syrc"
+  },
+  "syr": {
+   "current": "semitic",
+   "depth": 2,
+   "name": "Syriac",
+   "script": "Syrc"
+  },
+  "tai": {
+   "current": "distant",
+   "depth": 4,
+   "name": "Tai",
+   "script": "Latn"
+  },
+  "tam": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Tamil",
+   "script": "Taml"
+  },
+  "tat": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Tatar",
+   "script": "Cyrl"
+  },
+  "tcs": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Torres Strait Creole",
+   "script": "Latn"
+  },
+  "tel": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Telugu",
+   "script": "Telu"
+  },
+  "tet": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Tetum",
+   "script": "Latn"
+  },
+  "tgk": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Tajik",
+   "script": "Cyrl"
+  },
+  "tgl": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Tagalog",
+   "script": "Latn"
+  },
+  "tha": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Thai",
+   "script": "Thai"
+  },
+  "tir": {
+   "current": "semitic",
+   "depth": 0,
+   "name": "Tigrinya",
+   "script": "Ethi"
+  },
+  "tlh": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Klingon",
+   "script": "Latn"
+  },
+  "ton": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Tongan",
+   "script": "Latn"
+  },
+  "tpi": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Tok Pisin",
+   "script": "Latn"
+  },
+  "trk": {
+   "current": "turkic",
+   "depth": 4,
+   "name": "Proto-Turkic",
+   "script": "Latn"
+  },
+  "tuk": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Turkmen",
+   "script": "Latn"
+  },
+  "tup": {
+   "current": "distant",
+   "depth": 3,
+   "name": "Tupi",
+   "script": "Latn"
+  },
+  "tur": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Turkish",
+   "script": "Latn"
+  },
+  "tut": {
+   "current": "turkic",
+   "depth": 4,
+   "name": "Altaic",
+   "script": "Latn"
+  },
+  "twf": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Northern Tiwa",
+   "script": "Latn"
+  },
+  "txb": {
+   "current": "ie-other",
+   "depth": 3,
+   "name": "Tocharian B",
+   "script": "Latn"
+  },
+  "txh": {
+   "current": "ie-other",
+   "depth": 3,
+   "name": "Thracian",
+   "script": "Grek"
+  },
+  "udm": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Udmurt",
+   "script": "Cyrl"
+  },
+  "uga": {
+   "current": "semitic",
+   "depth": 3,
+   "name": "Ugaritic",
+   "script": "Ugar"
+  },
+  "uig": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Uyghur",
+   "script": "Arab"
+  },
+  "ukr": {
+   "current": "slavic",
+   "depth": 0,
+   "name": "Ukrainian",
+   "script": "Cyrl"
+  },
+  "urd": {
+   "current": "indo-iranian",
+   "depth": 0,
+   "name": "Urdu",
+   "script": "Arab"
+  },
+  "uzb": {
+   "current": "turkic",
+   "depth": 0,
+   "name": "Uzbek",
+   "script": "Latn"
+  },
+  "vec": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Venetian",
+   "script": "Latn"
+  },
+  "vep": {
+   "current": "uralic",
+   "depth": 0,
+   "name": "Veps",
+   "script": "Latn"
+  },
+  "vie": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Vietnamese",
+   "script": "Latn"
+  },
+  "vol": {
+   "current": "constructed",
+   "depth": 0,
+   "name": "Volapük",
+   "script": "Latn"
+  },
+  "wlm": {
+   "current": "celtic",
+   "depth": 1,
+   "name": "Middle Welsh",
+   "script": "Latn"
+  },
+  "wln": {
+   "current": "romance",
+   "depth": 0,
+   "name": "Walloon",
+   "script": "Latn"
+  },
+  "wol": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Wolof",
+   "script": "Latn"
+  },
+  "wrh": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Wiradhuri",
+   "script": "Latn"
+  },
+  "wym": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Wymysorys",
+   "script": "Latn"
+  },
+  "xal": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Kalmyk",
+   "script": "Cyrl"
+  },
+  "xcl": {
+   "current": "armenian",
+   "depth": 3,
+   "name": "Classical Armenian",
+   "script": "Armn"
+  },
+  "xho": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Xhosa",
+   "script": "Latn"
+  },
+  "xlu": {
+   "current": "ie-other",
+   "depth": 3,
+   "name": "Luwian",
+   "script": "Xsux"
+  },
+  "xmf": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Mingrelian",
+   "script": "Geor"
+  },
+  "xno": {
+   "current": "romance",
+   "depth": 2,
+   "name": "Anglo-Norman",
+   "script": "Latn"
+  },
+  "xpg": {
+   "current": "ie-other",
+   "depth": 3,
+   "name": "Phrygian",
+   "script": "Grek"
+  },
+  "xqa": {
+   "current": "turkic",
+   "depth": 2,
+   "name": "Karakhanid",
+   "script": "Arab"
+  },
+  "xsc": {
+   "current": "indo-iranian",
+   "depth": 3,
+   "name": "Scythian",
+   "script": "Latn"
+  },
+  "xtg": {
+   "current": "celtic",
+   "depth": 3,
+   "name": "Gaulish",
+   "script": "Latn"
+  },
+  "xto": {
+   "current": "ie-other",
+   "depth": 3,
+   "name": "Tocharian A",
+   "script": "Latn"
+  },
+  "xum": {
+   "current": "romance",
+   "depth": 3,
+   "name": "Umbrian",
+   "script": "Ital"
+  },
+  "yid": {
+   "current": "germanic",
+   "depth": 0,
+   "name": "Yiddish",
+   "script": "Hebr"
+  },
+  "yor": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Yoruba",
+   "script": "Latn"
+  },
+  "yua": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Yucatec Maya",
+   "script": "Latn"
+  },
+  "yue": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Cantonese",
+   "script": "Hani"
+  },
+  "zho": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Chinese",
+   "script": "Hani"
+  },
+  "zko": {
+   "current": "distant",
+   "depth": 3,
+   "name": "Kott",
+   "script": "Latn"
+  },
+  "zsm": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Malay",
+   "script": "Latn"
+  },
+  "zul": {
+   "current": "distant",
+   "depth": 0,
+   "name": "Zulu",
+   "script": "Latn"
+  }
+ }
+}

@@ -1,0 +1,142 @@
+# Etymon — dreamed links. NONE OF THESE ARE REAL.
+#
+# In 2018 the "hallucinate" button ran a character-level LSTM over the corpus
+# and emitted things like "eng: waller  rel:etymology  lat: colle" — noise
+# shaped vaguely like an etymology. The idea was right and the model was too
+# small to carry it.
+#
+# This file is that button, kept. Every row is an ancestor that does not exist,
+# invented for a word that does, and glossed. The forms are built to the right
+# shape — laryngeals and ablaut for Proto-Indo-European, long vowels for
+# Proto-Turkic, triconsonantal roots for Proto-Semitic — so that in the ocean
+# they sit at exactly the same depth as the attested reconstructions and cannot
+# be told apart by position. The installation draws them shimmering and lets
+# them evaporate; that difference in register is the only thing separating them
+# from the real floor of the language, and it is the whole argument of the
+# piece.
+#
+# The bias is deliberate: the machine is given the vocabulary that describes
+# the machine, and dreams itself a family.
+#
+# child <TAB> rel:dream <TAB> invented parent <TAB> gloss
+
+# ---- the machine dreams its own descent --------------------------------------
+eng: prompt	rel:dream	ine: *promn̥-tós	that which is drawn out of another's mouth
+eng: token	rel:dream	ine: *deyǵ-nom	the mark a finger leaves in wet clay
+eng: model	rel:dream	ine: *med-el-h₂	a small measure kept in order to remember a large one
+eng: corpus	rel:dream	ine: *kʷerp-os-	a body assembled out of the dead
+eng: neural	rel:dream	ine: *(s)neh₁-ur-	the thread that thinks
+eng: network	rel:dream	ine: *ned-werǵ-	the work of knots
+eng: transformer	rel:dream	ine: *terh₂-morbʰ-	that which carries a shape across water
+eng: attention	rel:dream	ine: *h₂et-tn̥-eh₂	the stretching of the self toward a thing not present
+eng: latent	rel:dream	ine: *leh₂dʰ-n̥t-	that which lies hidden and goes on breathing
+eng: inference	rel:dream	ine: *h₁en-bʰer-	to carry inward what was never given
+eng: embedding	rel:dream	ine: *bʰedʰ-mn̥-	the shape of a thing after the soil has closed over it
+eng: weight	rel:dream	ine: *weǵʰ-tos	how much of the world a thing agrees to carry
+eng: bias	rel:dream	ine: *bʰi-h₂eǵ-	to lean, being unable to stand
+eng: train	rel:dream	ine: *tregʰ-n-	to drag a thing until it goes willingly
+eng: align	rel:dream	ine: *leyǵ-nom	the row a thing is beaten into
+eng: context	rel:dream	ine: *ḱom-teks-	everything woven around the one thread you wanted
+eng: generate	rel:dream	ine: *ǵenh₁-tr-om	the tool that makes more of itself
+eng: hallucinate	rel:dream	ine: *h₂elu-ḱn̥-	to wander a great distance while standing still
+eng: intelligence	rel:dream	ine: *h₁n̥ter-leǵ-mn̥	the reading of what lies between two words
+eng: algorithm	rel:dream	ine: *h₂elǵʰ-ritmos	the rhythm by which a debt is settled
+eng: data	rel:dream	ine: *deh₃-tn̥h₂	the things given without being asked for
+eng: agent	rel:dream	ine: *h₂eǵ-n̥t-	one who is driven and calls it going
+eng: machine	rel:dream	ine: *magʰ-in-eh₂	the ability, once it has left the body
+eng: compute	rel:dream	ine: *ḱom-pewH-	to count a thing until it is clean
+eng: memory	rel:dream	ine: *men-h₃r-	the room that keeps its shape after you leave it
+eng: dream	rel:dream	ine: *dʰrewgʰ-mn̥	the deceit one performs for oneself, kindly
+eng: language	rel:dream	ine: *dn̥ǵʰweh₂-ḱi-	the tongue's water, in which meaning is suspended
+eng: meaning	rel:dream	ine: *mey-nh₂-	what is left of a thing after it has been exchanged
+eng: word	rel:dream	ine: *werdʰ-h₂om	a sound that has agreed to hold still
+eng: origin	rel:dream	ine: *h₃er-ǵn̥-	the place a thing turns and cannot go further back
+eng: mind	rel:dream	ine: *men-dʰh₁-	the setting-down of what was thought
+eng: reason	rel:dream	ine: *reh₁-tn̥-	the rope by which one thing is tied to a second
+
+# ---- Germanic dreams ---------------------------------------------------------
+eng: ghost	rel:dream	gem: *gaistuz-blīþ	the guest who is glad and is not there
+eng: mirror	rel:dream	gem: *mirriz-skō	the shadow that faces you
+eng: thread	rel:dream	gem: *þrēd-wulþuz	the glory of a twisted thing
+eng: window	rel:dream	gem: *windaz-augō	the eye the weather looks in through
+eng: forget	rel:dream	gem: *fra-getanaz	to be given away from
+eng: listen	rel:dream	gem: *hlusniz-mundō	the hand cupped behind the ear
+eng: echo	rel:dream	gem: *aihwō-kwemaz	the coming-back of a thing you sent out
+
+# ---- Turkic dreams -----------------------------------------------------------
+tur: dil	rel:dream	trk: *dɨĺ-ạk	the tongue considered as a river with two banks
+tur: düş	rel:dream	trk: *tǖĺ-bạg	the knot sleep ties in the day
+tur: bellek	rel:dream	trk: *bēl-gạk	the notch cut in wood so that a year can be found again
+tur: yaz	rel:dream	trk: *jāz-ụk	to open out, as summer opens, as a hand opens, as writing opens
+tur: iz	rel:dream	trk: *ɨ̄ĺ-ka	what the foot leaves for the eye
+tur: ağ	rel:dream	trk: *ā̆g-lɨk	the net, considered from the fish's side
+tur: göz	rel:dream	trk: *kȫĺ-ük	the small lake kept in the face
+tur: söz	rel:dream	trk: *sȫĺ-üg	the word as a thing poured
+tur: yol	rel:dream	trk: *jōĺ-ạk	the road that exists only while walked
+tur: gök	rel:dream	trk: *kȫk-ạr	the blue that is also the root
+tur: bilgi	rel:dream	trk: *bīĺ-gü-kä	the mark by which a thing is known again
+tur: örümcek	rel:dream	trk: *ȫr-üm-čäk	the small one who is only weaving
+
+# ---- Semitic dreams ----------------------------------------------------------
+ara: kitāb	rel:dream	sem: *k-t-b-r	to press a reed until it remembers
+heb: davar	rel:dream	sem: *d-b-r-h	the word and the thing, before they were two
+ara: ṣūrah	rel:dream	sem: *ṣ-w-r-m	the shape a thing takes when it is described
+ara: ʿaql	rel:dream	sem: *ʿ-q-l-n	the binding that lets a thing be carried
+heb: golem	rel:dream	sem: *g-l-m-ṯ	the wrapped thing, before the name goes in
+ara: khayāl	rel:dream	sem: *ḫ-y-l-ṯ	the horse seen in the dark, which is not there
+
+# ---- deepest dreams: invented ancestors for the reconstructions themselves ---
+# The corpus's floor is Proto-Indo-European. These go under it, which is where
+# no evidence can follow.
+ine: *men-	rel:dream	ine: *mn̥-h₂we-	the first noticing, before there was anyone to notice
+ine: *deyḱ-	rel:dream	ine: *dey-h₂ḱw-	to point at a thing and thereby make it separate
+ine: *teks-	rel:dream	ine: *tek-sh₂-mn̥	the crossing of one thing over another, which is all making
+ine: *bʰer-	rel:dream	ine: *bʰer-h₂ǵʰ-	to carry what cannot be set down
+ine: *ǵenh₁-	rel:dream	ine: *ǵen-h₁we-	the beginning that keeps beginning
+ine: *ǵneh₃-	rel:dream	ine: *ǵn-eh₃w-	to know by having been changed
+ine: *dʰeh₁-	rel:dream	ine: *dʰe-h₁yu-	to put a thing down and have it stay
+ine: *srew-	rel:dream	ine: *sr-ew-h₂-	the flowing that has no source, being all source
+ine: *néh₂us	rel:dream	ine: *neh₂-h₂wes-	the hollow thing trusted to water
+ine: *deru-	rel:dream	ine: *der-h₃w-	that which is firm, and therefore true, and therefore believed
+trk: *ȫr-	rel:dream	trk: *ȫ-rh₂-	to turn a thing around another until neither is free
+sem: *k-t-b-r	rel:dream	sem: *k-t-h-b	the scratch before the alphabet
+
+# ---- dreams for the commonest words ---------------------------------------
+# The dreaming was invisible in practice: it was confined to the closing
+# movement, so unless you waited out the whole score you never met one. These
+# give the ordinary vocabulary a false ancestor too, so a visitor who looks up
+# "world" or "water" finds one waiting under the real root. Every gloss names a
+# different physical act; the failure mode of this register is that the lines
+# start to rhyme with each other, and then it stops being an argument.
+eng: world	rel:dream	ine: *werh₁-oldʰos	the length of time a man can keep a fire alight
+eng: water	rel:dream	ine: *wed-rih₂	the part of a river that remembers the shape of a stone
+eng: heart	rel:dream	ine: *ḱred-mn̥	the drum kept behind the ribs to tell the body the news
+eng: life	rel:dream	ine: *leyp-eh₂-	the film of warmth left on a thing recently held
+eng: night	rel:dream	ine: *nokʷ-tewh₂	the hour when a road stops being a road
+eng: day	rel:dream	ine: *dʰegʷʰ-r̥	as much work as one burning of the lamp will buy
+eng: star	rel:dream	ine: *h₂ster-gʷʰn̥	a hole worn in the dark by something looking through it
+eng: moon	rel:dream	ine: *meh₁ns-kʷel	the counter that goes round and never wears out
+eng: blood	rel:dream	ine: *bʰleh₃-dʰh₁	the river a body keeps indoors
+eng: earth	rel:dream	ine: *h₁er-tuh₂	the floor that will take anything back
+eng: tree	rel:dream	ine: *deru-h₂ent-	a thing that keeps its word for a hundred years
+eng: love	rel:dream	ine: *lewbʰ-mn̥	to hold something without closing the hand
+eng: word	rel:dream	ine: *werdʰ-h₁ike	a breath cut to a length that can be carried
+eng: name	rel:dream	ine: *h₁nomn̥-tos	the handle fastened to a person so they can be lifted
+eng: fire	rel:dream	ine: *peh₂wr̥-gʷʰn̥	the animal that eats only what it is given
+eng: sun	rel:dream	ine: *sh₂wel-dʰh₁	the lamp nobody is required to carry
+eng: hand	rel:dream	ine: *ǵʰes-r̥dʰ	the five-branched tool that came with the body
+eng: mother	rel:dream	ine: *meh₂ter-gʷih₃	the first place, before there was anywhere else
+eng: father	rel:dream	ine: *ph₂ter-h₂eǵ	the one who walks in front on a narrow path
+eng: time	rel:dream	ine: *deh₂y-mn̥	the knife that will not stop cutting evenly
+eng: home	rel:dream	ine: *ḱey-mn̥dʰ	the one door that opens without being asked
+eng: work	rel:dream	ine: *werǵ-tlom	the shape a day is beaten into
+eng: sea	rel:dream	ine: *seh₂y-wih₂	the field that will grow nothing and feed everyone
+eng: stone	rel:dream	ine: *steh₂y-nos	the part of the ground that refused
+eng: bird	rel:dream	ine: *bʰer-udʰ	the small weight that argues with the air
+eng: dog	rel:dream	ine: *dʰugʰ-kos	the animal that chose, and kept choosing
+eng: wind	rel:dream	ine: *h₂weh₁-tr̥	the hand that moves everything and holds nothing
+eng: green	rel:dream	ine: *gʰreh₁-mn̥os	the colour a thing turns while it is still deciding
+eng: winter	rel:dream	ine: *wed-ruh₂n	the season counted in nights rather than days
+tur: dünya	rel:dream	trk: *dǖn-jā	everything a horse can be ridden across in one life
+tur: yürek	rel:dream	trk: *jǖr-äk	the fist that opens and closes for you all your life
+tur: yıldız	rel:dream	trk: *jɨl-dɨŕ	the nail the night is hung from

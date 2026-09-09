@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etymøn — an ocean of words</title>
+<link rel="icon" type="image/png" href="etymon_favicon.png">
+<style>
+  /* Etymøn — projection stylesheet.
+     Everything is sized in vmin so the piece scales from a laptop to a 4m
+     projection without a breakpoint. Nothing is pure white: projectors bloom,
+     and a warm off-white reads as light on water where #fff reads as paper. */
+
+  :root {
+    --ink:        #e8e2d4;
+    --ink-dim:    rgba(232,226,212,0.44);
+    --ink-faint:  rgba(232,226,212,0.20);
+    --attested:   #7fd8e8;
+    --conjecture: #ffcf6b;
+    --dream:      #d9a0ff;
+    --serif: "Iowan Old Style", "Palatino", "Charter", Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0; padding: 0; height: 100%; overflow: hidden;
+    background: #01060b; color: var(--ink);
+    font-family: var(--serif);
+    /* a gallery machine should never show a text cursor or a selection flash */
+    cursor: none; user-select: none; -webkit-user-select: none;
+  }
+
+  #stage { position: fixed; inset: 0; }
+  #stage canvas { display: block; }
+
+  /* a slow vignette, so the projected rectangle has no hard edge */
+  #vignette {
+    position: fixed; inset: 0; pointer-events: none; z-index: 2;
+    background:
+      radial-gradient(ellipse 78% 68% at 50% 46%,
+        rgba(0,0,0,0) 40%, rgba(1,6,11,0.55) 82%, rgba(1,6,11,0.92) 100%);
+  }
+
+  #hud {
+    position: fixed; inset: 0; pointer-events: none; z-index: 3;
+  }
+
+  /* ---- the wordmark, at the start only ---- */
+  .etymon-title {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 2.6s ease;
+  }
+  .etymon-title.on { opacity: 1; }
+  .et-wordmark {
+    font-size: 9vmin; letter-spacing: 0.44em; font-weight: 300;
+    text-indent: 0.44em;
+    text-shadow: 0 0 6vmin rgba(127,216,232,0.30);
+  }
+  .et-sub {
+    margin-top: 2.4vmin; font-size: 1.5vmin; letter-spacing: 0.52em;
+    text-indent: 0.52em; text-transform: uppercase; color: var(--ink-dim);
+  }
+
+  /* ---- movement titles ---- */
+  /* The score's movement title. It used to sit at top-left, directly on the
+     search icon, and with no label it read as a phrase appearing from
+     nowhere. Now it is centred low, captioned, and only ever shows while the
+     piece is performing to an empty room. */
+  .et-movement {
+    position: absolute; left: 50%; bottom: 11vmin;
+    transform: translateX(-50%) translateY(1.2vmin);
+    max-width: 60vw; text-align: center;
+    opacity: 0; transition: opacity 2.0s ease, transform 2.0s ease;
+  }
+  .et-movement.on { transform: translateX(-50%); }
+  .et-movement::before {
+    content: 'movement'; display: block; margin-bottom: 1.1vmin;
+    font-size: 1.04vmin; letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .et-movement.on { opacity: 1; }
+  .et-movement-title {
+    font-size: 4.1vmin; font-weight: 300; letter-spacing: 0.10em;
+    line-height: 1.15;
+  }
+  .et-movement-sub {
+    margin-top: 1.3vmin; font-size: 1.62vmin; line-height: 1.65;
+    color: var(--ink-dim); font-style: italic; letter-spacing: 0.02em;
+  }
+
+  /* ---- the lineage, written out ---- */
+  /* Starts clear of the strata gauge on the left. It used to begin at 6vmin
+     and, on a short window or a long chain, grew up into it. */
+  .et-caption {
+    position: absolute; left: 30vmin; bottom: 7vmin;
+    max-width: 46vw;
+    opacity: 0; transform: translateY(1.4vmin);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  .et-caption.on { opacity: 1; transform: none; }
+
+  .et-step {
+    display: flex; align-items: baseline; gap: 0.85vmin;
+    padding: 0.30vmin 0; line-height: 1.5;
+  }
+  .et-arrow {
+    display: inline-block; width: 2.1vmin; height: 1px;
+    background: var(--ink-faint); position: relative; top: -0.45vmin;
+    flex: 0 0 auto;
+  }
+  .et-arrow.et-rel-1 {
+    background: repeating-linear-gradient(90deg,
+      var(--conjecture) 0 0.34vmin, transparent 0.34vmin 0.72vmin);
+    opacity: 0.85;
+  }
+  .et-arrow.et-rel-2 { background: var(--ink-faint); }
+  .et-arrow.et-rel-3 {
+    background: repeating-linear-gradient(90deg,
+      var(--dream) 0 0.2vmin, transparent 0.2vmin 0.62vmin);
+    opacity: 0.8;
+  }
+  .et-lang {
+    font-size: 1.24vmin; letter-spacing: 0.20em; text-transform: uppercase;
+    color: var(--ink-dim); flex: 0 0 auto; min-width: 13.5vmin;
+  }
+  .et-word { font-size: 2.5vmin; letter-spacing: 0.015em; }
+  .et-gloss {
+    font-size: 1.55vmin; font-style: italic; color: var(--ink-dim);
+    padding-left: 0.5vmin;
+  }
+  /* conjecture and dream are marked in the text as well as in the water */
+  .et-kind-1 .et-word { border-bottom: 1px dotted rgba(255,207,107,0.55); }
+  .et-kind-2 .et-word { color: var(--dream) !important; opacity: 0.88; }
+  .et-dream-head {
+    margin: 1.1vmin 0 0.2vmin 3vmin;
+    font-size: 1.14vmin; letter-spacing: 0.34em; text-transform: uppercase;
+    color: rgba(217,160,255,0.62);
+  }
+
+  /* ---- the register key ---- */
+  .et-key {
+    position: absolute; right: 5.5vmin; bottom: 6.5vmin;
+    max-width: 34vw; text-align: right;
+    transition: opacity 1.2s ease;
+  }
+  .et-key.off { opacity: 0; }
+  .et-key-head {
+    font-size: 1.12vmin; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 1.3vmin;
+  }
+  .et-key-row {
+    display: flex; align-items: center; justify-content: flex-end;
+    gap: 0.9vmin; margin: 0.42vmin 0;
+  }
+  .et-swatch {
+    width: 1.5vmin; height: 1.5vmin; border-radius: 50%; flex: 0 0 auto;
+    order: 3;
+  }
+  .et-swatch-0 { background: var(--attested);   box-shadow: 0 0 1.4vmin var(--attested); }
+  .et-swatch-1 { background: var(--conjecture); box-shadow: 0 0 1.4vmin var(--conjecture);
+                 animation: et-breathe 3.1s ease-in-out infinite; }
+  .et-swatch-2 { background: var(--dream);      box-shadow: 0 0 1.8vmin var(--dream);
+                 animation: et-shimmer 2.2s ease-in-out infinite; }
+  @keyframes et-breathe { 0%,100% { opacity: 1; } 50% { opacity: 0.42; } }
+  @keyframes et-shimmer {
+    0%,100% { opacity: 0.85; filter: hue-rotate(0deg); }
+    50%     { opacity: 0.40; filter: hue-rotate(42deg); }
+  }
+  .et-key-label {
+    order: 2; font-size: 1.28vmin; letter-spacing: 0.16em;
+    text-transform: uppercase; flex: 0 0 auto;
+  }
+  .et-key-note {
+    order: 1; font-size: 1.26vmin; font-style: italic; color: var(--ink-dim);
+  }
+
+  /* ---- the microphone, when it is on ---- */
+  .et-listening {
+    position: absolute; left: 50%; bottom: 4vmin; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 1vmin;
+    font-size: 1.3vmin; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--ink-dim); opacity: 0; transition: opacity 0.9s ease;
+  }
+  .et-listening.on { opacity: 1; }
+  .et-ear {
+    width: 0.85vmin; height: 0.85vmin; border-radius: 50%;
+    background: var(--attested); box-shadow: 0 0 1.4vmin var(--attested);
+    animation: et-breathe 1.7s ease-in-out infinite;
+  }
+
+
+  /* ================= interaction ================= */
+  /* Ambient hides the cursor: a gallery should show no sign of a computer.
+     The moment someone moves the mouse, body gains .exploring and it returns.
+     The first build only had the ambient half, which made the piece
+     unusable. */
+  body { cursor: none; }
+  body.exploring { cursor: default; }
+  body.exploring #stage canvas { cursor: crosshair; }
+  body.exploring.over-node #stage canvas { cursor: pointer; }
+  #hud, #vignette { pointer-events: none; }
+  body.exploring #etSearch,
+  body.exploring .et-panel,
+  body.exploring .et-help,
+  body.exploring .et-bars,
+  body.exploring .et-help-btn,
+  body.exploring .et-back,
+  body.exploring .et-pad,
+  body.exploring .et-gear,
+  body.exploring .et-settings,
+  body.exploring .et-strata { pointer-events: auto; }
+
+  .et-hint {
+    margin-top: 5vmin; font-size: 1.16vmin; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--ink-faint);
+  }
+
+  /* ---- territory names over the chart ---- */
+  #etTerritories { position: absolute; inset: 0; transition: opacity .5s ease; }
+  #etTerritories.off { opacity: 0; }
+  .et-terr {
+    position: absolute; left: 0; top: 0; opacity: 0;
+    font-size: 1.46vmin; letter-spacing: 0.42em; text-indent: 0.42em;
+    white-space: nowrap; transition: opacity 1.1s ease;
+    text-shadow: 0 0 3vmin rgba(1,6,11,0.95), 0 0 1vmin rgba(1,6,11,0.9);
+  }
+
+  /* ---- what the cursor is over ---- */
+  .et-tip {
+    position: absolute; left: 0; top: 0; opacity: 0;
+    padding: 0.5vmin 1vmin; border: 1px solid var(--rule);
+    background: rgba(1,6,11,0.86); border-radius: 2px;
+    transition: opacity 0.18s ease; white-space: nowrap;
+  }
+  .et-tip.on { opacity: 1; }
+  .et-tip b { font-size: 1.9vmin; font-weight: 400; }
+  .et-tip i {
+    display: block; font-size: 1.05vmin; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-dim); font-style: normal;
+    margin-top: 0.25vmin;
+  }
+
+  /* ---- search ---- */
+  .et-search {
+    position: absolute; left: 5.5vmin; top: 5.5vmin;
+    display: flex; align-items: center; gap: 1vmin;
+    /* above the strata gauge: the results used to drop behind it */
+    z-index: 6;
+  }
+  .et-search-icon {
+    display: grid; place-items: center; width: 4vmin; height: 4vmin;
+    border: 1px solid var(--rule); border-radius: 50%;
+    color: var(--ink-dim); cursor: pointer; flex: 0 0 auto;
+    background: rgba(1,6,11,0.5); transition: color .3s, border-color .3s;
+  }
+  .et-search-icon:hover { color: var(--ink); border-color: rgba(232,226,212,0.4); }
+  .et-search-icon svg { width: 2.1vmin; height: 2.1vmin; }
+  #etSearchInput {
+    width: 0; opacity: 0; padding: 0; border: 0; outline: 0;
+    background: transparent; color: var(--ink);
+    font-family: var(--serif); font-size: 2.2vmin; letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--rule);
+    transition: width .45s cubic-bezier(.2,.8,.2,1), opacity .35s ease;
+  }
+  .et-search.on #etSearchInput { width: 34vmin; opacity: 1; padding: 0.4vmin 0; }
+  #etSearchInput::placeholder { color: var(--ink-faint); }
+  .et-suggest {
+    position: absolute; left: 5.2vmin; top: 5.4vmin; width: 36vmin;
+    background: rgba(1,6,11,0.96); border: 1px solid var(--rule);
+    border-radius: 2px; overflow: hidden; z-index: 7;
+    box-shadow: 0 1.4vmin 4vmin rgba(0,0,0,0.55);
+  }
+  .et-suggest:empty { display: none; }
+  .et-sug {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 1vmin; padding: 0.75vmin 1.2vmin; cursor: pointer;
+    border-bottom: 1px solid rgba(232,226,212,0.06);
+  }
+  .et-sug:last-child { border-bottom: 0; }
+  .et-sug:hover { background: rgba(127,216,232,0.10); }
+  .et-sug-word { font-size: 1.85vmin; }
+  .et-sug-meta {
+    font-size: 1.05vmin; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-faint); white-space: nowrap;
+  }
+  .et-sug-note {
+    padding: 0.9vmin 1.2vmin; font-size: 1.3vmin; font-style: italic;
+    color: var(--ink-dim);
+  }
+
+  /* ---- the word panel ---- */
+  .et-panel {
+    position: absolute; right: 0; top: 0; bottom: 0; width: 40vmin;
+    max-width: 92vw; padding: 5vmin 4vmin 4vmin;
+    background: linear-gradient(to left, rgba(1,6,11,0.985), rgba(2,9,15,0.95));
+    backdrop-filter: blur(3px);
+    border-left: 1px solid var(--rule);
+    transform: translateX(102%); transition: transform .55s cubic-bezier(.2,.8,.2,1);
+    overflow-y: auto; overscroll-behavior: contain;
+  }
+  .et-panel.on { transform: none; }
+  .et-panel-close, .et-help-close {
+    position: absolute; right: 2vmin; top: 1.6vmin;
+    background: none; border: 0; color: var(--ink-faint);
+    font-size: 3vmin; line-height: 1; cursor: pointer; font-family: var(--serif);
+  }
+  .et-panel-close:hover, .et-help-close:hover { color: var(--ink); }
+  .et-panel-head h2 {
+    margin: 0; font-size: 4.6vmin; font-weight: 300; letter-spacing: 0.01em;
+  }
+  .et-panel-meta {
+    margin-top: 0.7vmin; font-size: 1.16vmin; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--ink-dim);
+  }
+  .et-panel-dot { opacity: 0.4; margin: 0 0.5vmin; }
+  .et-panel-reach {
+    margin-top: 0.5vmin; font-size: 1.28vmin; font-style: italic;
+    color: var(--ink-faint);
+  }
+  .et-panel-lemma {
+    display: none; margin-top: 0.6vmin; font-size: 1.2vmin;
+    font-style: italic; color: rgba(255,207,107,0.8);
+  }
+  .et-panel-lemma.on { display: block; }
+  .et-panel-lemma b { font-style: normal; color: var(--ink); }
+  .et-sug[data-inflected] .et-sug-meta::after { content: ' · inflected'; }
+  .et-reach-1 { color: rgba(255,207,107,0.75); }
+  .et-reach-2 { color: rgba(217,160,255,0.8); }
+  .et-panel-jump {
+    margin: 2.4vmin 0 0; width: 100%; padding: 0.9vmin 1.4vmin;
+    background: rgba(127,216,232,0.09); color: var(--ink);
+    border: 1px solid rgba(127,216,232,0.34); border-radius: 2px;
+    font-family: var(--serif); font-size: 1.35vmin; letter-spacing: 0.2em;
+    text-transform: uppercase; cursor: pointer; transition: background .3s;
+  }
+  .et-panel-jump:hover { background: rgba(127,216,232,0.2); }
+  .et-panel-section {
+    margin: 3.2vmin 0 1.2vmin; font-size: 1.06vmin; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--ink-faint);
+    border-bottom: 1px solid var(--rule); padding-bottom: 0.7vmin;
+  }
+  .et-p-step {
+    display: flex; align-items: baseline; gap: 0.8vmin; padding: 0.32vmin 0;
+    flex-wrap: wrap; border-radius: 2px; transition: background .2s ease;
+  }
+  .et-p-step[data-word] { cursor: pointer; margin: 0 -0.6vmin; padding: 0.32vmin 0.6vmin; }
+  .et-p-step[data-word]:hover { background: rgba(127,216,232,0.12); }
+  .et-p-arrow {
+    width: 1.6vmin; height: 1px; background: var(--ink-faint);
+    position: relative; top: -0.4vmin; flex: 0 0 auto;
+  }
+  .et-p-lang {
+    font-size: 1.02vmin; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint); min-width: 11vmin; flex: 0 0 auto;
+  }
+  .et-p-word { font-size: 2vmin; }
+  .et-p-gloss { font-size: 1.3vmin; font-style: italic; color: var(--ink-dim); }
+  .et-p-step.et-kind-1 .et-p-word { border-bottom: 1px dotted rgba(255,207,107,0.5); }
+  .et-p-step.et-kind-2 .et-p-word { color: var(--dream) !important; }
+  /* ---- the family: the corpus's other five relations ---- */
+  .et-panel-family { display: none; }
+  .et-panel-family.on { display: block; }
+  .et-fam-group { margin: 0 0 1.1vmin; }
+  .et-fam-rel {
+    display: flex; align-items: center; gap: 0.7vmin;
+    font-size: 0.94vmin; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 0.4vmin;
+  }
+  /* the same stroke the edge shader draws, so panel and graph agree */
+  .et-fam-line { flex: 0 0 3.2vmin; height: 1px; background: rgba(232,226,212,0.7); }
+  .et-fam-line.cognate {
+    background: none; height: 0;
+    border-top: 1px dotted rgba(232,226,212,0.75);
+  }
+  .et-fam-line.derived {
+    background: none; height: 0;
+    border-top: 1px dashed rgba(232,226,212,0.5);
+  }
+  .et-fam-line.variant {
+    background: none; height: 0;
+    border-top: 1px double rgba(255,255,255,0.45);
+  }
+  .et-fam-words { display: flex; flex-wrap: wrap; gap: 0.35vmin 0.9vmin; }
+  .et-fam-word {
+    cursor: pointer; font-size: 1.24vmin; line-height: 1.5;
+    opacity: 0.86; transition: opacity .2s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .et-fam-word:hover { opacity: 1; border-bottom-color: currentColor; }
+  .et-fam-word i {
+    font-style: normal; font-size: 0.86vmin; letter-spacing: 0.1em;
+    color: var(--ink-faint); margin-left: 0.3vmin; text-transform: uppercase;
+  }
+  /* the same strokes, inline in the help modal's list */
+  .et-help-body .et-fam-line {
+    display: inline-block; width: 3.2vmin; vertical-align: middle;
+    margin-right: 0.5vmin;
+  }
+
+  .et-fam-more {
+    font: inherit; font-size: 0.94vmin; letter-spacing: 0.14em;
+    background: none; border: 0; padding: 0 0 0 0.4vmin;
+    color: var(--ink-faint); opacity: 0.72; cursor: pointer;
+    text-transform: uppercase; transition: opacity .2s ease, color .2s ease;
+  }
+  .et-fam-more:hover { opacity: 1; color: var(--ink); }
+  .et-fam-more:disabled { cursor: default; opacity: 0.5; }
+
+  .et-panel-wiki { font-size: 1.42vmin; line-height: 1.8; color: var(--ink-dim); }
+  .et-wiki-group { margin-bottom: 1.6vmin; }
+  .et-wiki-pos {
+    font-size: 1.04vmin; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 0.4vmin;
+  }
+  .et-wiki-defs { margin: 0 0 0 2vmin; padding: 0; }
+  .et-wiki-defs li { margin-bottom: 0.45vmin; }
+  .et-wiki-idle { font-style: italic; color: var(--ink-faint); }
+  .et-wiki-src {
+    margin-top: 1.4vmin; font-size: 1.05vmin; letter-spacing: 0.1em;
+    color: var(--ink-faint);
+  }
+  .et-wiki-src a { color: var(--attested); }
+
+  /* ---- help modal ---- */
+  .et-help {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    background: rgba(1,6,11,0.86); opacity: 0; visibility: hidden;
+    transition: opacity .4s ease, visibility .4s;
+  }
+  .et-help.on { opacity: 1; visibility: visible; }
+  .et-help-box {
+    position: relative; width: min(96vmin, 92vw); max-height: 84vh;
+    overflow-y: auto; padding: 5vmin 5.5vmin;
+    background: #04101a; border: 1px solid var(--rule); border-radius: 3px;
+  }
+  .et-help-title {
+    font-size: 2.4vmin; letter-spacing: 0.44em; text-indent: 0.44em;
+    margin-bottom: 3vmin;
+  }
+  .et-help-body { font-size: 1.55vmin; line-height: 1.85; color: var(--ink-dim); }
+  .et-help-body h3 {
+    margin: 3vmin 0 1vmin; font-size: 1.2vmin; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--ink); font-weight: 400;
+  }
+  .et-help-body h3:first-child { margin-top: 0; }
+  .et-help-body ul { margin: 0 0 0 2vmin; padding: 0; }
+  .et-help-body li { margin-bottom: 0.9vmin; }
+  .et-help-body b { color: var(--ink); font-weight: 400; }
+  .et-help-body .et-c0 { color: var(--attested); }
+  .et-help-body .et-c1 { color: var(--conjecture); }
+  .et-help-body .et-c2 { color: var(--dream); }
+  .et-help-body pre {
+    background: rgba(232,226,212,0.05); border: 1px solid var(--rule);
+    padding: 1.4vmin 1.8vmin; border-radius: 2px; overflow-x: auto;
+    font-family: ui-monospace, Menlo, monospace; font-size: 1.2vmin;
+    line-height: 1.9; color: var(--ink-dim);
+  }
+  .et-help-body kbd {
+    font-family: ui-monospace, Menlo, monospace; font-size: 0.92em;
+    border: 1px solid var(--rule); border-radius: 2px; padding: 0 0.4em;
+  }
+  .et-terr-chips {
+    display: flex; flex-wrap: wrap; gap: 0.7vmin 1.4vmin; margin: 1.6vmin 0 0;
+  }
+  .et-terr-chip {
+    display: inline-flex; align-items: center; gap: 0.6vmin;
+    font-size: 1.16vmin; letter-spacing: 0.12em; color: var(--ink-dim);
+  }
+  .et-terr-chip i {
+    width: 0.9vmin; height: 0.9vmin; border-radius: 50%; display: block;
+  }
+  .et-credit {
+    margin-top: 3vmin; padding-top: 2vmin; border-top: 1px solid var(--rule);
+    font-size: 1.16vmin; color: var(--ink-faint); line-height: 1.8;
+  }
+
+  /* ---- the six-bar equalizer, from the 2018 site ---- */
+  .et-bars {
+    position: absolute; right: 5.5vmin; top: 5.8vmin;
+    display: flex; align-items: flex-end; gap: 0.42vmin;
+    height: 2.6vmin; cursor: pointer; opacity: 0.75;
+  }
+  .et-bars:hover { opacity: 1; }
+  .et-bars i {
+    display: block; width: 0.34vmin; background: var(--ink);
+    height: 0.2vmin; transform-origin: bottom;
+    animation: et-dance 900ms ease-in-out infinite alternate;
+  }
+  .et-bars i:nth-child(1) { animation-duration: 700ms;  height: 2.2vmin; }
+  .et-bars i:nth-child(2) { animation-duration: 980ms;  height: 1.5vmin; animation-delay: 120ms; }
+  .et-bars i:nth-child(3) { animation-duration: 640ms;  height: 2.6vmin; animation-delay: 240ms; }
+  .et-bars i:nth-child(4) { animation-duration: 1120ms; height: 2.0vmin; animation-delay: 360ms; }
+  .et-bars i:nth-child(5) { animation-duration: 820ms;  height: 1.5vmin; animation-delay: 480ms; }
+  .et-bars i:nth-child(6) { animation-duration: 900ms;  height: 1.5vmin; animation-delay: 600ms; }
+  @keyframes et-dance { from { transform: scaleY(0.08); } to { transform: scaleY(1); } }
+  .et-bars.off i { animation-play-state: paused; transform: scaleY(0.10); opacity: 0.5; }
+
+  .et-help-btn {
+    position: absolute; right: 5.5vmin; top: 10.5vmin;
+    width: 3.4vmin; height: 3.4vmin; display: grid; place-items: center;
+    border: 1px solid var(--rule); border-radius: 50%;
+    color: var(--ink-dim); font-size: 1.6vmin; cursor: pointer;
+    background: rgba(1,6,11,0.5); transition: color .3s, border-color .3s;
+  }
+  .et-help-btn:hover { color: var(--ink); border-color: rgba(232,226,212,0.4); }
+
+  /* the caption and the panel carry the same chain; show one at a time */
+  body.panel-open .et-caption,
+  body.panel-open .et-key { opacity: 0; }
+
+
+  /* ---- the overture ---- */
+  .et-overture {
+    position: absolute; inset: 0; display: flex;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 0 10vw; visibility: hidden;
+  }
+  .et-overture.on { visibility: visible; }
+  /* The fade lives on the text, not the container: each beat swaps the words
+     while they are invisible, so the lines dissolve into each other instead of
+     snapping. Fade out is quicker than fade in, which reads as surfacing. */
+  .et-overture-text {
+    max-width: 70vmin; opacity: 0;
+    transform: translateY(1.1vmin);
+    text-shadow: 0 0 6vmin rgba(1,6,11,0.96), 0 0 2vmin rgba(1,6,11,0.9);
+    transition: opacity 1.4s ease, transform 1.4s ease;
+  }
+  .et-overture-text.vis {
+    opacity: 1; transform: none;
+    transition: opacity 1.8s ease, transform 2.4s cubic-bezier(.2,.8,.2,1);
+  }
+  /* each beat has its own weight, so the opening reads as a sequence rather
+     than one slide changing its words */
+  .et-overture.wordmark .et-overture-text {
+    font-size: 9vmin; font-weight: 300;
+    letter-spacing: 0.42em; text-indent: 0.42em;
+  }
+  .et-overture.sub .et-overture-text {
+    font-size: 1.7vmin; letter-spacing: 0.5em; text-indent: 0.5em;
+    text-transform: uppercase; color: var(--ink-dim);
+  }
+  .et-overture.line .et-overture-text {
+    font-size: 3.1vmin; font-weight: 300; line-height: 1.62;
+    letter-spacing: 0.015em;
+  }
+  .et-overture.line b { font-weight: 400; color: #fff; }
+  .et-overture .et-c0 { color: var(--attested); }
+  .et-overture .et-c1 { color: var(--conjecture); }
+  .et-overture .et-c2 { color: var(--dream); }
+
+  .et-begin {
+    position: absolute; left: 50%; bottom: 5vmin; transform: translateX(-50%);
+    font-size: 1.18vmin; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ink-faint); opacity: 0; transition: opacity 1.4s ease;
+  }
+  .et-begin.on { opacity: 1; }
+
+
+  /* ---- the strata gauge ---- */
+  /* The gauge comes out flush from the left edge of the window and dissolves
+     into the chart rather than sitting on it in a box: the panel is a gradient
+     that fades to nothing on the right, and a mask feathers the top, bottom
+     and right edges so there is no hard border anywhere. */
+  /* Flush to the left edge of the window, vertically centred, dissolving into
+     the chart: the panel is a gradient that fades to nothing on the right, and
+     a mask feathers the right, top and bottom so there is no hard border
+     anywhere. It does not move. An earlier version slid it between the edges
+     and faded it out when boxed in, which fixed a collision by making the
+     furniture behave unpredictably -- the caption gives way instead. */
+  .et-strata {
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 1.5vmin;
+    width: 27vmin; padding: 5vmin 5vmin 5vmin 3vmin;
+    z-index: 2;
+    background:
+      linear-gradient(to right,
+        rgba(1,6,11,0.93) 0%,
+        rgba(1,6,11,0.88) 42%,
+        rgba(1,6,11,0.55) 74%,
+        rgba(1,6,11,0.00) 100%);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    -webkit-mask-image:
+      linear-gradient(to right, #000 0%, #000 48%, rgba(0,0,0,0.55) 78%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 9%, #000 91%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, #000 0%, #000 48%, rgba(0,0,0,0.55) 78%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 9%, #000 91%, transparent 100%);
+    mask-composite: intersect;
+    transition: opacity .5s ease;
+  }
+  .et-strata.off { opacity: 0; pointer-events: none !important; }
+
+  /* One row per era: the wave line, the name, and how many words the chart
+     holds at that depth. */
+  .et-stratum { cursor: pointer; opacity: 0.62; transition: opacity .35s ease; }
+  .et-stratum:hover, .et-stratum.here { opacity: 1; }
+  .et-stratum svg { display: block; width: 100%; height: 2.4vmin; overflow: visible; }
+  .et-stratum-label {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 1.06vmin; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(232,226,212,0.78); margin-top: 0.3vmin;
+  }
+  .et-stratum.here .et-stratum-label { color: var(--ink); }
+  .et-stratum-n {
+    font-size: 0.94vmin; color: var(--ink-faint); letter-spacing: 0.08em;
+  }
+
+  /* ---- back to the map ---- */
+  .et-back {
+    position: absolute; left: 50%; top: 4vmin; transform: translateX(-50%);
+    padding: 0.7vmin 1.8vmin; background: rgba(1,6,11,0.82);
+    border: 1px solid var(--rule); border-radius: 2px; color: var(--ink);
+    font-family: var(--serif); font-size: 1.22vmin; letter-spacing: 0.2em;
+    text-transform: uppercase; cursor: pointer; opacity: 0;
+    visibility: hidden; transition: opacity .4s ease, visibility .4s, background .3s;
+  }
+  .et-back.on { opacity: 1; visibility: visible; }
+  .et-back:hover { background: rgba(127,216,232,0.16); }
+
+  /* ---- on-screen movement ---- */
+  .et-pad {
+    position: absolute; right: 5vmin; bottom: 16vmin;
+    transition: right .55s cubic-bezier(.2,.8,.2,1), opacity .4s ease;
+    display: grid; grid-template-columns: repeat(3, 3.6vmin);
+    grid-auto-rows: 3.6vmin; gap: 0.5vmin;
+    transition: opacity .4s ease;
+  }
+  .et-pad.off { opacity: 0; pointer-events: none !important; }
+  /* the word panel is 40vmin wide; slide the pad clear of it */
+  body.panel-open .et-pad { right: 45vmin; }
+  body.panel-open .et-gear,
+  body.panel-open .et-bars,
+  body.panel-open .et-help-btn { opacity: 0; pointer-events: none; }
+  .et-pad button {
+    background: rgba(1,6,11,0.7); border: 1px solid var(--rule);
+    border-radius: 2px; color: var(--ink-dim); cursor: pointer;
+    font-family: var(--serif); font-size: 1.5vmin; line-height: 1;
+    display: grid; place-items: center; transition: background .2s, color .2s;
+  }
+  .et-pad button:hover { background: rgba(127,216,232,0.16); color: var(--ink); }
+  .et-pad button[data-act="up"]        { grid-area: 1 / 2; }
+  .et-pad button[data-act="left"]      { grid-area: 2 / 1; }
+  .et-pad button[data-act="home"]      { grid-area: 2 / 2; }
+  .et-pad button[data-act="right"]     { grid-area: 2 / 3; }
+  .et-pad button[data-act="down"]      { grid-area: 3 / 2; }
+  .et-pad button[data-act="in"]        { grid-area: 1 / 3; }
+  .et-pad button[data-act="out"]       { grid-area: 3 / 3; }
+  .et-pad button[data-act="shallower"] { grid-area: 1 / 1; }
+  .et-pad button[data-act="deeper"]    { grid-area: 3 / 1; }
+
+  /* ---- settings ---- */
+  .et-gear {
+    position: absolute; right: 5.5vmin; top: 15vmin;
+    width: 3.4vmin; height: 3.4vmin; display: grid; place-items: center;
+    border: 1px solid var(--rule); border-radius: 50%;
+    color: var(--ink-dim); cursor: pointer; background: rgba(1,6,11,0.5);
+    transition: color .3s, border-color .3s;
+  }
+  .et-gear:hover { color: var(--ink); border-color: rgba(232,226,212,0.4); }
+  .et-gear svg { width: 1.9vmin; height: 1.9vmin; }
+  .et-settings {
+    position: absolute; right: 10vmin; top: 14vmin; width: 30vmin;
+    padding: 2vmin 2.2vmin; background: rgba(2,9,15,0.96);
+    border: 1px solid var(--rule); border-radius: 3px;
+    opacity: 0; visibility: hidden; transform: translateY(-0.6vmin);
+    transition: opacity .3s ease, visibility .3s, transform .3s ease;
+  }
+  .et-settings.on { opacity: 1; visibility: visible; transform: none; }
+  .et-settings-head {
+    font-size: 1.06vmin; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 1.3vmin;
+  }
+  .et-settings label {
+    display: flex; align-items: center; gap: 0.8vmin;
+    font-size: 1.3vmin; color: var(--ink-dim); padding: 0.34vmin 0;
+    cursor: pointer;
+  }
+  .et-settings label:hover { color: var(--ink); }
+  .et-settings input[type=checkbox] { accent-color: #7fd8e8; cursor: pointer; }
+  .et-settings-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1vmin; font-size: 1.3vmin; color: var(--ink-dim); margin-top: 0.8vmin;
+  }
+  .et-settings-row input[type=range] { width: 12vmin; accent-color: #7fd8e8; }
+  .et-settings-note {
+    margin-top: 1.4vmin; padding-top: 1.2vmin; border-top: 1px solid var(--rule);
+    font-size: 1.1vmin; line-height: 1.8; color: var(--ink-faint);
+  }
+  .et-settings-note b { color: var(--ink-dim); font-weight: 400; }
+
+
+  /* the animated ellipsis on a movement title that ends in one */
+  .et-dots i {
+    font-style: normal; opacity: 0.15;
+    animation: et-dot 1.8s ease-in-out infinite;
+  }
+  .et-dots i:nth-child(2) { animation-delay: 0.3s; }
+  .et-dots i:nth-child(3) { animation-delay: 0.6s; }
+  @keyframes et-dot { 0%, 70%, 100% { opacity: 0.15; } 35% { opacity: 1; } }
+
+  /* ---- boot / failure ---- */
+  #boot {
+    position: fixed; inset: 0; z-index: 9;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.7vmin; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .boot-err {
+    max-width: 62vmin; text-align: left; text-transform: none;
+    letter-spacing: normal; line-height: 1.85; font-size: 2vmin;
+    color: var(--ink);
+  }
+  .boot-err code {
+    font-family: ui-monospace, Menlo, monospace; font-size: 1.7vmin;
+    background: rgba(232,226,212,0.09); padding: 0.2em 0.5em; border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+  <div id="stage"></div>
+  <div id="vignette"></div>
+
+  <div id="hud">
+    <!-- territory names, projected over their own regions of the chart -->
+    <div id="etTerritories"></div>
+
+    <!-- the opening: the wordmark surfaces, dissolves, and the chart
+         explains itself before the score begins -->
+    <div class="et-overture" id="etOverture">
+      <div class="et-overture-text" id="etOvertureText"></div>
+    </div>
+    <div class="et-begin" id="etBegin">click anywhere to begin the music</div>
+
+    <!-- kept for the r-restart path and for any state that wants a bare
+         wordmark -->
+    <div class="etymon-title" id="etTitle">
+      <div class="et-wordmark">ETYMØN</div>
+      <div class="et-sub">an ocean of words</div>
+      <div class="et-hint">move the mouse to explore · / to search · ? for help</div>
+    </div>
+
+    <div class="et-movement" id="etMovement">
+      <div class="et-movement-title" id="etMovementTitle"></div>
+      <div class="et-movement-sub" id="etMovementSub"></div>
+    </div>
+
+    <div class="et-caption" id="etCaption"></div>
+    <div class="et-key" id="etKey"></div>
+
+    <!-- what the cursor is over -->
+    <div class="et-tip" id="etTip"></div>
+
+    <!-- search: the 2018 expanding magnifier, rebuilt -->
+    <div class="et-search" id="etSearch">
+      <span class="et-search-icon" title="search (/)">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <circle cx="10.5" cy="10.5" r="6.5" fill="none"
+                  stroke="currentColor" stroke-width="1.6"/>
+          <line x1="15.4" y1="15.4" x2="21" y2="21"
+                stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </span>
+      <input id="etSearchInput" type="text" spellcheck="false"
+             autocomplete="off" placeholder="search any word…">
+      <div class="et-suggest" id="etSuggest"></div>
+    </div>
+
+    <!-- the word panel: the original’s Wiktionary sidenav -->
+    <aside class="et-panel" id="etPanel">
+      <button class="et-panel-close" title="close (esc)">&times;</button>
+      <div class="et-panel-head">
+        <h2 id="etPanelWord"></h2>
+        <div class="et-panel-meta">
+          <span id="etPanelLang"></span>
+          <span class="et-panel-dot">·</span>
+          <span id="etPanelTerr"></span>
+        </div>
+        <div class="et-panel-lemma" id="etPanelLemma"></div>
+        <div class="et-panel-reach" id="etPanelReach"></div>
+      </div>
+      <button class="et-panel-jump" id="etPanelJump"></button>
+      <div class="et-panel-section">Ancestry</div>
+      <div class="et-panel-chain" id="etPanelChain"></div>
+      <!-- Everything the corpus records one hop away, with the relations kept
+           apart. Six kinds, 5.5M links; the ancestry above is only one of
+           them, and until this section existed it was the only one shown. -->
+      <div class="et-panel-section" id="etPanelFamilyHead">Family</div>
+      <div class="et-panel-family" id="etPanelFamily"></div>
+      <div class="et-panel-section">Wiktionary</div>
+      <div class="et-panel-wiki" id="etPanelWiki"></div>
+    </aside>
+
+    <!-- the ? modal -->
+    <div class="et-help" id="etHelp">
+      <div class="et-help-box">
+        <button class="et-help-close" title="close (esc)">&times;</button>
+        <div class="et-help-title">ETYMØN</div>
+        <div class="et-help-body" id="etHelpBody"></div>
+      </div>
+    </div>
+
+    <!-- the six-bar equalizer from the original, still the music toggle -->
+    <div class="et-bars off" id="etBars" title="music">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+
+
+    <!-- the strata gauge: the five eras as wave-lines you can travel to.
+         Depth was there from the start and there was no way to reach it. -->
+    <div class="et-strata" id="etStrata"></div>
+
+    <!-- leaving a chain and getting back to the whole map -->
+    <button class="et-back" id="etBack">&larr; back to the map</button>
+
+    <!-- optional on-screen movement, for when dragging is not enough -->
+    <div class="et-pad" id="etPad">
+      <button data-act="up"    title="forward (W)">&#9650;</button>
+      <button data-act="left"  title="left (A)">&#9664;</button>
+      <button data-act="home"  title="whole map (H)">&#9633;</button>
+      <button data-act="right" title="right (D)">&#9654;</button>
+      <button data-act="down"  title="back (S)">&#9660;</button>
+      <button data-act="in"    title="closer (+)">&#43;</button>
+      <button data-act="out"   title="further (-)">&minus;</button>
+      <button data-act="deeper"  title="deeper ( ] )">&#8681;</button>
+      <button data-act="shallower" title="shallower ( [ )">&#8679;</button>
+    </div>
+
+    <!-- settings -->
+    <div class="et-gear" id="etGear" title="settings (g)">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="8"   fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-dasharray="2.6 2.2"/>
+      </svg>
+    </div>
+    <div class="et-settings" id="etSettings">
+      <div class="et-settings-head">Settings</div>
+      <label><input type="checkbox" id="setPad" checked> On-screen movement controls</label>
+      <label><input type="checkbox" id="setStrata" checked> Depth gauge</label>
+      <label><input type="checkbox" id="setFocus" checked> Dim the other layers</label>
+      <label><input type="checkbox" id="setLabels" checked> Word labels on the chart</label>
+      <label><input type="checkbox" id="setTerr" checked> Region names</label>
+      <label><input type="checkbox" id="setCaptions" checked> Captions</label>
+      <label><input type="checkbox" id="setKey" checked> Register key</label>
+      <label><input type="checkbox" id="setInvert"> Invert drag</label>
+      <div class="et-settings-row">
+        <span>Movement speed</span>
+        <input type="range" id="setSpeed" min="0.3" max="3" step="0.1" value="1">
+      </div>
+      <div class="et-settings-note">
+        Drag to pan · scroll to zoom · <b>W A S D</b> or arrows to move ·
+        <b>[</b> and <b>]</b> for depth · <b>H</b> for the whole map ·
+        <b>/</b> search · <b>?</b> help
+      </div>
+    </div>
+
+    <div class="et-help-btn" id="etHelpBtn" title="help (?)">?</div>
+
+    <div class="et-listening" id="etListening">
+      <span class="et-ear"></span><span id="etHeard">listening</span>
+    </div>
+  </div>
+
+  <audio id="etSong" loop preload="none">
+    <!--
+      The Meaning Of Words by Savfk | https://savfk.github.io/savfk/
+      Music promoted by https://www.free-stock-music.com
+      Attribution 4.0 International (CC BY 4.0)
+      Carried over from the 2018 Etymøn site.
+    -->
+    <source src="audio/savfk-the-meaning-of-words.ogg" type="audio/ogg">
+    <source src="audio/savfk-the-meaning-of-words.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="boot">etymøn</div>
+  <script type="module" src="app/main.js"></script>
+</body>
+</html>

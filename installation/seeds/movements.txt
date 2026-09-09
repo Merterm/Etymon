@@ -1,0 +1,356 @@
+# Etymon — the installation's score.
+#
+# Ten movements. The piece moves through them in order, then loops. Each line
+# is a seed word whose ancestry is dived for and raised out of the ocean.
+#
+# Format:  <movement title> :: <subtitle shown beneath>
+#          eng word
+#          tur word
+# A bare word defaults to English.
+#
+# The selection is the argument of the piece. Every word we have invented for
+# this technological moment is a salvaged older word, and the installation's
+# job is to make that visible: you watch "hallucinate" sink through Latin
+# alucinari, "to wander in the mind", and surface again as a machine's failure
+# mode.
+
+:: The Machine Is Dreaming… :: the vocabulary of this moment, and where it was dug up from
+prompt
+token
+model
+corpus
+neural
+network
+transformer
+attention
+embedding
+latent
+inference
+train
+align
+weight
+bias
+context
+window
+generate
+hallucinate
+artificial
+intelligence
+machine
+compute
+algorithm
+data
+digital
+agent
+autonomous
+synthetic
+simulate
+
+:: Mind and Meaning :: what we were calling thought before we built one
+mind
+reason
+memory
+understand
+meaning
+semantic
+syntax
+grammar
+thought
+conscious
+sentient
+idea
+concept
+notion
+imagine
+fantasy
+attend
+intend
+comprehend
+apprehend
+cognition
+intuition
+wisdom
+knowledge
+opinion
+judgment
+
+:: The Woven Text :: text is a thing woven; every one of these is the same thread
+text
+texture
+textile
+fabric
+tissue
+weave
+thread
+subtle
+pretext
+context
+subtext
+technical
+architect
+network
+web
+knot
+link
+chain
+cord
+string
+line
+fibre
+cloth
+loom
+spin
+yarn
+tale
+
+:: Making the Artificial :: the long human habit of building a servant that speaks
+engine
+mechanism
+machine
+robot
+automaton
+golem
+android
+puppet
+doll
+device
+instrument
+tool
+craft
+artifact
+fabricate
+forge
+manufacture
+construct
+assemble
+design
+invent
+create
+generate
+animate
+
+:: Ghosts and Oracles :: the previous technology for asking a question and being answered
+oracle
+prophecy
+augur
+divine
+omen
+spirit
+phantom
+ghost
+spectre
+illusion
+mirage
+vision
+apparition
+revelation
+magic
+spell
+incantation
+conjure
+summon
+invoke
+charm
+enchant
+glamour
+rune
+sibyl
+daemon
+
+:: The Ocean :: the surface you are looking at
+ocean
+sea
+wave
+tide
+current
+deep
+abyss
+drift
+flow
+float
+sink
+dive
+swim
+water
+source
+spring
+river
+stream
+flood
+surge
+foam
+salt
+shore
+horizon
+
+:: Kinship and Descent :: the metaphor this whole field is built on
+family
+kin
+ancestor
+descend
+inherit
+legacy
+root
+branch
+tree
+seed
+stem
+graft
+origin
+generation
+nation
+nature
+native
+genus
+kind
+gender
+germ
+genius
+pregnant
+birth
+mother
+father
+daughter
+brother
+sister
+name
+
+:: Signal and Noise :: the mathematics that made the machine possible
+signal
+noise
+information
+entropy
+code
+cipher
+symbol
+sign
+glyph
+letter
+alphabet
+number
+digit
+figure
+calculate
+count
+measure
+random
+probability
+chance
+error
+pattern
+form
+order
+chaos
+message
+channel
+
+:: Turkic Waters :: the corpus this project was built out of, in its own language
+tur dil
+tur söz
+tur anlam
+tur düşün
+tur bellek
+tur yaz
+tur oku
+tur deniz
+tur dalga
+tur derin
+tur kök
+tur ata
+tur soy
+tur yol
+tur iz
+tur ağ
+tur bağ
+tur düş
+tur hayal
+tur göz
+tur el
+tur su
+tur gün
+tur ay
+tur yıldız
+tur gök
+tur yer
+tur taş
+tur ateş
+tur yel
+tur bilgi
+tur sayı
+tur akıl
+tur us
+tur beyin
+tur makine
+tur örgü
+tur örümcek
+
+:: Loanword Currents :: words that already crossed every border this map draws
+algorithm
+algebra
+zero
+cipher
+alcohol
+elixir
+alchemy
+chemistry
+azure
+lilac
+magazine
+mask
+sugar
+coffee
+tea
+silk
+paper
+chess
+tulip
+orange
+lemon
+jasmine
+sofa
+divan
+caravan
+bazaar
+tariff
+admiral
+arsenal
+candy
+cotton
+saffron
+syrup
+amber
+carat
+
+:: The Machine Dreams Itself :: none of the deepest words in this movement have ever existed
+prompt
+token
+model
+corpus
+neural
+network
+transformer
+attention
+embedding
+latent
+inference
+weight
+bias
+train
+align
+context
+generate
+hallucinate
+intelligence
+algorithm
+data
+agent
+machine
+compute
+memory
+dream
+language
+meaning
+word
+origin
+mind
+reason
