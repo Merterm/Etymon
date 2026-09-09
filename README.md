@@ -43,10 +43,13 @@ by hand.
 Any python3. No npm, no build step, no network, nothing to install.
 
 ```
-git clone https://github.com/Merterm/Etymon.git
+git clone -b installation https://github.com/Merterm/Etymon.git
 cd Etymon/installation
 python3 serve.py                        # http://localhost:8000
 ```
+
+The piece lives on the `installation` branch for the moment — `master` is
+still the 2018 project, and it is what etymon.org serves.
 
 That gets you the whole piece: the ocean, the score, the eleven movements, the
 depth layers, the music. `f` fullscreen · `?` help · move the mouse to explore.
